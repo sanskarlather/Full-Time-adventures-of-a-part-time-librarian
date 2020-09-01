@@ -2,6 +2,7 @@
 typedef struct object {
     const char* description;
     const char* tag;
+    const char* usage;
     struct object* location;
     struct object* destination;
 } OBJECT;

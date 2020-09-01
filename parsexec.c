@@ -3,6 +3,7 @@
 #include <string.h>
 #include"location.h"
 #include "inventory.h"
+#include "item.h"
 bool parseAndExecute(char* input)
 {
     char* verb = strtok(input, " \n");
@@ -40,6 +41,10 @@ bool parseAndExecute(char* input)
         else if (strcmp(verb, "inventory") == 0)
         {
             executeInventory();
+        }
+        else if (strcmp(verb, "use") == 0)
+        {
+            executeUse(noun);
         }
         else
         {
