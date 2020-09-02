@@ -1,1 +1,89 @@
-Text files containg all the objects to be read by Object.awk
+
+#include <stdbool.h>
+#include <stdio.h>
+#include "object.h"
+
+
+typedef struct object {
+   const char    *description;
+   const char   **tags;
+   const char    *usage;
+   struct object *location;
+   struct object *destination;
+   int weight;
+
+   
+} OBJECT;
+
+extern OBJECT objs[];
+
+- bathroom
+     description "a smelly bathroom"
+     tags        "bathroom","south"
+     location    bedroom
+     destination bathroom
+	 weight      99999
+- bedroom
+     description "your bedroom"
+     tags        "bedroom","north"
+     location    bathroom
+     destination bedroom
+	 weight      99999
+	 
+
+	 
+- library
+     description "an old dusty library"
+     tags        "library"
+     location    bedroom
+     destination library
+	 weight      99999
+	 
+
+- toothbrush
+     description "a chewed out toothbrush"
+     tags        "toothbrush", "tooth brush", "brush"
+     location    bathroom
+	 usage		 "You have brushed your teeth"
+
+- toilet
+     description "a toilet with a bidet"
+     tags        "washroom", "toilet"
+     location    bathroom
+	 usage		 "You have used your toilet"
+
+- shower
+     description "a shower"
+     tags        "shower", "bath"
+     location    bathroom
+	 usage		 "You have taken a shower"
+
+- backpack
+     description "a worn out backpack"
+     tags        "backpack", "bag", "backpack"
+     location    bedroom
+	 usage		 "You have packed your backpack"
+
+- keys
+     description "a set of keys with a sonic screwdriver keychain"
+     tags        "keychain", "keys", "key set"
+     location    bedroom
+	 
+
+
+- guard
+     description "a burly guard"
+     tags        "guard", "burly guard"
+    
+
+- player
+     description "yourself"
+     tags        "yourself"
+     location    bedroom
+
+
+	 
+	 
+	 
+	 
+
