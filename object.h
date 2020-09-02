@@ -7,6 +7,7 @@ typedef struct object {
     struct object* location;
     struct object* destination;
     const char* textPass;
+    const char* details;
     int weight;
 
 
@@ -23,14 +24,22 @@ extern OBJECT objs[];
 #define bedroomExit	(objs + 6)
 #define road	(objs + 7)
 #define roadWalls	(objs + 8)
-#define libraryEntrance	(objs + 9)
-#define library	(objs + 10)
-#define toothbrush	(objs + 11)
-#define toilet	(objs + 12)
-#define shower	(objs + 13)
-#define backpack	(objs + 14)
-#define keys	(objs + 15)
-#define guard	(objs + 16)
-#define player	(objs + 17)
+#define library	(objs + 9)
+#define libraryEntrance	(objs + 10)
+#define libraryExit	(objs + 11)
+#define libraryReception	(objs + 12)
+#define libraryShelf	(objs + 13)
+#define libraryShelfEntrance	(objs + 14)
+#define shelf_1	(objs + 15)
+#define shelf_2	(objs + 16)
+#define shelf_3	(objs + 17)
+#define shelf_4	(objs + 18)
+#define toothbrush	(objs + 19)
+#define toilet	(objs + 20)
+#define shower	(objs + 21)
+#define backpack	(objs + 22)
+#define keys	(objs + 23)
+#define guard	(objs + 24)
+#define player	(objs + 25)
 
-#define endOfObjs	(objs + 18)
+#define endOfObjs	(objs + 26)

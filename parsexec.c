@@ -55,11 +55,14 @@ bool parseAndExecute(char* input)
        {
            executeBook(noun);
        }
-       
-        else
-        {
+       else if (strcmp(verb, "examine") == 0)
+       {
+           executeExamine(noun);
+       }
+       else
+       {
             printf("I don't know how to '%s'.\n", verb);
-        }
+       }
     }
     return true;
 }
