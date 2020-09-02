@@ -140,6 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="book.c" />
     <ClCompile Include="inventory.c" />
     <ClCompile Include="item.c" />
     <ClCompile Include="location.c" />
@@ -152,6 +153,7 @@
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="book.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="location.h" />

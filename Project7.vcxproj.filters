@@ -45,6 +45,9 @@
     <ClCompile Include="use.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="book.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parsexec.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="use.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="book.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

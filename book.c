@@ -3,21 +3,12 @@
 #include "object.h"
 #include "misc.h"
 #include "noun.h"
-void executeLook(const char* noun)
+#include "location.h"
+
+void executeBook(const char* noun)
 {
-    if (noun != NULL && strcmp(noun, "around") == 0)
-    {
-        printf("You are in %s.\n", player->location->description);
-        listObjectsAtLocation(player->location);
-    }
-    else
-    {
-        printf("I don't understand what you want to see.\n");
-    }
-}
-void executeGo(const char* noun)
-{
-    OBJECT* obj = getVisible("where you want to go", noun);
+
+    OBJECT* obj = getVisible("what do you want to open", noun);
     switch (getDistance(player, obj))
     {
     case distOverthere:
