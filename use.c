@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include "object.h"
-void useObject(OBJECT *obj)
+void useObject(OBJECT* obj)
 {
 	if (obj == NULL)
 	{
 
 	}
-	printf(obj->usage);
+	else if (obj->usage == NULL) {
+		printf("No way, You can't use that.\n");
+	}
+	else
+	{
+		printf(obj->usage);
+
+	}
 }
