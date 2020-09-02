@@ -1,4 +1,3 @@
-
 #include <stdbool.h>
 #include <stdio.h>
 #include "object.h"
@@ -10,6 +9,7 @@ typedef struct object {
    const char    *usage;
    struct object *location;
    struct object *destination;
+   const char 	 *textPass;
    int weight;
 
    
@@ -19,27 +19,78 @@ extern OBJECT objs[];
 
 - bathroom
      description "a smelly bathroom"
-     tags        "bathroom","south"
+	 tags    "bathroom"
+	 textPass    "You entred the bathroom\n"
+	 weight      99999
+
+- bathroomWalls
+     description "bathroom walls"
+     tags        "west","east","south"
+     location    bathroom
+	 textPass    "Their is nothing but walls here\n"
+	 weight      99999
+
+- bathroomEntrance
+     description "Entrance of the bathroom"
+     tags        "entrance","south"
      location    bedroom
      destination bathroom
+	 textPass    "You entred the bathroom\n"
 	 weight      99999
+	 
 - bedroom
-     description "your bedroom"
-     tags        "bedroom","north"
+     description "Your bedroom"
+     tags        "bedroom"
+	 textPass    "You entred the bedroom\n"
+	 weight      99999
+	 
+- bedroomWalls
+     description "Your bedroom walls"
+     tags        "east","west"
+     location    bedroom
+	 textPass    "There is nothing but walls there\n"
+	 weight      99999
+	 
+- bedroomEntrance
+     description "Entrance of the bedroom"
+     tags        "south"
      location    bathroom
      destination bedroom
-	 weight      99999
-	 
+	 textPass    "You entred the bedroom\n"
+	 weight      99999	 
 
-	 
+- bedroomExit
+     description "Exit of the house"
+     tags        "north","exit"
+     location    bedroom
+     destination road
+	 textPass    "You are on the road\n"
+	 weight      99999	 
+- road
+	 description "the road to the library"
+	 tags 		 "road"
+	 textPass    "You are on the road"
+
+- roadWalls
+     description "Some closed down shops"
+     tags        "west","north","south"
+     location    road
+	 textPass    "There is nothing but locked shops there\n"
+	 weight      99999
 - library
      description "an old dusty library"
      tags        "library"
-     location    bedroom
-     destination library
+	 textPass    "You have entred the library"
 	 weight      99999
 	 
-
+- libraryEntrance
+     description "entrance to the library"
+     tags        "entrance","east"
+     location    road
+     destination library
+	 textPass    "You entred the library\n"
+	 weight      99999	  
+	 
 - toothbrush
      description "a chewed out toothbrush"
      tags        "toothbrush", "tooth brush", "brush"
@@ -68,14 +119,11 @@ extern OBJECT objs[];
      description "a set of keys with a sonic screwdriver keychain"
      tags        "keychain", "keys", "key set"
      location    bedroom
-	 
-
 
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
-    
-
+	 
 - player
      description "yourself"
      tags        "yourself"
