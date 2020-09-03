@@ -10,12 +10,14 @@ BEGIN {
    obj = $2;
    prop["description"] = "NULL";
    prop["tags"]        = "";
-   prop["usage"] = "NULL";
+   prop["usage"]       = "NULL";
    prop["location"]    = "NULL";
    prop["destination"] = "NULL";
-   prop["textPass"] = "\"You can't get much closer than this.\\n\"";
+   prop["textPass"]    = "NULL";
+   prop["details"]     = "NULL";
    prop["weight"]      = "NULL";
-
+   
+	
    
 }
 obj && /^[ \t]+[a-z]/ {
@@ -52,8 +54,9 @@ function outputRecord(separator)
          print "\t\ttags" count ",";
 		  print "\t\t" prop["usage"] ",";
          print "\t\t" prop["location"] ",";
-		 print "\t\t" prop["destination"] ",";
+		 print "\t\t" prop["destination"]	 ",";
 		 print "\t\t" prop["textPass"] ",";
+		 print "\t\t" prop["details"] ",";
 		 print "\t\t" prop["weight"]; 
          
          print "\t}" separator;

@@ -14,7 +14,11 @@ void executeLook(const char* noun)
 }
 static void movePlayer(OBJECT* passage)
 {
-    printf("%s", passage->textPass);
+
+    if (passage->textPass != NULL)
+    {
+        printf("%s", passage->textPass);
+    }
     if (passage->destination != NULL)
     {
         player->location = passage->destination;
