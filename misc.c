@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "object.h"
+#include "misc.h"
 OBJECT* getPassage(OBJECT* from, OBJECT* to)
 {
     OBJECT* obj;
@@ -12,15 +13,25 @@ OBJECT* getPassage(OBJECT* from, OBJECT* to)
     }
     return NULL;
 }
+DISTANCE getDistance(OBJECT* from, OBJECT* to)
+{
+    return to == NULL ? distUnknownObject :
+        to == from ? distSelf :
+        to->location == from ? distHeld :
+        to == from->location ? distLocation :
+        to->location == from->location ? distHere :
+        getPassage(from->location, to) != NULL ? distOverthere :
+        to->location == NULL ? distNotHere :
+        to->location->location == from ? distHeldContained :
+        to->location->location == from->location ? distHereContained :
+        distNotHere;
+}
 OBJECT* actorHere(void)
 {
     OBJECT* obj;
     for (obj = objs; obj < endOfObjs; obj++)
     {
-        if (obj->location == player->location)
-        {
-            return obj;
-        }
+        
     }
     return NULL;
 }

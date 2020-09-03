@@ -1,15 +1,17 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include"location.h"
+#include "location.h"
 #include "inventory.h"
+#include "book.h"
+
 bool parseAndExecute(char* input)
 {
     char* verb = strtok(input, " \n");
-    char* noun = strtok(NULL, " \n");
+    char* noun = strtok(NULL, "\n");
     if (verb != NULL)
     {
-        if (strcmp(verb, "quit") == 0)
+       if (strcmp(verb, "quit") == 0)
         {
             return false;
         }
@@ -41,10 +43,26 @@ bool parseAndExecute(char* input)
         {
             executeInventory();
         }
-        else
+        else if (strcmp(verb, "use") == 0)
         {
-            printf("I don't know how to '%s'.\n", verb);
+            executeUse(noun);
         }
+       else if (strcmp(verb, "help") == 0)
+       {
+           executeHelp();
+       }
+       else if (strcmp(verb, "open") == 0  )
+       {
+           executeBook(noun);
+       }
+       else if (strcmp(verb, "examine") == 0)
+       {
+           executeExamine(noun);
+       }
+       else
+       {
+            printf("I don't know how to '%s'.\n", verb);
+       }
     }
     return true;
 }

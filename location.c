@@ -10,36 +10,62 @@ void executeLook(const char* noun)
         printf("You are in %s.\n", player->location->description);
         listObjectsAtLocation(player->location);
     }
-    else
+   
+}
+static void movePlayer(OBJECT* passage)
+{
+
+    if (passage->textPass != NULL)
     {
-        printf("I don't understand what you want to see.\n");
+        printf("%s", passage->textPass);
+    }
+    if (passage->destination != NULL)
+    {
+        player->location = passage->destination;
+        printf("\n");
+        executeLook("around");
     }
 }
 void executeGo(const char* noun)
 {
     OBJECT* obj = getVisible("where you want to go", noun);
-    if (obj == NULL)
+    switch (getDistance(player, obj))
     {
-        // already handled by getVisible
-    }
-    else if (getPassage(player->location, obj) != NULL)
-    {
-        printf("OK.\n");
-        player->location = obj;
-        executeLook("around");
-    }
-    else if (obj->location != player->location)
-    {
+    case distOverthere:
+        movePlayer(getPassage(player->location, obj));
+        break;
+    case distNotHere:
         printf("You don't see any %s here.\n", noun);
+        break;
+    case distUnknownObject:
+        // already handled by getVisible
+        break;
+    default:
+        movePlayer(obj);
     }
-    else if (obj->destination != NULL)
+}
+
+void executeExamine(const char* noun)
+{
+     
+    OBJECT* obj = getVisible("what you want to look at", noun);
+    switch (getDistance(player, obj))
     {
-        printf("OK.\n");
-        player->location = obj->destination;
-        executeLook("around");
+    case distHereContained:
+        printf("Hard to see, try to get it first.\n");
+        break;
+    case distOverthere:
+        printf("Too far away, move closer please.\n");
+        break;
+    case distNotHere:
+        printf("You don't see any %s here.\n", noun);
+        break;
+    case distUnknownObject:
+        // already handled by getVisible
+        break;
+    default:
+        printf("%s", obj->details);
+        listObjectsAtLocation(obj);
     }
-    else
-    {
-        printf("You can't get much closer than this.\n");
-    }
+    
 }
