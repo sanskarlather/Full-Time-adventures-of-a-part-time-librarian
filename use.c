@@ -4,7 +4,6 @@ void useObject(OBJECT* obj)
 {
 	if (obj == NULL)
 	{
-
 	}
 	else if (obj->usage == NULL) {
 		printf("No way, You can't use that.\n");
@@ -12,6 +11,5 @@ void useObject(OBJECT* obj)
 	else
 	{
 		printf(obj->usage);
-
 	}
 }

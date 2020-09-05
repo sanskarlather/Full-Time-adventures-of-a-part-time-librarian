@@ -45,9 +45,6 @@
     <ClCompile Include="use.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="book.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parsexec.h">
@@ -68,16 +65,13 @@
     <ClInclude Include="inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="move.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="use.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="book.h">
+    <ClInclude Include="move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -90,5 +84,16 @@
     <None Include="object.awk">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="map.awk">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="map.gv">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="map.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
