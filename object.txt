@@ -17,7 +17,7 @@ typedef struct object {
 } OBJECT;
 
 extern OBJECT objs[];
-
+//bathroom
 - bathroom
      description "a smelly bathroom"
 	 tags        "bathroom"
@@ -25,12 +25,45 @@ extern OBJECT objs[];
 	 details     "The bathroom is crampped and has just the essentials"
 	 weight       99999
 
-- bathroomWalls
+- bathroomWallToilet
      description "bathroom walls"
      tags        "west","east","south"
      location     bathroom
 	 textPass    "Their is nothing but walls here\n"
 	 details     "The bathroom wall is tiled with yellow and white tiles\n"
+	 weight       99999
+	 
+- bedroomEntrance
+     description "Entrance of the bedroom"
+     tags        "north"
+     location     bathroom
+     destination  bedroom
+	 textPass    "You entred the bedroom\n"
+	 weight       99999	 
+
+- toilet
+     description "a toilet with a bidet"
+     tags        "washroom", "toilet"
+     location     bathroom
+	 usage		 "You have used your toilet"
+
+- shower
+     description "a shower"
+     tags        "shower", "bath"
+     location     bathroom
+	 usage		 "You have taken a shower"
+
+- toothbrush
+     description "a chewed out toothbrush"
+     tags        "toothbrush", "tooth brush", "brush"
+     location     bathroom
+	 usage		 "You have brushed your teeth"
+
+//bedroom
+- bedroom
+     description "Your bedroom"
+     tags        "bedroom"
+	 textPass    "You entred the bedroom\n"
 	 weight       99999
 
 - bathroomEntrance
@@ -40,27 +73,13 @@ extern OBJECT objs[];
      destination  bathroom
 	 textPass    "You entred the bathroom\n"
 	 weight       99999
-	 
-- bedroom
-     description "Your bedroom"
-     tags        "bedroom"
-	 textPass    "You entred the bedroom\n"
-	 weight       99999
-	 
+	 	 
 - bedroomWalls
      description "Your bedroom walls"
      tags        "east","west"
      location     bedroom
 	 textPass    "There is nothing but walls there\n"
 	 weight       99999
-	 
-- bedroomEntrance
-     description "Entrance of the bedroom"
-     tags        "south"
-     location     bathroom
-     destination  bedroom
-	 textPass    "You entred the bedroom\n"
-	 weight       99999	 
 
 - bedroomExit
      description "Exit of the house"
@@ -69,6 +88,20 @@ extern OBJECT objs[];
      destination  road
 	 textPass    "You are on the road\n"
 	 weight       99999	 
+
+- backpack
+     description "a worn out backpack"
+     tags        "backpack", "bag", "backpack"
+     location     bedroom
+	 usage		 "You have packed your backpack"
+	 details     "The bag has many pockets to carry all your essentials"
+
+- keys
+     description "a set of keys with a sonic screwdriver keychain"
+     tags        "keychain", "keys", "key set"
+     location     bedroom
+
+//road
 - road
 	 description "the road to the library"
 	 tags 		 "road"
@@ -80,12 +113,6 @@ extern OBJECT objs[];
      location     road
 	 textPass    "There is nothing but locked shops there\n"
 	 weight       99999
-- library
-     description "an old dusty library"
-     tags        "library"
-	 destination  libraryReception
-	 textPass    "You have entred the library"
-	 weight       99999
 	 
 - libraryEntrance
      description "Entrance of the library"
@@ -93,7 +120,15 @@ extern OBJECT objs[];
      location     road
      destination  library
 	 textPass    "You entred the library\n"
-	 weight       99999	  
+	 weight       99999	  	 
+	 
+//library
+- library
+     description "an old dusty library"
+     tags        "library"
+	 destination  libraryReception
+	 textPass    "You have entred the library"
+	 weight       99999	 
 
 - libraryExit
      description "Exit of the library"
@@ -109,17 +144,19 @@ extern OBJECT objs[];
 	 details     "This is the reception of the library. This is your station you spend all your days here."
 	 weight       99999
 
-- libraryShelf
-	 description "The section with the book shelves"
-	 tags        "book shelf","shelves","shelf"
-	 details     "This is the reception of the library. This is your station you spend all your days here."
-	 weight       99999
-
 - libraryShelfEntrance
 	 description "The section with the book shelves"
 	 tags        "east"
 	 location     library
 	 destination  libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+//libraryShelf
+
+- libraryShelf
+	 description "The section with the book shelves"
+	 tags        "book shelf","shelves","shelf"
 	 details     "This is the reception of the library. This is your station you spend all your days here."
 	 weight       99999
 
@@ -189,7 +226,7 @@ extern OBJECT objs[];
 	 
 - shelf_1_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	 
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"
 	 location	  shelf_1
 	 destination  libraryToilet
@@ -198,7 +235,7 @@ extern OBJECT objs[];
 	 
 - shelf_2_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_2
 	 destination  libraryToilet
@@ -207,7 +244,7 @@ extern OBJECT objs[];
 	 
 - shelf_3_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_3
 	 destination  libraryToilet
@@ -216,24 +253,33 @@ extern OBJECT objs[];
 
 - shelf_4_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	 
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_4
 	 destination  libraryToilet
 	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
+- shelf_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  libraryShelf
+	 destination  libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
+//libraryToilet
 - libraryToilet
 	 description "The library toilet"
-	 tags 		  "toilet"
+	 tags 		  "toilet","east"
 	 details     "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow"
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - sink
 	 description "Wash Basin"
-	 tags        "wash basin","sink"
+	 tags        "wash basin","sink","south"
+	 textPass    "You see the wash	basin and the urinal on this side of the toilet"
 	 location    libraryToilet
 	 usage       "You have washed your hands and face"
 	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
@@ -251,6 +297,7 @@ extern OBJECT objs[];
 	 description "Supply Closet"
 	 tags        "supply closet","closet"
 	 location     libraryToilet
+	 textPass    "You see the supply closet on this side of the toilet"
 	 usage       "The Supply Closet is locked"
 	 details     "The Supply Closet is locked"
 	 weight       99999
@@ -271,10 +318,10 @@ extern OBJECT objs[];
 
 - urinalCabin_3
 	 description "Urinal Cabin 3"
-	 tags        "urinal cabin 3","cabin 3"
+	 tags        "urinal cabin 3","cabin 3","north"
 	 location    libraryToilet
 	 destination urinalCabin_3
-	 textPass    ""
+	 
 	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
 	 
 - urinalCabin_4
@@ -284,6 +331,13 @@ extern OBJECT objs[];
 	 textPass    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
+- libraryToiletExit
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     libraryToilet
+	 destination  libraryShelf
+	 textPass     "you have entered the book shelved"
+
 - mysteryObject
 	 description "Body of a guard in mysterious uniform"
 	 tags 		 "body","mysterious body","guard"
@@ -292,53 +346,293 @@ extern OBJECT objs[];
 	 
 - portal
 	 description "A portal type thing emanating green radiation"
-	 tags 		 "north"
+	 
 	 location     urinalCabin_3
 	 destination  alt_toilet
-	 details     "The portal is making very ominous sounds. You cant see through it. you can go through it......maybe"
+	 details     "The portal is making very ominous sounds. You cant see through it. You can go through it......maybe"
 	 textPass    "Where am I what is happening ? Where is the guard ? Where did the portal go ? Woah that was some strong acid yesterday"
 
 - alt_toilet
 	 description "The library toilet"
-	 tags 		  "portal"
+	 tags 		 "portal","north"
+	 details     "This toilet looks eerily similar to the one you were in but there is some ominous feeling about it"
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+//alt world
+           
+
+  
+//
+- alt_libraryToilet
+	 description "The library toilet"
+	 tags 		  "toilet","east"
 	 details     "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow"
+	 weight       99999
+	 
+- alt_sink
+	 description "Wash Basin"
+	 tags        "wash basin","sink"
+	 location    alt_toilet
+	 usage       "You have washed your hands and face"
+	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
+	 weight      99999
+	 
+- alt_urinal
+	 description "Urinals"
+	 tags        "urinal","urinals"
+	 location    alt_toilet
+	 usage       "You have used the urinal"
+	 details     "The urinals are stinky and stained"
+	 weight      99999
+	 
+- alt_supplyCloset
+	 description "Supply Closet"
+	 tags        "supply closet","closet"
+	 location     alt_toilet
+	 usage       "The Supply Closet is locked"
+	 details     "The Supply Closet is locked"
+	 weight       99999
+	
+- alt_urinalCabin_1
+	 description "Urinal Cabin 1"
+	 tags        "urinal cabin 1","cabin 1"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+	 
+- alt_urinalCabin_2
+	 description "Urinal Cabin 2"
+	 tags        "urinal cabin 2","cabin 2"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_urinalCabin_3
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+	 
+- alt_urinalCabin_4
+	 description "Urinal Cabin 4"
+	 tags        "urinal cabin 4","cabin 4"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_ToiletExit
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     alt_toilet
+	 
+	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+
+- alt_libraryShelf
+	 description "The section with the book shelves"
+	 tags        "book shelf","shelves","shelf"
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_shelf_1
+	 description "Book Shelf Number 1\n"
+	 tags        "book shelf 1","shelf 1"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_1
+	 weight       99999
+	 
+- alt_shelf_2
+	 description "Book Shelf Number 2\n"
+	 tags        "book shelf 2","shelf 2"
+	 details     "There is 1 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_2
+	 weight       99999
+	 
+- alt_shelf_3
+	 description "Book Shelf Number 3\n"
+	 tags        "book shelf 3","shelf 3"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_3
+	 weight       99999
+
+- alt_shelf_4
+	 description "Book Shelf Number 4\n"
+	 tags        "book shelf 4","shelf 4"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_4
+	 weight       99999
+	 
+- alt_shelf_1_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"
+	 location	  alt_shelf_1
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_2_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_2
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_3_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_3
+	 destination  alt_libraryShelf
+	 weight       99999
+
+- alt_shelf_4_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_4
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_1_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"
+	 location	  alt_shelf_1
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+- alt_shelf_2_toilet
+	 description "Entrance of the toilet"
+	
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_2
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+- alt_shelf_3_toilet
+	 description "Entrance of the toilet"
+	
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_3
+	 destination  alt_libraryToilet
 	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
-- toothbrush
-     description "a chewed out toothbrush"
-     tags        "toothbrush", "tooth brush", "brush"
-     location     bathroom
-	 usage		 "You have brushed your teeth"
+- alt_shelf_4_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_4
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
-- toilet
-     description "a toilet with a bidet"
-     tags        "washroom", "toilet"
-     location     bathroom
-	 usage		 "You have used your toilet"
+- alt_shelf_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_libraryShelf
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
-- shower
-     description "a shower"
-     tags        "shower", "bath"
-     location     bathroom
-	 usage		 "You have taken a shower"
+- level_1
+     description  "A book on the floor"
+	 details      "It is a sherlock holmes book but why is it glowing"
+	 location     alt_toilet
+	 destination  levelSherlock
+	 textPass     "What is this what apartment is this"
+	 weight       99999
 
-- backpack
-     description "a worn out backpack"
-     tags        "backpack", "bag", "backpack"
-     location     bedroom
-	 usage		 "You have packed your backpack"
-	 details     "The bag has many pockets to carry all your essentials"
+- levelSherlock
+     description  "221b placeholder text"
+	 tags          "book"
+	 
+	 
+- levelExit
+	 description "Exit of the level PLACEHOLDER"
+	 tags         "Exit"
+	 location     levelSherlock
+	 destination  alt_libraryToilet
+	 
 
-- keys
-     description "a set of keys with a sonic screwdriver keychain"
-     tags        "keychain", "keys", "key set"
-     location     bedroom
+	 
 
+	 
+- alt_sink_level_exit
+	 description "Wash Basin"
+	 tags        "wash basin","sink"
+	 location    alt_libraryToilet
+	 usage       "You have washed your hands and face"
+	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
+	 weight      99999
+	 
+- alt_urinal_level_exit
+	 description "Urinals"
+	 tags        "urinal","urinals"
+	 location    alt_libraryToilet
+	 usage       "You have used the urinal"
+	 details     "The urinals are stinky and stained"
+	 weight      99999
+	 
+- alt_supplyCloset_level_exit
+	 description "Supply Closet"
+	 tags        "supply closet","closet"
+	 location    alt_libraryToilet
+	 usage       "The Supply Closet is locked"
+	 details     "The Supply Closet is locked"
+	 weight       99999
+	
+- alt_urinalCabin_1_level_exit
+	 description "Urinal Cabin 1"
+	 tags        "urinal cabin 1","cabin 1"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+	 
+- alt_urinalCabin_2_level_exit
+	 description "Urinal Cabin 2"
+	 tags        "urinal cabin 2","cabin 2"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_urinalCabin_3_level_exit
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+	 
+- alt_urinalCabin_4_level_exit
+	 description "Urinal Cabin 4"
+	 tags        "urinal cabin 4","cabin 4"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_ToiletExit_locked
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     alt_libraryToilet
+	 destination  alt_libraryShelf
+	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+
+
+// misc
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
-	 
+
+//players	 
 - player
      description "yourself"
      tags        "yourself"
