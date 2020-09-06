@@ -557,7 +557,7 @@ extern OBJECT objs[];
 	 tags          "book"
 	 
 	 
-- levelExit
+- levelExit_1
 	 description "Exit of the level PLACEHOLDER"
 	 tags         "Exit"
 	 location     levelSherlock
@@ -626,7 +626,263 @@ extern OBJECT objs[];
 	 destination  alt_libraryShelf
 	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
 
+// alt_library
 
+- alt_library
+     description "an old dusty library"
+     tags        "library"
+	 textPass    "You have entred the library"
+	 weight       99999	 
+
+- alt_libraryExit
+     description "Exit of the library"
+     tags        "exit","west"
+     location     alt_library
+     textPass    "It is locked"
+	 weight       99999	  
+
+- alt_libraryReception
+	 description "The library reception"
+	 tags        "reception"
+	 location    alt_library
+	 textPass    "You are facing the reception"
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_libraryShelfEntrance
+	 description "The gorund floor book shelves"
+	 tags        "east"
+	 location     alt_library
+	 destination  alt_libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_libraryShelfExit
+	 description "The library hall"
+	 tags        "west","hall"
+	 destination  alt_library
+	 location     alt_libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+	 
+- stairs_floor_2	
+	 description  "The second floor stairs"
+	 tags         "stairs","up"
+	 location      alt_library
+	 destination   secondFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+
+	 
+
+//secondFloor
+	 
+- secondFloor
+     description "The second floor"
+	 tags         "second floor"
+	 
+- secondFloorShelf
+	 description  "Second Floor book shelves"
+	 tags           "shelf","east"
+	 location      secondFloor
+	 destination   secondFloorShelf
+	 
+	 
+- secondFloorShelf_1
+	 description  "Book Shelf 1"
+	 tags          "book shelf 1","shelf 1"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_1
+	 
+- secondFloorShelf_2
+	 description  "Book Shelf 2"
+	 tags          "book shelf 2","shelf 2"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_2
+	 
+- secondFloorShelf_3
+	 description  "Book Shelf 3"
+	 tags          "book shelf 3","shelf 3"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_3
+	 
+- secondFloorShelf_4
+	 description  "Book Shelf 4"
+	 tags          "book shelf 4","shelf 4"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_4
+	 
+
+- secondFloorShelf_hall
+	 description  "Second floor Hall"
+	 tags           "hall","west"
+	 destination   secondFloor
+	 location      secondFloorShelf
+	 
+	 
+- secondFloorShelf_1_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+	 location      secondFloorShelf_1
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_2_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_2
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_3_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_3
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_4_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_4
+	 destination   secondFloorShelf
+	 
+
+
+- computerCorner
+	 description  "Computer area for research"
+	 tags         "computer","computer corner"
+	 location     secondFloor
+	 usage        "The power is down try again later"
+	 textPass     "You are in front of a computer"
+
+- level_2
+	 description "A mysterious book"
+	 tags        "book"
+	 location    secondFloorShelf_3
+	 destination levelMahabharat
+	 textPass    "What is this PLACEHOLDER"
+	 
+- levelMahabharat
+	 description "Placeholder"
+	 
+- levelExit_2
+	 description  "Level Exit PLACEHOLDER"
+	 tags         "exit"
+	 location     levelMahabharat
+	 destination  secondFloorShelf_3_alt
+ 
+- thirdFloor
+	 description  "The third floor of the library"
+	 tags         "third floor"
+
+- secondFloor_alt
+     description "The second floor"
+	 tags         "second floor"
+	 
+- secondFloorShelf_alt
+	 description  "Second Floor book shelves"
+	 tags           "shelf","east"
+	 location      secondFloor_alt
+	 destination   secondFloorShelf_alt
+	 
+	 
+- secondFloorShelf_1_alt
+	 description  "Book Shelf 1"
+	 tags          "book shelf 1","shelf 1"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_1_alt
+	 
+- secondFloorShelf_2_alt
+	 description  "Book Shelf 2"
+	 tags          "book shelf 2","shelf 2"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_2_alt
+	 
+- secondFloorShelf_3_alt
+	 description  "Book Shelf 3"
+	 tags          "book shelf 3","shelf 3"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_3_alt
+	 
+- secondFloorShelf_4_alt
+	 description  "Book Shelf 4"
+	 tags          "book shelf 4","shelf 4"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_4_alt
+	 
+
+- secondFloorShelf_hall_alt
+	 description  "Second floor Hall"
+	 tags           "hall","west"
+	 location      secondFloorShelf_alt
+	 textPass      "GO FORWARD EVERYTHING IS ON FIRE HERE"
+	 
+	 
+- secondFloorShelf_1_exit_alt
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+	 location      secondFloorShelf_1_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_2_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_2_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_3_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_3_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_4_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_4_alt
+	 destination   secondFloorShelf_alt
+	 	 
+- stairs_floor_3_1	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+
+- stairs_floor_3_1	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_1_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+	 	 
+- stairs_floor_3_2	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_2_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+- stairs_floor_3_3	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_3_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+- stairs_floor_3_4	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_4_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+- firstFloor
+	 description  "The first floor stairs"
+	 tags          "down","stairs"
+	 location      secondFloor
+	 destination   alt_library
+	 textPass      "The first floor"
+
+//hhd
 // misc
 - guard
      description "a burly guard"
