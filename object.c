@@ -128,7 +128,7 @@ static const char* tags113[] = { "stairs","up", NULL };
 static const char* tags114[] = { "stairs","up", NULL };
 static const char* tags115[] = { "stairs","up", NULL };
 static const char* tags116[] = { "stairs","up", NULL };
-//hhd
+
 // misc
 static const char* tags117[] = { "down","stairs", NULL };
 //players	 
