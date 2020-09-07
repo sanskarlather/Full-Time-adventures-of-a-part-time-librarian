@@ -148,7 +148,9 @@
     <ClCompile Include="move.c" />
     <ClCompile Include="noun.c" />
     <ClCompile Include="object.c" />
-    <ClCompile Include="parsexec.c" />
+    <ClCompile Include="parsexec.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4996</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
