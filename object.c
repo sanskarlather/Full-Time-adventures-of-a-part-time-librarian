@@ -47,93 +47,101 @@ static const char* tags36[] = { "supply closet","closet", NULL };
 static const char* tags37[] = { "urinal cabin 1","cabin 1", NULL };
 static const char* tags38[] = { "urinal cabin 2","cabin 2", NULL };
 static const char* tags39[] = { "urinal cabin 3","cabin 3","north", NULL };
-static const char* tags40[] = { "urinal cabin 4","cabin 4", NULL };
-static const char* tags41[] = { "exit","toilet exit", NULL };
-static const char* tags42[] = { "body","mysterious body","guard", NULL };
-static const char* tags43[] = { NULL };
+static const char* tags40[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags41[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags42[] = { "exit","toilet exit", NULL };
+static const char* tags43[] = { "body","mysterious body","guard", NULL };
+static const char* tags44[] = { NULL };
 //alt world
 //
-static const char* tags44[] = { "portal","north", NULL };
-static const char* tags45[] = { "toilet","east", NULL };
-static const char* tags46[] = { "wash basin","sink", NULL };
-static const char* tags47[] = { "urinal","urinals", NULL };
-static const char* tags48[] = { "supply closet","closet", NULL };
-static const char* tags49[] = { "urinal cabin 1","cabin 1", NULL };
-static const char* tags50[] = { "urinal cabin 2","cabin 2", NULL };
-static const char* tags51[] = { "urinal cabin 3","cabin 3", NULL };
-static const char* tags52[] = { "urinal cabin 4","cabin 4", NULL };
-static const char* tags53[] = { "exit","toilet exit", NULL };
-static const char* tags54[] = { "book shelf","shelves","shelf", NULL };
-static const char* tags55[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags56[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags57[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags58[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags59[] = { "exit", NULL };
+static const char* tags45[] = { "portal","north", NULL };
+static const char* tags46[] = { "toilet","east", NULL };
+static const char* tags47[] = { "wash basin","sink", NULL };
+static const char* tags48[] = { "urinal","urinals", NULL };
+static const char* tags49[] = { "supply closet","closet", NULL };
+static const char* tags50[] = { "urinal cabin 1","cabin 1", NULL };
+static const char* tags51[] = { "urinal cabin 2","cabin 2", NULL };
+static const char* tags52[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags53[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags54[] = { "exit","toilet exit", NULL };
+static const char* tags55[] = { "book shelf","shelves","shelf", NULL };
+static const char* tags56[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags57[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags58[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags59[] = { "book shelf 4","shelf 4", NULL };
 static const char* tags60[] = { "exit", NULL };
 static const char* tags61[] = { "exit", NULL };
 static const char* tags62[] = { "exit", NULL };
-static const char* tags63[] = { NULL };
+static const char* tags63[] = { "exit", NULL };
 static const char* tags64[] = { NULL };
 static const char* tags65[] = { NULL };
 static const char* tags66[] = { NULL };
 static const char* tags67[] = { NULL };
 static const char* tags68[] = { NULL };
-static const char* tags69[] = { "book", NULL };
-static const char* tags70[] = { "Exit", NULL };
-static const char* tags71[] = { "wash basin","sink", NULL };
-static const char* tags72[] = { "urinal","urinals", NULL };
-static const char* tags73[] = { "supply closet","closet", NULL };
-static const char* tags74[] = { "urinal cabin 1","cabin 1", NULL };
-static const char* tags75[] = { "urinal cabin 2","cabin 2", NULL };
-static const char* tags76[] = { "urinal cabin 3","cabin 3", NULL };
-static const char* tags77[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags69[] = { NULL };
+static const char* tags70[] = { "book", NULL };
+static const char* tags71[] = { "Exit", NULL };
+static const char* tags72[] = { "wash basin","sink", NULL };
+static const char* tags73[] = { "urinal","urinals", NULL };
+static const char* tags74[] = { "supply closet","closet", NULL };
+static const char* tags75[] = { "urinal cabin 1","cabin 1", NULL };
+static const char* tags76[] = { "urinal cabin 2","cabin 2", NULL };
+static const char* tags77[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags78[] = { "urinal cabin 4","cabin 4", NULL };
 // alt_library
-static const char* tags78[] = { "exit","toilet exit", NULL };
-static const char* tags79[] = { "library", NULL };
-static const char* tags80[] = { "exit","west", NULL };
-static const char* tags81[] = { "reception", NULL };
-static const char* tags82[] = { "east", NULL };
-static const char* tags83[] = { "west","hall", NULL };
+static const char* tags79[] = { "exit","toilet exit", NULL };
+static const char* tags80[] = { "library", NULL };
+static const char* tags81[] = { "exit","west", NULL };
+static const char* tags82[] = { "reception", NULL };
+static const char* tags83[] = { "east", NULL };
+static const char* tags84[] = { "west","hall", NULL };
+static const char* tags85[] = { "stairs","up", NULL };
 //secondFloor
-static const char* tags84[] = { "stairs","up", NULL };
-static const char* tags85[] = { "second floor", NULL };
-static const char* tags86[] = { "shelf","east", NULL };
-static const char* tags87[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags88[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags89[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags90[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags91[] = { "hall","west", NULL };
-static const char* tags92[] = { "exit","west", NULL };
-static const char* tags93[] = { "exit","west", NULL };
+static const char* tags86[] = { "down","stairs", NULL };
+static const char* tags87[] = { "second floor", NULL };
+static const char* tags88[] = { "shelf","east", NULL };
+static const char* tags89[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags90[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags91[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags92[] = { "book shelf 4","shelf 4", NULL };
+static const char* tags93[] = { "hall","west", NULL };
 static const char* tags94[] = { "exit","west", NULL };
 static const char* tags95[] = { "exit","west", NULL };
-static const char* tags96[] = { "computer","computer corner", NULL };
-static const char* tags97[] = { "book", NULL };
-static const char* tags98[] = { NULL };
-static const char* tags99[] = { "exit", NULL };
-static const char* tags100[] = { "third floor", NULL };
-static const char* tags101[] = { "second floor", NULL };
-static const char* tags102[] = { "shelf","east", NULL };
-static const char* tags103[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags104[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags105[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags106[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags107[] = { "hall","west", NULL };
-static const char* tags108[] = { "exit","west", NULL };
+static const char* tags96[] = { "exit","west", NULL };
+static const char* tags97[] = { "exit","west", NULL };
+// level 2
+static const char* tags98[] = { "computer","computer corner", NULL };
+static const char* tags99[] = { "book", NULL };
+static const char* tags100[] = { NULL };
+static const char* tags101[] = { "exit", NULL };
+static const char* tags102[] = { "second floor", NULL };
+static const char* tags103[] = { "shelf","east", NULL };
+static const char* tags104[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags105[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags106[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags107[] = { "book shelf 4","shelf 4", NULL };
+static const char* tags108[] = { "hall","west", NULL };
 static const char* tags109[] = { "exit","west", NULL };
 static const char* tags110[] = { "exit","west", NULL };
 static const char* tags111[] = { "exit","west", NULL };
-static const char* tags112[] = { "stairs","up", NULL };
+static const char* tags112[] = { "exit","west", NULL };
 static const char* tags113[] = { "stairs","up", NULL };
 static const char* tags114[] = { "stairs","up", NULL };
 static const char* tags115[] = { "stairs","up", NULL };
 static const char* tags116[] = { "stairs","up", NULL };
+static const char* tags117[] = { "stairs","up", NULL };
+static const char* tags118[] = { "third floor", NULL };
+static const char* tags119[] = { "down","east","second floor", NULL };
+static const char* tags120[] = { "table 1","west", NULL };
+static const char* tags121[] = { "table 2","north", NULL };
+static const char* tags122[] = { "table 2","south", NULL };
+static const char* tags123[] = { "book", NULL };
 //hhd
 // misc
-static const char* tags117[] = { "down","stairs", NULL };
+static const char* tags124[] = { "surrounding", NULL };
 //players	 
-static const char* tags118[] = { "guard", "burly guard", NULL };
-static const char* tags119[] = { "yourself", NULL };
+static const char* tags125[] = { "guard", "burly guard", NULL };
+static const char* tags126[] = { "yourself", NULL };
 
 OBJECT objs[] = {
 	//bathroom
@@ -532,7 +540,7 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is locked from inside, it stinks very badly",
 			NULL
 		},
-		{	/* 39 = urinalCabin_3 */
+		{	/* 39 = urinalCabin_3_entrance */
 			 "Urinal Cabin 3",
 			tags39,
 			NULL,
@@ -542,9 +550,19 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
 			NULL
 		},
-		{	/* 40 = urinalCabin_4 */
-			 "Urinal Cabin 4",
+		{	/* 40 = urinalCabin_3 */
+			 "Urinal Cabin 3",
 			tags40,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
+			NULL
+		},
+		{	/* 41 = urinalCabin_4 */
+			 "Urinal Cabin 4",
+			tags41,
 			NULL,
 			 libraryToilet,
 			NULL,
@@ -552,9 +570,9 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is locked from inside, it stinks very badly",
 			NULL
 		},
-		{	/* 41 = libraryToiletExit */
+		{	/* 42 = libraryToiletExit */
 			 "Exit of the toilet",
-			tags41,
+			tags42,
 			NULL,
 			 libraryToilet,
 			 libraryShelf,
@@ -562,9 +580,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 42 = mysteryObject */
+		{	/* 43 = mysteryObject */
 			 "Body of a guard in mysterious uniform",
-			tags42,
+			tags43,
 			NULL,
 			 urinalCabin_3,
 			NULL,
@@ -572,9 +590,9 @@ OBJECT objs[] = {
 			 "The guard appears to be dead. His uniform is slightly burnt and doesnt appear to normal guard uniform",
 			NULL
 		},
-		{	/* 43 = portal */
+		{	/* 44 = portal */
 			 "A portal type thing emanating green radiation",
-			tags43,
+			tags44,
 			NULL,
 			 urinalCabin_3,
 			 alt_toilet,
@@ -584,9 +602,9 @@ OBJECT objs[] = {
 		},
 	//alt world
 	//
-		{	/* 44 = alt_toilet */
+		{	/* 45 = alt_toilet */
 			 "The library toilet",
-			tags44,
+			tags45,
 			NULL,
 			NULL,
 			NULL,
@@ -594,9 +612,9 @@ OBJECT objs[] = {
 			 "This toilet looks eerily similar to the one you were in but there is some ominous feeling about it",
 			 99999
 		},
-		{	/* 45 = alt_libraryToilet */
+		{	/* 46 = alt_libraryToilet */
 			 "The library toilet",
-			tags45,
+			tags46,
 			NULL,
 			NULL,
 			NULL,
@@ -604,9 +622,9 @@ OBJECT objs[] = {
 			 "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow",
 			 99999
 		},
-		{	/* 46 = alt_sink */
+		{	/* 47 = alt_sink */
 			 "Wash Basin",
-			tags46,
+			tags47,
 			 "You have washed your hands and face",
 			 alt_toilet,
 			NULL,
@@ -614,9 +632,9 @@ OBJECT objs[] = {
 			 "The tap in the wash basin is leaking slowly and there is no way to close it properly",
 			 99999
 		},
-		{	/* 47 = alt_urinal */
+		{	/* 48 = alt_urinal */
 			 "Urinals",
-			tags47,
+			tags48,
 			 "You have used the urinal",
 			 alt_toilet,
 			NULL,
@@ -624,9 +642,9 @@ OBJECT objs[] = {
 			 "The urinals are stinky and stained",
 			 99999
 		},
-		{	/* 48 = alt_supplyCloset */
+		{	/* 49 = alt_supplyCloset */
 			 "Supply Closet",
-			tags48,
+			tags49,
 			 "The Supply Closet is locked",
 			 alt_toilet,
 			NULL,
@@ -634,18 +652,8 @@ OBJECT objs[] = {
 			 "The Supply Closet is locked",
 			 99999
 		},
-		{	/* 49 = alt_urinalCabin_1 */
+		{	/* 50 = alt_urinalCabin_1 */
 			 "Urinal Cabin 1",
-			tags49,
-			NULL,
-			 alt_toilet,
-			NULL,
-			 "The door is locked",
-			 "The door is of blue color, it is locked from inside, it stinks very badly",
-			NULL
-		},
-		{	/* 50 = alt_urinalCabin_2 */
-			 "Urinal Cabin 2",
 			tags50,
 			NULL,
 			 alt_toilet,
@@ -654,9 +662,19 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is locked from inside, it stinks very badly",
 			NULL
 		},
-		{	/* 51 = alt_urinalCabin_3 */
-			 "Urinal Cabin 3",
+		{	/* 51 = alt_urinalCabin_2 */
+			 "Urinal Cabin 2",
 			tags51,
+			NULL,
+			 alt_toilet,
+			NULL,
+			 "The door is locked",
+			 "The door is of blue color, it is locked from inside, it stinks very badly",
+			NULL
+		},
+		{	/* 52 = alt_urinalCabin_3 */
+			 "Urinal Cabin 3",
+			tags52,
 			NULL,
 			 alt_toilet,
 			NULL,
@@ -664,9 +682,9 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
 			NULL
 		},
-		{	/* 52 = alt_urinalCabin_4 */
+		{	/* 53 = alt_urinalCabin_4 */
 			 "Urinal Cabin 4",
-			tags52,
+			tags53,
 			NULL,
 			 alt_toilet,
 			NULL,
@@ -674,9 +692,9 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is locked from inside, it stinks very badly",
 			NULL
 		},
-		{	/* 53 = alt_ToiletExit */
+		{	/* 54 = alt_ToiletExit */
 			 "Exit of the toilet",
-			tags53,
+			tags54,
 			NULL,
 			 alt_toilet,
 			NULL,
@@ -684,9 +702,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 54 = alt_libraryShelf */
+		{	/* 55 = alt_libraryShelf */
 			 "The section with the book shelves",
-			tags54,
+			tags55,
 			NULL,
 			NULL,
 			NULL,
@@ -694,9 +712,9 @@ OBJECT objs[] = {
 			 "This is the reception of the library. This is your station you spend all your days here.",
 			 99999
 		},
-		{	/* 55 = alt_shelf_1 */
+		{	/* 56 = alt_shelf_1 */
 			 "Book Shelf Number 1\n",
-			tags55,
+			tags56,
 			NULL,
 			 alt_libraryShelf,
 			 alt_shelf_1,
@@ -704,9 +722,9 @@ OBJECT objs[] = {
 			 "There are 2 books missing from this shelf.",
 			 99999
 		},
-		{	/* 56 = alt_shelf_2 */
+		{	/* 57 = alt_shelf_2 */
 			 "Book Shelf Number 2\n",
-			tags56,
+			tags57,
 			NULL,
 			 alt_libraryShelf,
 			 alt_shelf_2,
@@ -714,49 +732,49 @@ OBJECT objs[] = {
 			 "There is 1 books missing from this shelf.",
 			 99999
 		},
-		{	/* 57 = alt_shelf_3 */
+		{	/* 58 = alt_shelf_3 */
 			 "Book Shelf Number 3\n",
-			tags57,
-			NULL,
-			 alt_libraryShelf,
-			 alt_shelf_3,
-			NULL,
-			 "There are 2 books missing from this shelf.",
-			 99999
-		},
-		{	/* 58 = alt_shelf_4 */
-			 "Book Shelf Number 4\n",
 			tags58,
 			NULL,
 			 alt_libraryShelf,
+			 alt_shelf_3,
+			NULL,
+			 "There are 2 books missing from this shelf.",
+			 99999
+		},
+		{	/* 59 = alt_shelf_4 */
+			 "Book Shelf Number 4\n",
+			tags59,
+			NULL,
+			 alt_libraryShelf,
 			 alt_shelf_4,
 			NULL,
 			 "There are 2 books missing from this shelf.",
 			 99999
 		},
-		{	/* 59 = alt_shelf_1_exit */
-			 "Exit of the shelf",
-			tags59,
-			NULL,
-			 alt_shelf_1,
-			 alt_libraryShelf,
-			NULL,
-			 "This is the exit of this shelf. Exit to explore the other shelves",
-			 99999
-		},
-		{	/* 60 = alt_shelf_2_exit */
+		{	/* 60 = alt_shelf_1_exit */
 			 "Exit of the shelf",
 			tags60,
 			NULL,
+			 alt_shelf_1,
+			 alt_libraryShelf,
+			NULL,
+			 "This is the exit of this shelf. Exit to explore the other shelves",
+			 99999
+		},
+		{	/* 61 = alt_shelf_2_exit */
+			 "Exit of the shelf",
+			tags61,
+			NULL,
 			 alt_shelf_2,
 			 alt_libraryShelf,
 			NULL,
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 61 = alt_shelf_3_exit */
+		{	/* 62 = alt_shelf_3_exit */
 			 "Exit of the shelf",
-			tags61,
+			tags62,
 			NULL,
 			 alt_shelf_3,
 			 alt_libraryShelf,
@@ -764,9 +782,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 62 = alt_shelf_4_exit */
+		{	/* 63 = alt_shelf_4_exit */
 			 "Exit of the shelf",
-			tags62,
+			tags63,
 			NULL,
 			 alt_shelf_4,
 			 alt_libraryShelf,
@@ -774,9 +792,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 63 = alt_shelf_1_toilet */
+		{	/* 64 = alt_shelf_1_toilet */
 			 "Entrance of the toilet",
-			tags63,
+			tags64,
 			NULL,
 			 alt_shelf_1,
 			 alt_libraryToilet,
@@ -784,9 +802,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 64 = alt_shelf_2_toilet */
+		{	/* 65 = alt_shelf_2_toilet */
 			 "Entrance of the toilet",
-			tags64,
+			tags65,
 			NULL,
 			 alt_shelf_2,
 			 alt_libraryToilet,
@@ -794,9 +812,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 65 = alt_shelf_3_toilet */
+		{	/* 66 = alt_shelf_3_toilet */
 			 "Entrance of the toilet",
-			tags65,
+			tags66,
 			NULL,
 			 alt_shelf_3,
 			 alt_libraryToilet,
@@ -804,9 +822,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 66 = alt_shelf_4_toilet */
+		{	/* 67 = alt_shelf_4_toilet */
 			 "Entrance of the toilet",
-			tags66,
+			tags67,
 			NULL,
 			 alt_shelf_4,
 			 alt_libraryToilet,
@@ -814,9 +832,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 67 = alt_shelf_toilet */
+		{	/* 68 = alt_shelf_toilet */
 			 "Entrance of the toilet",
-			tags67,
+			tags68,
 			NULL,
 			 alt_libraryShelf,
 			 alt_libraryToilet,
@@ -824,9 +842,9 @@ OBJECT objs[] = {
 			 "This is the exit of this shelf. Exit to explore the other shelves",
 			 99999
 		},
-		{	/* 68 = level_1 */
+		{	/* 69 = level_1 */
 			 "A book on the floor",
-			tags68,
+			tags69,
 			NULL,
 			 alt_toilet,
 			 levelSherlock,
@@ -834,9 +852,9 @@ OBJECT objs[] = {
 			 "It is a sherlock holmes book but why is it glowing",
 			 99999
 		},
-		{	/* 69 = levelSherlock */
+		{	/* 70 = levelSherlock */
 			 "221b placeholder text",
-			tags69,
+			tags70,
 			NULL,
 			NULL,
 			NULL,
@@ -844,9 +862,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 70 = levelExit_1 */
+		{	/* 71 = levelExit_1 */
 			 "Exit of the level PLACEHOLDER",
-			tags70,
+			tags71,
 			NULL,
 			 levelSherlock,
 			 alt_libraryToilet,
@@ -854,9 +872,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 71 = alt_sink_level_exit */
+		{	/* 72 = alt_sink_level_exit */
 			 "Wash Basin",
-			tags71,
+			tags72,
 			 "You have washed your hands and face",
 			 alt_libraryToilet,
 			NULL,
@@ -864,9 +882,9 @@ OBJECT objs[] = {
 			 "The tap in the wash basin is leaking slowly and there is no way to close it properly",
 			 99999
 		},
-		{	/* 72 = alt_urinal_level_exit */
+		{	/* 73 = alt_urinal_level_exit */
 			 "Urinals",
-			tags72,
+			tags73,
 			 "You have used the urinal",
 			 alt_libraryToilet,
 			NULL,
@@ -874,9 +892,9 @@ OBJECT objs[] = {
 			 "The urinals are stinky and stained",
 			 99999
 		},
-		{	/* 73 = alt_supplyCloset_level_exit */
+		{	/* 74 = alt_supplyCloset_level_exit */
 			 "Supply Closet",
-			tags73,
+			tags74,
 			 "The Supply Closet is locked",
 			 alt_libraryToilet,
 			NULL,
@@ -884,18 +902,8 @@ OBJECT objs[] = {
 			 "The Supply Closet is locked",
 			 99999
 		},
-		{	/* 74 = alt_urinalCabin_1_level_exit */
+		{	/* 75 = alt_urinalCabin_1_level_exit */
 			 "Urinal Cabin 1",
-			tags74,
-			NULL,
-			 alt_libraryToilet,
-			NULL,
-			 "The door is locked",
-			 "The door is of blue color, it is locked from inside, it stinks very badly",
-			NULL
-		},
-		{	/* 75 = alt_urinalCabin_2_level_exit */
-			 "Urinal Cabin 2",
 			tags75,
 			NULL,
 			 alt_libraryToilet,
@@ -904,9 +912,19 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is locked from inside, it stinks very badly",
 			NULL
 		},
-		{	/* 76 = alt_urinalCabin_3_level_exit */
-			 "Urinal Cabin 3",
+		{	/* 76 = alt_urinalCabin_2_level_exit */
+			 "Urinal Cabin 2",
 			tags76,
+			NULL,
+			 alt_libraryToilet,
+			NULL,
+			 "The door is locked",
+			 "The door is of blue color, it is locked from inside, it stinks very badly",
+			NULL
+		},
+		{	/* 77 = alt_urinalCabin_3_level_exit */
+			 "Urinal Cabin 3",
+			tags77,
 			NULL,
 			 alt_libraryToilet,
 			NULL,
@@ -914,9 +932,9 @@ OBJECT objs[] = {
 			 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
 			NULL
 		},
-		{	/* 77 = alt_urinalCabin_4_level_exit */
+		{	/* 78 = alt_urinalCabin_4_level_exit */
 			 "Urinal Cabin 4",
-			tags77,
+			tags78,
 			NULL,
 			 alt_libraryToilet,
 			NULL,
@@ -925,9 +943,9 @@ OBJECT objs[] = {
 			NULL
 		},
 	// alt_library
-		{	/* 78 = alt_ToiletExit_locked */
+		{	/* 79 = alt_ToiletExit_locked */
 			 "Exit of the toilet",
-			tags78,
+			tags79,
 			NULL,
 			 alt_libraryToilet,
 			 alt_libraryShelf,
@@ -935,9 +953,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 79 = alt_library */
+		{	/* 80 = alt_library */
 			 "an old dusty library",
-			tags79,
+			tags80,
 			NULL,
 			NULL,
 			NULL,
@@ -945,9 +963,9 @@ OBJECT objs[] = {
 			NULL,
 			 99999
 		},
-		{	/* 80 = alt_libraryExit */
+		{	/* 81 = alt_libraryExit */
 			 "Exit of the library",
-			tags80,
+			tags81,
 			NULL,
 			 alt_library,
 			NULL,
@@ -955,9 +973,9 @@ OBJECT objs[] = {
 			NULL,
 			 99999
 		},
-		{	/* 81 = alt_libraryReception */
+		{	/* 82 = alt_libraryReception */
 			 "The library reception",
-			tags81,
+			tags82,
 			NULL,
 			 alt_library,
 			NULL,
@@ -965,30 +983,29 @@ OBJECT objs[] = {
 			 "This is the reception of the library. This is your station you spend all your days here.",
 			 99999
 		},
-		{	/* 82 = alt_libraryShelfEntrance */
+		{	/* 83 = alt_libraryShelfEntrance */
 			 "The gorund floor book shelves",
-			tags82,
-			NULL,
-			 alt_library,
-			 alt_libraryShelf,
-			NULL,
-			 "This is the reception of the library. This is your station you spend all your days here.",
-			 99999
-		},
-		{	/* 83 = alt_libraryShelfExit */
-			 "The library hall",
 			tags83,
 			NULL,
+			 alt_library,
+			 alt_libraryShelf,
+			NULL,
+			 "This is the reception of the library. This is your station you spend all your days here.",
+			 99999
+		},
+		{	/* 84 = alt_libraryShelfExit */
+			 "The library hall",
+			tags84,
+			NULL,
 			 alt_libraryShelf,
 			 alt_library,
 			NULL,
 			 "This is the reception of the library. This is your station you spend all your days here.",
 			 99999
 		},
-	//secondFloor
-		{	/* 84 = stairs_floor_2 */
+		{	/* 85 = stairs_floor_2 */
 			 "The second floor stairs",
-			tags84,
+			tags85,
 			NULL,
 			 alt_library,
 			 secondFloor,
@@ -996,29 +1013,40 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 85 = secondFloor */
-			 "The second floor",
-			tags85,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL
-		},
-		{	/* 86 = secondFloorShelf */
-			 "Second Floor book shelves",
+	//secondFloor
+		{	/* 86 = firstFloor */
+			 "The first floor stairs",
 			tags86,
 			NULL,
 			 secondFloor,
+			 alt_library,
+			 "The first floor",
+			NULL,
+			NULL
+		},
+		{	/* 87 = secondFloor */
+			 "The second floor",
+			tags87,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL
+		},
+		{	/* 88 = secondFloorShelf */
+			 "Second Floor book shelves",
+			tags88,
+			NULL,
+			 secondFloor,
 			 secondFloorShelf,
 			NULL,
 			NULL,
 			NULL
 		},
-		{	/* 87 = secondFloorShelf_1 */
+		{	/* 89 = secondFloorShelf_1 */
 			 "Book Shelf 1",
-			tags87,
+			tags89,
 			NULL,
 			 secondFloorShelf,
 			 secondFloorShelf_1,
@@ -1026,9 +1054,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 88 = secondFloorShelf_2 */
+		{	/* 90 = secondFloorShelf_2 */
 			 "Book Shelf 2",
-			tags88,
+			tags90,
 			NULL,
 			 secondFloorShelf,
 			 secondFloorShelf_2,
@@ -1036,9 +1064,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 89 = secondFloorShelf_3 */
+		{	/* 91 = secondFloorShelf_3 */
 			 "Book Shelf 3",
-			tags89,
+			tags91,
 			NULL,
 			 secondFloorShelf,
 			 secondFloorShelf_3,
@@ -1046,9 +1074,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 90 = secondFloorShelf_4 */
+		{	/* 92 = secondFloorShelf_4 */
 			 "Book Shelf 4",
-			tags90,
+			tags92,
 			NULL,
 			 secondFloorShelf,
 			 secondFloorShelf_4,
@@ -1056,9 +1084,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 91 = secondFloorShelf_hall */
+		{	/* 93 = secondFloorShelf_hall */
 			 "Second floor Hall",
-			tags91,
+			tags93,
 			NULL,
 			 secondFloorShelf,
 			 secondFloor,
@@ -1066,9 +1094,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 92 = secondFloorShelf_1_exit */
+		{	/* 94 = secondFloorShelf_1_exit */
 			 "Exit of the shelf",
-			tags92,
+			tags94,
 			NULL,
 			 secondFloorShelf_1,
 			 secondFloorShelf,
@@ -1076,9 +1104,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 93 = secondFloorShelf_2_exit */
+		{	/* 95 = secondFloorShelf_2_exit */
 			 "Exit of the shelf",
-			tags93,
+			tags95,
 			NULL,
 			 secondFloorShelf_2,
 			 secondFloorShelf,
@@ -1086,9 +1114,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 94 = secondFloorShelf_3_exit */
+		{	/* 96 = secondFloorShelf_3_exit */
 			 "Exit of the shelf",
-			tags94,
+			tags96,
 			NULL,
 			 secondFloorShelf_3,
 			 secondFloorShelf,
@@ -1096,9 +1124,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 95 = secondFloorShelf_4_exit */
+		{	/* 97 = secondFloorShelf_4_exit */
 			 "Exit of the shelf",
-			tags95,
+			tags97,
 			NULL,
 			 secondFloorShelf_4,
 			 secondFloorShelf,
@@ -1106,9 +1134,10 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 96 = computerCorner */
+	// level 2
+		{	/* 98 = computerCorner */
 			 "Computer area for research",
-			tags96,
+			tags98,
 			 "The power is down try again later",
 			 secondFloor,
 			NULL,
@@ -1116,9 +1145,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 97 = level_2 */
+		{	/* 99 = level_2 */
 			 "A mysterious book",
-			tags97,
+			tags99,
 			NULL,
 			 secondFloorShelf_3,
 			 levelMahabharat,
@@ -1126,28 +1155,8 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 98 = levelMahabharat */
+		{	/* 100 = levelMahabharat */
 			 "Placeholder",
-			tags98,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL
-		},
-		{	/* 99 = levelExit_2 */
-			 "Level Exit PLACEHOLDER",
-			tags99,
-			NULL,
-			 levelMahabharat,
-			 secondFloorShelf_3_alt,
-			NULL,
-			NULL,
-			NULL
-		},
-		{	/* 100 = thirdFloor */
-			 "The third floor of the library",
 			tags100,
 			NULL,
 			NULL,
@@ -1156,9 +1165,19 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 101 = secondFloor_alt */
-			 "The second floor",
+		{	/* 101 = levelExit_2 */
+			 "Level Exit PLACEHOLDER",
 			tags101,
+			NULL,
+			 levelMahabharat,
+			 secondFloorShelf_3_alt,
+			NULL,
+			NULL,
+			NULL
+		},
+		{	/* 102 = secondFloor_alt */
+			 "The second floor",
+			tags102,
 			NULL,
 			NULL,
 			NULL,
@@ -1166,9 +1185,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 102 = secondFloorShelf_alt */
+		{	/* 103 = secondFloorShelf_alt */
 			 "Second Floor book shelves",
-			tags102,
+			tags103,
 			NULL,
 			 secondFloor_alt,
 			 secondFloorShelf_alt,
@@ -1176,9 +1195,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 103 = secondFloorShelf_1_alt */
+		{	/* 104 = secondFloorShelf_1_alt */
 			 "Book Shelf 1",
-			tags103,
+			tags104,
 			NULL,
 			 secondFloorShelf_alt,
 			 secondFloorShelf_1_alt,
@@ -1186,9 +1205,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 104 = secondFloorShelf_2_alt */
+		{	/* 105 = secondFloorShelf_2_alt */
 			 "Book Shelf 2",
-			tags104,
+			tags105,
 			NULL,
 			 secondFloorShelf_alt,
 			 secondFloorShelf_2_alt,
@@ -1196,9 +1215,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 105 = secondFloorShelf_3_alt */
+		{	/* 106 = secondFloorShelf_3_alt */
 			 "Book Shelf 3",
-			tags105,
+			tags106,
 			NULL,
 			 secondFloorShelf_alt,
 			 secondFloorShelf_3_alt,
@@ -1206,9 +1225,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 106 = secondFloorShelf_4_alt */
+		{	/* 107 = secondFloorShelf_4_alt */
 			 "Book Shelf 4",
-			tags106,
+			tags107,
 			NULL,
 			 secondFloorShelf_alt,
 			 secondFloorShelf_4_alt,
@@ -1216,9 +1235,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 107 = secondFloorShelf_hall_alt */
+		{	/* 108 = secondFloorShelf_hall_alt */
 			 "Second floor Hall",
-			tags107,
+			tags108,
 			NULL,
 			 secondFloorShelf_alt,
 			NULL,
@@ -1226,9 +1245,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 108 = secondFloorShelf_1_exit_alt */
+		{	/* 109 = secondFloorShelf_1_exit_alt */
 			 "Exit of the shelf",
-			tags108,
+			tags109,
 			NULL,
 			 secondFloorShelf_1_alt,
 			 secondFloorShelf_alt,
@@ -1236,9 +1255,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 109 = secondFloorShelf_2_exit */
+		{	/* 110 = secondFloorShelf_2_exit */
 			 "Exit of the shelf",
-			tags109,
+			tags110,
 			NULL,
 			 secondFloorShelf_2_alt,
 			 secondFloorShelf_alt,
@@ -1246,9 +1265,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 110 = secondFloorShelf_3_exit */
+		{	/* 111 = secondFloorShelf_3_exit */
 			 "Exit of the shelf",
-			tags110,
+			tags111,
 			NULL,
 			 secondFloorShelf_3_alt,
 			 secondFloorShelf_alt,
@@ -1256,23 +1275,13 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 111 = secondFloorShelf_4_exit */
+		{	/* 112 = secondFloorShelf_4_exit */
 			 "Exit of the shelf",
-			tags111,
+			tags112,
 			NULL,
 			 secondFloorShelf_4_alt,
 			 secondFloorShelf_alt,
 			NULL,
-			NULL,
-			NULL
-		},
-		{	/* 112 = stairs_floor_3_1 */
-			 "The third floor stairs",
-			tags112,
-			NULL,
-			 secondFloorShelf_alt,
-			 thirdFloor,
-			 "What these stairs were never here my library only had 1 floor",
 			NULL,
 			NULL
 		},
@@ -1280,15 +1289,25 @@ OBJECT objs[] = {
 			 "The third floor stairs",
 			tags113,
 			NULL,
+			 secondFloorShelf_alt,
+			 thirdFloor,
+			 "What these stairs were never here my library only had 1 floor",
+			NULL,
+			NULL
+		},
+		{	/* 114 = stairs_floor_3_1 */
+			 "The third floor stairs",
+			tags114,
+			NULL,
 			 secondFloorShelf_1_alt,
 			 thirdFloor,
 			 "What these stairs were never here my library only had 1 floor",
 			NULL,
 			NULL
 		},
-		{	/* 114 = stairs_floor_3_2 */
+		{	/* 115 = stairs_floor_3_2 */
 			 "The third floor stairs",
-			tags114,
+			tags115,
 			NULL,
 			 secondFloorShelf_2_alt,
 			 thirdFloor,
@@ -1296,9 +1315,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 115 = stairs_floor_3_3 */
+		{	/* 116 = stairs_floor_3_3 */
 			 "The third floor stairs",
-			tags115,
+			tags116,
 			NULL,
 			 secondFloorShelf_3_alt,
 			 thirdFloor,
@@ -1306,9 +1325,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 116 = stairs_floor_3_4 */
+		{	/* 117 = stairs_floor_3_4 */
 			 "The third floor stairs",
-			tags116,
+			tags117,
 			NULL,
 			 secondFloorShelf_4_alt,
 			 thirdFloor,
@@ -1316,21 +1335,8 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-	//hhd
-	// misc
-		{	/* 117 = firstFloor */
-			 "The first floor stairs",
-			tags117,
-			NULL,
-			 secondFloor,
-			 alt_library,
-			 "The first floor",
-			NULL,
-			NULL
-		},
-	//players	 
-		{	/* 118 = guard */
-			 "a burly guard",
+		{	/* 118 = thirdFloor */
+			 "the third floor reading room",
 			tags118,
 			NULL,
 			NULL,
@@ -1339,9 +1345,82 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 119 = player */
-			 "yourself",
+		{	/* 119 = stairsSecondFloorDown */
+			 "Stairs to the second floor",
 			tags119,
+			NULL,
+			 thirdFloor,
+			 secondFloorShelf_alt,
+			 "You went down the stairs to the shelf",
+			NULL,
+			NULL
+		},
+		{	/* 120 = table_1 */
+			 "Reading room table 1",
+			tags120,
+			NULL,
+			 thirdFloor,
+			NULL,
+			 "You are facing table 1",
+			NULL,
+			NULL
+		},
+		{	/* 121 = table_2 */
+			 "Reading room table 2",
+			tags121,
+			NULL,
+			 thirdFloor,
+			NULL,
+			 "You are facing table 2",
+			NULL,
+			NULL
+		},
+		{	/* 122 = table_3 */
+			 "Reading room table 3",
+			tags122,
+			NULL,
+			 thirdFloor,
+			NULL,
+			 "You are facing table 3",
+			NULL,
+			NULL
+		},
+		{	/* 123 = level_3 */
+			 "A book on table 3",
+			tags123,
+			NULL,
+			 thirdFloor,
+			 porcelianPalace,
+			 "What place is this why are there these paintings on the wall? What is it this time",
+			NULL,
+			NULL
+		},
+	//hhd
+	// misc
+		{	/* 124 = porcelianPalace */
+			 "a mysterious alley",
+			tags124,
+			NULL,
+			NULL,
+			NULL,
+			 "You cant get much closer than this",
+			 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
+			NULL
+		},
+	//players	 
+		{	/* 125 = guard */
+			 "a burly guard",
+			tags125,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL,
+			NULL
+		},
+		{	/* 126 = player */
+			 "yourself",
+			tags126,
 			NULL,
 			 bedroom,
 			NULL,

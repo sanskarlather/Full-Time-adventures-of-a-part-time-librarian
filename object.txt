@@ -315,13 +315,16 @@ extern OBJECT objs[];
 	 location    libraryToilet
 	 textPass    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
-
-- urinalCabin_3
+- urinalCabin_3_entrance
 	 description "Urinal Cabin 3"
 	 tags        "urinal cabin 3","cabin 3","north"
 	 location    libraryToilet
 	 destination urinalCabin_3
 	 
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+- urinalCabin_3
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"	 
 	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
 	 
 - urinalCabin_4
@@ -671,7 +674,12 @@ extern OBJECT objs[];
 	 location      alt_library
 	 destination   secondFloor
 	 textPass     "What these stairs were never here my library only had 1 floor"
-
+- firstFloor
+	 description  "The first floor stairs"
+	 tags          "down","stairs"
+	 location      secondFloor
+	 destination   alt_library
+	 textPass      "The first floor"
 	 
 
 //secondFloor
@@ -751,7 +759,8 @@ extern OBJECT objs[];
 	 location     secondFloor
 	 usage        "The power is down try again later"
 	 textPass     "You are in front of a computer"
-
+	    
+// level 2
 - level_2
 	 description "A mysterious book"
 	 tags        "book"
@@ -767,10 +776,6 @@ extern OBJECT objs[];
 	 tags         "exit"
 	 location     levelMahabharat
 	 destination  secondFloorShelf_3_alt
- 
-- thirdFloor
-	 description  "The third floor of the library"
-	 tags         "third floor"
 
 - secondFloor_alt
      description "The second floor"
@@ -838,7 +843,8 @@ extern OBJECT objs[];
 	 tags          "exit","west"
      location      secondFloorShelf_4_alt
 	 destination   secondFloorShelf_alt
-	 	 
+
+
 - stairs_floor_3_1	
 	 description  "The third floor stairs"
 	 tags         "stairs","up"
@@ -874,14 +880,55 @@ extern OBJECT objs[];
 	 location      secondFloorShelf_4_alt
 	 destination   thirdFloor
 	 textPass     "What these stairs were never here my library only had 1 floor"
-	 
-- firstFloor
-	 description  "The first floor stairs"
-	 tags          "down","stairs"
-	 location      secondFloor
-	 destination   alt_library
-	 textPass      "The first floor"
 
+- thirdFloor
+	 description  "the third floor reading room"
+	 tags         "third floor"	 	 
+
+- stairsSecondFloorDown
+	 description   "Stairs to the second floor"
+	 tags          "down","east","second floor"
+	 location      thirdFloor
+	 destination   secondFloorShelf_alt
+	 textPass      "You went down the stairs to the shelf"
+	 
+- table_1
+	 description  "Reading room table 1"
+	 tags         "table 1","west"
+	 location     thirdFloor
+	 textPass     "You are facing table 1"
+	 
+- table_2
+	 description  "Reading room table 2"
+	 tags         "table 2","north"
+	 location     thirdFloor
+	 textPass     "You are facing table 2"	 
+	 
+- table_3
+	 description  "Reading room table 3"
+	 tags         "table 2","south"
+	 location     thirdFloor
+	 textPass     "You are facing table 3"
+
+- level_3
+	 description  "A book on table 3"
+	 tags         "book"
+	 location     thirdFloor
+	 destination  porcelianPalace
+	 textPass     "What place is this why are there these paintings on the wall? What is it this time"
+	 
+- porcelianPalace
+	 description   "a mysterious alley"
+	 tags          "surrounding"
+	 details   "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
+	 textPass      "You cant get much closer than this"
+	
+
+	 
+	 
+	 
+	 
+	 
 //hhd
 // misc
 - guard
