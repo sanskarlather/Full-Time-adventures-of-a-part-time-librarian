@@ -17,7 +17,7 @@ typedef struct object {
 } OBJECT;
 
 extern OBJECT objs[];
-
+//bathroom
 - bathroom
      description "a smelly bathroom"
 	 tags        "bathroom"
@@ -25,12 +25,45 @@ extern OBJECT objs[];
 	 details     "The bathroom is crampped and has just the essentials"
 	 weight       99999
 
-- bathroomWalls
+- bathroomWallToilet
      description "bathroom walls"
      tags        "west","east","south"
      location     bathroom
 	 textPass    "Their is nothing but walls here\n"
 	 details     "The bathroom wall is tiled with yellow and white tiles\n"
+	 weight       99999
+	 
+- bedroomEntrance
+     description "Entrance of the bedroom"
+     tags        "north"
+     location     bathroom
+     destination  bedroom
+	 textPass    "You entred the bedroom\n"
+	 weight       99999	 
+
+- toilet
+     description "a toilet with a bidet"
+     tags        "washroom", "toilet"
+     location     bathroom
+	 usage		 "You have used your toilet"
+
+- shower
+     description "a shower"
+     tags        "shower", "bath"
+     location     bathroom
+	 usage		 "You have taken a shower"
+
+- toothbrush
+     description "a chewed out toothbrush"
+     tags        "toothbrush", "tooth brush", "brush"
+     location     bathroom
+	 usage		 "You have brushed your teeth"
+
+//bedroom
+- bedroom
+     description "Your bedroom"
+     tags        "bedroom"
+	 textPass    "You entred the bedroom\n"
 	 weight       99999
 
 - bathroomEntrance
@@ -40,27 +73,13 @@ extern OBJECT objs[];
      destination  bathroom
 	 textPass    "You entred the bathroom\n"
 	 weight       99999
-	 
-- bedroom
-     description "Your bedroom"
-     tags        "bedroom"
-	 textPass    "You entred the bedroom\n"
-	 weight       99999
-	 
+	 	 
 - bedroomWalls
      description "Your bedroom walls"
      tags        "east","west"
      location     bedroom
 	 textPass    "There is nothing but walls there\n"
 	 weight       99999
-	 
-- bedroomEntrance
-     description "Entrance of the bedroom"
-     tags        "south"
-     location     bathroom
-     destination  bedroom
-	 textPass    "You entred the bedroom\n"
-	 weight       99999	 
 
 - bedroomExit
      description "Exit of the house"
@@ -69,6 +88,20 @@ extern OBJECT objs[];
      destination  road
 	 textPass    "You are on the road\n"
 	 weight       99999	 
+
+- backpack
+     description "a worn out backpack"
+     tags        "backpack", "bag", "backpack"
+     location     bedroom
+	 usage		 "You have packed your backpack"
+	 details     "The bag has many pockets to carry all your essentials"
+
+- keys
+     description "a set of keys with a sonic screwdriver keychain"
+     tags        "keychain", "keys", "key set"
+     location     bedroom
+
+//road
 - road
 	 description "the road to the library"
 	 tags 		 "road"
@@ -80,12 +113,6 @@ extern OBJECT objs[];
      location     road
 	 textPass    "There is nothing but locked shops there\n"
 	 weight       99999
-- library
-     description "an old dusty library"
-     tags        "library"
-	 destination  libraryReception
-	 textPass    "You have entred the library"
-	 weight       99999
 	 
 - libraryEntrance
      description "Entrance of the library"
@@ -93,7 +120,15 @@ extern OBJECT objs[];
      location     road
      destination  library
 	 textPass    "You entred the library\n"
-	 weight       99999	  
+	 weight       99999	  	 
+	 
+//library
+- library
+     description "an old dusty library"
+     tags        "library"
+	 destination  libraryReception
+	 textPass    "You have entred the library"
+	 weight       99999	 
 
 - libraryExit
      description "Exit of the library"
@@ -109,17 +144,19 @@ extern OBJECT objs[];
 	 details     "This is the reception of the library. This is your station you spend all your days here."
 	 weight       99999
 
-- libraryShelf
-	 description "The section with the book shelves"
-	 tags        "book shelf","shelves","shelf"
-	 details     "This is the reception of the library. This is your station you spend all your days here."
-	 weight       99999
-
 - libraryShelfEntrance
 	 description "The section with the book shelves"
 	 tags        "east"
 	 location     library
 	 destination  libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+//libraryShelf
+
+- libraryShelf
+	 description "The section with the book shelves"
+	 tags        "book shelf","shelves","shelf"
 	 details     "This is the reception of the library. This is your station you spend all your days here."
 	 weight       99999
 
@@ -189,7 +226,7 @@ extern OBJECT objs[];
 	 
 - shelf_1_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	 
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"
 	 location	  shelf_1
 	 destination  libraryToilet
@@ -198,7 +235,7 @@ extern OBJECT objs[];
 	 
 - shelf_2_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_2
 	 destination  libraryToilet
@@ -207,7 +244,7 @@ extern OBJECT objs[];
 	 
 - shelf_3_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_3
 	 destination  libraryToilet
@@ -216,24 +253,33 @@ extern OBJECT objs[];
 
 - shelf_4_toilet
 	 description "Entrance of the toilet"
-	 tags        "east"
+	 
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_4
 	 destination  libraryToilet
 	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
+- shelf_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  libraryShelf
+	 destination  libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
+//libraryToilet
 - libraryToilet
 	 description "The library toilet"
-	 tags 		  "toilet"
+	 tags 		  "toilet","east"
 	 details     "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow"
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - sink
 	 description "Wash Basin"
-	 tags        "wash basin","sink"
+	 tags        "wash basin","sink","south"
+	 textPass    "You see the wash	basin and the urinal on this side of the toilet"
 	 location    libraryToilet
 	 usage       "You have washed your hands and face"
 	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
@@ -251,6 +297,7 @@ extern OBJECT objs[];
 	 description "Supply Closet"
 	 tags        "supply closet","closet"
 	 location     libraryToilet
+	 textPass    "You see the supply closet on this side of the toilet"
 	 usage       "The Supply Closet is locked"
 	 details     "The Supply Closet is locked"
 	 weight       99999
@@ -268,13 +315,16 @@ extern OBJECT objs[];
 	 location    libraryToilet
 	 textPass    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
-
-- urinalCabin_3
+- urinalCabin_3_entrance
 	 description "Urinal Cabin 3"
-	 tags        "urinal cabin 3","cabin 3"
+	 tags        "urinal cabin 3","cabin 3","north"
 	 location    libraryToilet
 	 destination urinalCabin_3
-	 textPass    ""
+	 
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+- urinalCabin_3
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"	 
 	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
 	 
 - urinalCabin_4
@@ -284,6 +334,13 @@ extern OBJECT objs[];
 	 textPass    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
+- libraryToiletExit
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     libraryToilet
+	 destination  libraryShelf
+	 textPass     "you have entered the book shelved"
+
 - mysteryObject
 	 description "Body of a guard in mysterious uniform"
 	 tags 		 "body","mysterious body","guard"
@@ -292,53 +349,593 @@ extern OBJECT objs[];
 	 
 - portal
 	 description "A portal type thing emanating green radiation"
-	 tags 		 "north"
+	 
 	 location     urinalCabin_3
 	 destination  alt_toilet
-	 details     "The portal is making very ominous sounds. You cant see through it. you can go through it......maybe"
+	 details     "The portal is making very ominous sounds. You cant see through it. You can go through it......maybe"
 	 textPass    "Where am I what is happening ? Where is the guard ? Where did the portal go ? Woah that was some strong acid yesterday"
 
 - alt_toilet
 	 description "The library toilet"
-	 tags 		  "portal"
+	 tags 		 "portal","north"
+	 details     "This toilet looks eerily similar to the one you were in but there is some ominous feeling about it"
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+//alt world
+           
+
+  
+//
+- alt_libraryToilet
+	 description "The library toilet"
+	 tags 		  "toilet","east"
 	 details     "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow"
+	 weight       99999
+	 
+- alt_sink
+	 description "Wash Basin"
+	 tags        "wash basin","sink"
+	 location    alt_toilet
+	 usage       "You have washed your hands and face"
+	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
+	 weight      99999
+	 
+- alt_urinal
+	 description "Urinals"
+	 tags        "urinal","urinals"
+	 location    alt_toilet
+	 usage       "You have used the urinal"
+	 details     "The urinals are stinky and stained"
+	 weight      99999
+	 
+- alt_supplyCloset
+	 description "Supply Closet"
+	 tags        "supply closet","closet"
+	 location     alt_toilet
+	 usage       "The Supply Closet is locked"
+	 details     "The Supply Closet is locked"
+	 weight       99999
+	
+- alt_urinalCabin_1
+	 description "Urinal Cabin 1"
+	 tags        "urinal cabin 1","cabin 1"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+	 
+- alt_urinalCabin_2
+	 description "Urinal Cabin 2"
+	 tags        "urinal cabin 2","cabin 2"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_urinalCabin_3
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+	 
+- alt_urinalCabin_4
+	 description "Urinal Cabin 4"
+	 tags        "urinal cabin 4","cabin 4"
+	 location    alt_toilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_ToiletExit
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     alt_toilet
+	 
+	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+
+- alt_libraryShelf
+	 description "The section with the book shelves"
+	 tags        "book shelf","shelves","shelf"
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_shelf_1
+	 description "Book Shelf Number 1\n"
+	 tags        "book shelf 1","shelf 1"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_1
+	 weight       99999
+	 
+- alt_shelf_2
+	 description "Book Shelf Number 2\n"
+	 tags        "book shelf 2","shelf 2"
+	 details     "There is 1 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_2
+	 weight       99999
+	 
+- alt_shelf_3
+	 description "Book Shelf Number 3\n"
+	 tags        "book shelf 3","shelf 3"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_3
+	 weight       99999
+
+- alt_shelf_4
+	 description "Book Shelf Number 4\n"
+	 tags        "book shelf 4","shelf 4"
+	 details     "There are 2 books missing from this shelf."
+	 location	  alt_libraryShelf
+	 destination  alt_shelf_4
+	 weight       99999
+	 
+- alt_shelf_1_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"
+	 location	  alt_shelf_1
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_2_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_2
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_3_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_3
+	 destination  alt_libraryShelf
+	 weight       99999
+
+- alt_shelf_4_exit
+	 description "Exit of the shelf"
+	 tags        "exit"
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_4
+	 destination  alt_libraryShelf
+	 weight       99999
+	 
+- alt_shelf_1_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"
+	 location	  alt_shelf_1
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+- alt_shelf_2_toilet
+	 description "Entrance of the toilet"
+	
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_2
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
+	 
+- alt_shelf_3_toilet
+	 description "Entrance of the toilet"
+	
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_3
+	 destination  alt_libraryToilet
 	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
-- toothbrush
-     description "a chewed out toothbrush"
-     tags        "toothbrush", "tooth brush", "brush"
-     location     bathroom
-	 usage		 "You have brushed your teeth"
+- alt_shelf_4_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_shelf_4
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
-- toilet
-     description "a toilet with a bidet"
-     tags        "washroom", "toilet"
-     location     bathroom
-	 usage		 "You have used your toilet"
+- alt_shelf_toilet
+	 description "Entrance of the toilet"
+	 
+	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
+	 location	  alt_libraryShelf
+	 destination  alt_libraryToilet
+	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 weight       99999
 
-- shower
-     description "a shower"
-     tags        "shower", "bath"
-     location     bathroom
-	 usage		 "You have taken a shower"
+- level_1
+     description  "A book on the floor"
+	 details      "It is a sherlock holmes book but why is it glowing"
+	 location     alt_toilet
+	 destination  levelSherlock
+	 textPass     "What is this what apartment is this"
+	 weight       99999
 
-- backpack
-     description "a worn out backpack"
-     tags        "backpack", "bag", "backpack"
-     location     bedroom
-	 usage		 "You have packed your backpack"
-	 details     "The bag has many pockets to carry all your essentials"
+- levelSherlock
+     description  "221b placeholder text"
+	 tags          "book"
+	 
+	 
+- levelExit_1
+	 description "Exit of the level PLACEHOLDER"
+	 tags         "Exit"
+	 location     levelSherlock
+	 destination  alt_libraryToilet
+	 
 
-- keys
-     description "a set of keys with a sonic screwdriver keychain"
-     tags        "keychain", "keys", "key set"
-     location     bedroom
+	 
 
+	 
+- alt_sink_level_exit
+	 description "Wash Basin"
+	 tags        "wash basin","sink"
+	 location    alt_libraryToilet
+	 usage       "You have washed your hands and face"
+	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
+	 weight      99999
+	 
+- alt_urinal_level_exit
+	 description "Urinals"
+	 tags        "urinal","urinals"
+	 location    alt_libraryToilet
+	 usage       "You have used the urinal"
+	 details     "The urinals are stinky and stained"
+	 weight      99999
+	 
+- alt_supplyCloset_level_exit
+	 description "Supply Closet"
+	 tags        "supply closet","closet"
+	 location    alt_libraryToilet
+	 usage       "The Supply Closet is locked"
+	 details     "The Supply Closet is locked"
+	 weight       99999
+	
+- alt_urinalCabin_1_level_exit
+	 description "Urinal Cabin 1"
+	 tags        "urinal cabin 1","cabin 1"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+	 
+- alt_urinalCabin_2_level_exit
+	 description "Urinal Cabin 2"
+	 tags        "urinal cabin 2","cabin 2"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_urinalCabin_3_level_exit
+	 description "Urinal Cabin 3"
+	 tags        "urinal cabin 3","cabin 3"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
+	 
+- alt_urinalCabin_4_level_exit
+	 description "Urinal Cabin 4"
+	 tags        "urinal cabin 4","cabin 4"
+	 location    alt_libraryToilet
+	 textPass    "The door is locked"
+	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
+
+- alt_ToiletExit_locked
+	 description "Exit of the toilet"
+	 tags        "exit","toilet exit"
+	 location     alt_libraryToilet
+	 destination  alt_libraryShelf
+	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+
+// alt_library
+
+- alt_library
+     description "an old dusty library"
+     tags        "library"
+	 textPass    "You have entred the library"
+	 weight       99999	 
+
+- alt_libraryExit
+     description "Exit of the library"
+     tags        "exit","west"
+     location     alt_library
+     textPass    "It is locked"
+	 weight       99999	  
+
+- alt_libraryReception
+	 description "The library reception"
+	 tags        "reception"
+	 location    alt_library
+	 textPass    "You are facing the reception"
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_libraryShelfEntrance
+	 description "The gorund floor book shelves"
+	 tags        "east"
+	 location     alt_library
+	 destination  alt_libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+
+- alt_libraryShelfExit
+	 description "The library hall"
+	 tags        "west","hall"
+	 destination  alt_library
+	 location     alt_libraryShelf
+	 details     "This is the reception of the library. This is your station you spend all your days here."
+	 weight       99999
+	 
+- stairs_floor_2	
+	 description  "The second floor stairs"
+	 tags         "stairs","up"
+	 location      alt_library
+	 destination   secondFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+- firstFloor
+	 description  "The first floor stairs"
+	 tags          "down","stairs"
+	 location      secondFloor
+	 destination   alt_library
+	 textPass      "The first floor"
+	 
+
+//secondFloor
+	 
+- secondFloor
+     description "The second floor"
+	 tags         "second floor"
+	 
+- secondFloorShelf
+	 description  "Second Floor book shelves"
+	 tags           "shelf","east"
+	 location      secondFloor
+	 destination   secondFloorShelf
+	 
+	 
+- secondFloorShelf_1
+	 description  "Book Shelf 1"
+	 tags          "book shelf 1","shelf 1"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_1
+	 
+- secondFloorShelf_2
+	 description  "Book Shelf 2"
+	 tags          "book shelf 2","shelf 2"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_2
+	 
+- secondFloorShelf_3
+	 description  "Book Shelf 3"
+	 tags          "book shelf 3","shelf 3"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_3
+	 
+- secondFloorShelf_4
+	 description  "Book Shelf 4"
+	 tags          "book shelf 4","shelf 4"
+	 location      secondFloorShelf
+	 destination   secondFloorShelf_4
+	 
+
+- secondFloorShelf_hall
+	 description  "Second floor Hall"
+	 tags           "hall","west"
+	 destination   secondFloor
+	 location      secondFloorShelf
+	 
+	 
+- secondFloorShelf_1_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+	 location      secondFloorShelf_1
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_2_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_2
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_3_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_3
+	 destination   secondFloorShelf
+	 
+- secondFloorShelf_4_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_4
+	 destination   secondFloorShelf
+	 
+
+
+- computerCorner
+	 description  "Computer area for research"
+	 tags         "computer","computer corner"
+	 location     secondFloor
+	 usage        "The power is down try again later"
+	 textPass     "You are in front of a computer"
+	    
+// level 2
+- level_2
+	 description "A mysterious book"
+	 tags        "book"
+	 location    secondFloorShelf_3
+	 destination levelMahabharat
+	 textPass    "What is this PLACEHOLDER"
+	 
+- levelMahabharat
+	 description "Placeholder"
+	 
+- levelExit_2
+	 description  "Level Exit PLACEHOLDER"
+	 tags         "exit"
+	 location     levelMahabharat
+	 destination  secondFloorShelf_3_alt
+
+- secondFloor_alt
+     description "The second floor"
+	 tags         "second floor"
+	 
+- secondFloorShelf_alt
+	 description  "Second Floor book shelves"
+	 tags           "shelf","east"
+	 location      secondFloor_alt
+	 destination   secondFloorShelf_alt
+	 
+	 
+- secondFloorShelf_1_alt
+	 description  "Book Shelf 1"
+	 tags          "book shelf 1","shelf 1"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_1_alt
+	 
+- secondFloorShelf_2_alt
+	 description  "Book Shelf 2"
+	 tags          "book shelf 2","shelf 2"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_2_alt
+	 
+- secondFloorShelf_3_alt
+	 description  "Book Shelf 3"
+	 tags          "book shelf 3","shelf 3"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_3_alt
+	 
+- secondFloorShelf_4_alt
+	 description  "Book Shelf 4"
+	 tags          "book shelf 4","shelf 4"
+	 location      secondFloorShelf_alt
+	 destination   secondFloorShelf_4_alt
+	 
+
+- secondFloorShelf_hall_alt
+	 description  "Second floor Hall"
+	 tags           "hall","west"
+	 location      secondFloorShelf_alt
+	 textPass      "GO FORWARD EVERYTHING IS ON FIRE HERE"
+	 
+	 
+- secondFloorShelf_1_exit_alt
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+	 location      secondFloorShelf_1_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_2_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_2_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_3_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_3_alt
+	 destination   secondFloorShelf_alt
+	 
+- secondFloorShelf_4_exit
+	 description  "Exit of the shelf"
+	 tags          "exit","west"
+     location      secondFloorShelf_4_alt
+	 destination   secondFloorShelf_alt
+
+
+- stairs_floor_3_1	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+
+- stairs_floor_3_1	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_1_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+	 	 
+- stairs_floor_3_2	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_2_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+- stairs_floor_3_3	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_3_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+	 
+- stairs_floor_3_4	
+	 description  "The third floor stairs"
+	 tags         "stairs","up"
+	 location      secondFloorShelf_4_alt
+	 destination   thirdFloor
+	 textPass     "What these stairs were never here my library only had 1 floor"
+
+- thirdFloor
+	 description  "the third floor reading room"
+	 tags         "third floor"	 	 
+
+- stairsSecondFloorDown
+	 description   "Stairs to the second floor"
+	 tags          "down","east","second floor"
+	 location      thirdFloor
+	 destination   secondFloorShelf_alt
+	 textPass      "You went down the stairs to the shelf"
+	 
+- table_1
+	 description  "Reading room table 1"
+	 tags         "table 1","west"
+	 location     thirdFloor
+	 textPass     "You are facing table 1"
+	 
+- table_2
+	 description  "Reading room table 2"
+	 tags         "table 2","north"
+	 location     thirdFloor
+	 textPass     "You are facing table 2"	 
+	 
+- table_3
+	 description  "Reading room table 3"
+	 tags         "table 2","south"
+	 location     thirdFloor
+	 textPass     "You are facing table 3"
+
+- level_3
+	 description  "A book on table 3"
+	 tags         "book"
+	 location     thirdFloor
+	 destination  porcelianPalace
+	 textPass     "What place is this why are there these paintings on the wall? What is it this time"
+	 
+- porcelianPalace
+	 description   "a mysterious alley"
+	 tags          "surrounding"
+	 details   "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
+	 textPass      "You cant get much closer than this"
+	
+
+	 
+	 
+	 
+	 
+	 
+//hhd
+// misc
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
-	 
+
+//players	 
 - player
      description "yourself"
      tags        "yourself"

@@ -20,6 +20,11 @@ BEGIN {
 	
    
 }
+/^\/\// {
+prop[com]=$0
+print prop[com]
+}
+
 obj && /^[ \t]+[a-z]/ {
    name = $1;
    $1 = "";
@@ -49,6 +54,7 @@ function outputRecord(separator)
          print "static const char *tags" count "[] = {" prop["tags"] ", NULL};";
       }
       else if (pass == "c2") {
+		 
          print "\t{\t/* " count " = " obj " */";
          print "\t\t" prop["description"] ",";
          print "\t\ttags" count ",";

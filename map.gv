@@ -1,0 +1,26 @@
+digraph map {
+	bathroom -> bedroom
+	bedroom -> bathroom
+	bedroom -> road
+	road -> library
+	library -> road
+	library -> libraryShelf
+	libraryShelf -> shelf_1
+	libraryShelf -> shelf_2
+	libraryShelf -> shelf_3
+	libraryShelf -> shelf_4
+	shelf_1 -> libraryShelf
+	shelf_2 -> libraryShelf
+	shelf_3 -> libraryShelf
+	shelf_4 -> libraryShelf
+	shelf_1 -> libraryToilet
+	shelf_2 -> libraryToilet
+	shelf_3 -> libraryToilet
+	shelf_4 -> libraryToilet
+	libraryShelf -> libraryToilet
+	libraryToilet -> urinalCabin_3
+	libraryToilet -> libraryShelf
+	urinalCabin_3 -> alt_toilet
+	alt_toilet -> urinalCabin_3
+	alt_toilet -> libraryShelf
+}

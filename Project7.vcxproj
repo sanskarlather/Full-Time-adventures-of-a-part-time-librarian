@@ -140,7 +140,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="book.c" />
     <ClCompile Include="inventory.c" />
     <ClCompile Include="item.c" />
     <ClCompile Include="location.c" />
@@ -153,7 +152,6 @@
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="book.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="item.h" />
     <ClInclude Include="location.h" />
@@ -168,7 +166,12 @@
     <Text Include="object.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="map.awk" />
+    <None Include="map.gv" />
     <None Include="object.awk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="map.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
