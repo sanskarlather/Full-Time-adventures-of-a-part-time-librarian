@@ -10,7 +10,7 @@ typedef struct object {
    struct object *location;
    struct object *destination;
    const char 	 *textPass;
-   const char    *details;
+   struct object* details;
    int weight;
 
    
@@ -24,28 +24,37 @@ extern OBJECT objs[];
 	 textPass    "You are in the city of lakshagriha\n"
 	 weight      99999
 
-
-- forest
-     description "a forest"
-     tags        "east", "west"
+- jungle
+     description "jungle"
+     tags        "west","east","south"
      location    lakshagriha
-	 textPass    "Their is nothing but jungle all over here\n"
+	 textPass    "Their is nothing but the jungle all over here\n"
 	 weight      99999
 
-
+- lakshagrihaEntrance
+     description "Entrance of the lakshagriha area"
+     tags        "entrance"
+     location    lakshagriha
+     destination lakshagriha
+	 textPass    "You entred the lakshagriha area\n"
+	 weight      99999
 	 
 - lakshagrihacastle
-     description "Lakshagriha castle"
-     tags        "lakshagrihacastle","north"
-	 location    lakshagriha
-	 destination lakshagrihacastle
-	 textPass    "You entred the castle of lakshagriha\n"
+     description "lakshagrihacastle\n"
+     tags        "lakshagrihacastle"
+	 textPass    "You entred the lakshagrihacastle\n"
 	 weight      99999
 
-
+- lakshagrihacastleEntrance
+     description "Entrance of the lakshagrihacastle"
+     tags        "north","lakshagrihacastle"
+     location    lakshagriha
+     destination lakshagrihacastle
+	 textPass    "You entred the lakshagriha Castle\n"
+	 weight      99999	 
 	 
-- castleWalls
-     description "castle walls"
+- lakshagrihacastleWalls
+     description "lakshagrihacastle walls"
      tags        "east","west"
      location    lakshagrihacastle
 	 textPass    "There is nothing but walls there\n"
@@ -53,46 +62,111 @@ extern OBJECT objs[];
 	 
 
 - lakshagrihacastleExit
-     description "back to place with burning castle"
-     tags        "south","lakshagriha"
-     location     lakshagrihacastle
-     destination  lakshagriha
-	 textPass    "You are back on the city of lakshagriha\n"
-	 weight       99999	
+     description "Exit of the lakshagrihacastle"
+     tags        "south","exit"
+     location    lakshagrihacastle
+     destination road
+	 textPass    "You are on the road towards village\n"
+	 weight      99999	
+	 
+- road
+	 description "the road leads to the village"
+	 tags 		 "road"
+	 textPass    "You are on the road that leads you to the village"
+
+- roadentrance
+	 description "The Road leads to the Village"
+     tags        "road"
+     location    lakshagriha
+     destination road
+	 textPass    "You are on the road that leads to the Village\n"
+	 weight      99999
 
 
-	 	
-- village
-	 description "the way to the village"
-	 tags 		 "village","south"
-	 location    lakshagriha
-	 destination village
-	 textPass    "You are on the village"
-
-- villageWalls
-     description "village perimeter"
-     tags        "west","north","south"
-     location    village
-	 textPass    "There is nothing but villageWalls\n"  
+- roadWalls
+     description "only jungle"
+     tags        "west","east","north"
+     location    road
+	 textPass    "There is nothing but jungle all around and a narrow road that leads to small village\n"
 	 weight      99999
 	 
+- roadexit
+	 description "The exit "
+     tags        "exit"
+     location    road
+     destination lakshagriha
+	 textPass    "You are on the road that leads to the Village\n"
+	 weight      99999
 	 
-
-	   
+- village
+     description "an old small village"
+     tags        "village"
+	 textPass    "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
+	 weight      99999
 	 
-- hindi
-     description "language used by people at the time"
-     tags        "hindi", "language"
+- villageEntrance
+     description "entrance to the village"
+     tags        "entrance","south"
+     location    road
+     destination village
+	 textPass    "You entred the village\n"
+	 weight      99999
+	 
+- villageWalls
+     description "surrounded by mountains"
+     tags        "west","east"
      location    village
-	 usage		 "You have learned new language - Hindi"
+	 textPass    "Whole village is surronded by the mountains and the jungle\n"
+	 weight      99999	 
+
+- villagexit
+	 description "exit to the village"
+     tags        "exit"
+     location    village
+     destination road1
+	 textPass    "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
+	 weight      99999	  
+	 
+- road1
+	 description "the road leads to the Hastinapur Castle\n"
+	 tags 		 "road"
+	 textPass    "You are on the road that leads you to the village"
+
+- road1entrance
+	 description "The Road leads to the Hatinapur Castle\n"
+     tags        "north"
+     location    road1
+     destination hastinapurcastle
+	 textPass    "You are on the road that leads to the Hastinapur Castle\n"
+	 weight      99999
+	 
+- road1Walls
+     description "only jungle"
+     tags        "west","east"
+     location    road
+	 textPass    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n"
+	 weight      99999
+	 
+- road1exit
+	 description "back to village"
+     tags        "exit"
+     location    road1
+     destination village
+	 textPass    "back to village\n"
+	 weight      99999
+
+- hastinapurcastle
+     description "welcome to the castle"
+     tags        "hastinapurcastle"
+	 textPass    "You are at the glorious castle"
+	 weight      99999
+
 
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
-
-//players	 
+	 
 - player
      description "yourself"
      tags        "yourself"
-     location     lakshagriha
-
+     location    lakshagriha

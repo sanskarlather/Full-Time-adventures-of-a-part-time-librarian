@@ -28,7 +28,7 @@ void executeLook(const char* noun)
 			// already handled by getVisible
 			break;
 		default:
-			printf("%s", obj->details);
+			printf("%s", obj-> details);
 			listObjectsAtLocation(obj);
 		}
 	}

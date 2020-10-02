@@ -3,24 +3,47 @@
 #include "object.h"
 static const char* tags0[] = { "lakshagriha"
 , NULL };
-static const char* tags1[] = { "east", "west"
+static const char* tags1[] = { "west","east","south"
 , NULL };
-static const char* tags2[] = { "lakshagrihacastle","north"
+static const char* tags2[] = { "entrance"
 , NULL };
-static const char* tags3[] = { "east","west"
+static const char* tags3[] = { "lakshagrihacastle"
 , NULL };
-static const char* tags4[] = { "south","lakshagriha"
+static const char* tags4[] = { "north","lakshagrihacastle"
 , NULL };
-static const char* tags5[] = { "village","south"
+static const char* tags5[] = { "east","west"
 , NULL };
-static const char* tags6[] = { "west","north","south"
+static const char* tags6[] = { "south","exit"
 , NULL };
-static const char* tags7[] = { "hindi", "language"
+static const char* tags7[] = { "road"
 , NULL };
-//players	 
-static const char* tags8[] = { "guard", "burly guard"
+static const char* tags8[] = { "road"
 , NULL };
-static const char* tags9[] = { "yourself"
+static const char* tags9[] = { "west","east","north"
+, NULL };
+static const char* tags10[] = { "exit"
+, NULL };
+static const char* tags11[] = { "village"
+, NULL };
+static const char* tags12[] = { "entrance","south"
+, NULL };
+static const char* tags13[] = { "west","east"
+, NULL };
+static const char* tags14[] = { "exit"
+, NULL };
+static const char* tags15[] = { "road"
+, NULL };
+static const char* tags16[] = { "north"
+, NULL };
+static const char* tags17[] = { "west","east"
+, NULL };
+static const char* tags18[] = { "exit"
+, NULL };
+static const char* tags19[] = { "hastinapurcastle"
+, NULL };
+static const char* tags20[] = { "guard", "burly guard"
+, NULL };
+static const char* tags21[] = { "yourself"
 , NULL };
 
 OBJECT objs[] = {
@@ -37,40 +60,68 @@ OBJECT objs[] = {
 		NULL,
 		 99999
 	},
-	{	/* 1 = forest
+	{	/* 1 = jungle
  */
-		 "a forest"
+		 "jungle"
 ,
 		tags1,
 		NULL,
 		 lakshagriha
 ,
 		NULL,
-		 "Their is nothing but jungle all over here\n"
+		 "Their is nothing but the jungle all over here\n"
 ,
 		NULL,
 		 99999
 	},
-	{	/* 2 = lakshagrihacastle
+	{	/* 2 = lakshagrihaEntrance
  */
-		 "Lakshagriha castle"
+		 "Entrance of the lakshagriha area"
 ,
 		tags2,
 		NULL,
 		 lakshagriha
 ,
-		 lakshagrihacastle
+		 lakshagriha
 ,
-		 "You entred the castle of lakshagriha\n"
+		 "You entred the lakshagriha area\n"
 ,
 		NULL,
 		 99999
 	},
-	{	/* 3 = castleWalls
+	{	/* 3 = lakshagrihacastle
  */
-		 "castle walls"
+		 "lakshagrihacastle\n"
 ,
 		tags3,
+		NULL,
+		NULL,
+		NULL,
+		 "You entred the lakshagrihacastle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 4 = lakshagrihacastleEntrance
+ */
+		 "Entrance of the lakshagrihacastle"
+,
+		tags4,
+		NULL,
+		 lakshagriha
+,
+		 lakshagrihacastle
+,
+		 "You entred the lakshagriha Castle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 5 = lakshagrihacastleWalls
+ */
+		 "lakshagrihacastle walls"
+,
+		tags5,
 		NULL,
 		 lakshagrihacastle
 ,
@@ -80,88 +131,227 @@ OBJECT objs[] = {
 		NULL,
 		 99999
 	},
-	{	/* 4 = lakshagrihacastleExit
+	{	/* 6 = lakshagrihacastleExit
  */
-		 "back to place with burning castle"
-,
-		tags4,
-		NULL,
-		 lakshagrihacastle
-,
-		 lakshagriha
-,
-		 "You are back on the city of lakshagriha\n"
-,
-		NULL,
-		 99999
-	},
-	{	/* 5 = village
- */
-		 "the way to the village"
-,
-		tags5,
-		NULL,
-		 lakshagriha
-,
-		 village
-,
-		 "You are on the village"
-,
-		NULL,
-		NULL
-	},
-	{	/* 6 = villageWalls
- */
-		 "village perimeter"
+		 "Exit of the lakshagrihacastle"
 ,
 		tags6,
 		NULL,
-		 village
+		 lakshagrihacastle
 ,
-		NULL,
-		 "There is nothing but villageWalls\n"
+		 road
+,
+		 "You are on the road towards village\n"
 ,
 		NULL,
 		 99999
 	},
-	{	/* 7 = hindi
+	{	/* 7 = road
  */
-		 "language used by people at the time"
+		 "the road leads to the village"
 ,
 		tags7,
-		 "You have learned new language - Hindi"
+		NULL,
+		NULL,
+		NULL,
+		 "You are on the road that leads you to the village"
+,
+		NULL,
+		NULL
+	},
+	{	/* 8 = roadentrance
+ */
+		 "The Road leads to the Village"
+,
+		tags8,
+		NULL,
+		 lakshagriha
+,
+		 road
+,
+		 "You are on the road that leads to the Village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 9 = roadWalls
+ */
+		 "only jungle"
+,
+		tags9,
+		NULL,
+		 road
+,
+		NULL,
+		 "There is nothing but jungle all around and a narrow road that leads to small village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 10 = roadexit
+ */
+		 "The exit "
+,
+		tags10,
+		NULL,
+		 road
+,
+		 lakshagriha
+,
+		 "You are on the road that leads to the Village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 11 = village
+ */
+		 "an old small village"
+,
+		tags11,
+		NULL,
+		NULL,
+		NULL,
+		 "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 12 = villageEntrance
+ */
+		 "entrance to the village"
+,
+		tags12,
+		NULL,
+		 road
 ,
 		 village
 ,
+		 "You entred the village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 13 = villageWalls
+ */
+		 "surrounded by mountains"
+,
+		tags13,
+		NULL,
+		 village
+,
+		NULL,
+		 "Whole village is surronded by the mountains and the jungle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 14 = villagexit
+ */
+		 "exit to the village"
+,
+		tags14,
+		NULL,
+		 village
+,
+		 road1
+,
+		 "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 15 = road1
+ */
+		 "the road leads to the Hastinapur Castle\n"
+,
+		tags15,
+		NULL,
+		NULL,
+		NULL,
+		 "You are on the road that leads you to the village"
+,
+		NULL,
+		NULL
+	},
+	{	/* 16 = road1entrance
+ */
+		 "The Road leads to the Hatinapur Castle\n"
+,
+		tags16,
+		NULL,
+		 road1
+,
+		 hastinapurcastle
+,
+		 "You are on the road that leads to the Hastinapur Castle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 17 = road1Walls
+ */
+		 "only jungle"
+,
+		tags17,
+		NULL,
+		 road
+,
+		NULL,
+		 "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 18 = road1exit
+ */
+		 "back to village"
+,
+		tags18,
+		NULL,
+		 road1
+,
+		 village
+,
+		 "back to village\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 19 = hastinapurcastle
+ */
+		 "welcome to the castle"
+,
+		tags19,
+		NULL,
+		NULL,
+		NULL,
+		 "You are at the glorious castle"
+,
+		NULL,
+		 99999
+	},
+	{	/* 20 = guard
+ */
+		 "a burly guard"
+,
+		tags20,
+		NULL,
+		NULL,
 		NULL,
 		NULL,
 		NULL,
 		NULL
 	},
-	//players	 
-		{	/* 8 = guard
-	 */
-			 "a burly guard"
-	,
-			tags8,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL
-		},
-		{	/* 9 = player
-	 */
-			 "yourself"
-	,
-			tags9,
-			NULL,
-			 lakshagriha
-	,
-			NULL,
-			NULL,
-			NULL,
-			NULL
-		}
+	{	/* 21 = player
+ */
+		 "yourself"
+,
+		tags21,
+		NULL,
+		 lakshagriha,
+		NULL,
+		NULL,
+		NULL,
+		NULL
+	}
 };

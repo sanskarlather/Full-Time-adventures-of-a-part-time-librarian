@@ -7,7 +7,7 @@ typedef struct object {
 	struct object* location;
 	struct object* destination;
 	const char* textPass;
-	const char* details;
+	struct object* details;
 	int weight;
 
 
@@ -16,15 +16,26 @@ typedef struct object {
 extern OBJECT objs[];
 
 #define lakshagriha (objs + 0)
-#define forest (objs + 1)
-#define lakshagrihacastle (objs + 2)
-#define castleWalls (objs + 3)
-#define lakshagrihacastleExit (objs + 4)
-#define village (objs + 5)
-#define villageWalls (objs + 6)
-#define hindi (objs + 7)
-//players	 
-#define guard (objs + 8)
-#define player (objs + 9)
+#define jungle (objs + 1)
+#define lakshagrihaEntrance (objs + 2)
+#define lakshagrihacastle (objs + 3)
+#define lakshagrihacastleEntrance (objs + 4)
+#define lakshagrihacastleWalls (objs + 5)
+#define lakshagrihacastleExit (objs + 6)
+#define road (objs + 7)
+#define roadentrance (objs + 8)
+#define roadWalls (objs + 9)
+#define roadexit (objs + 10)
+#define village (objs + 11)
+#define villageEntrance (objs + 12)
+#define villageWalls (objs + 13)
+#define villagexit (objs + 14)
+#define road1 (objs + 15)
+#define road1entrance (objs + 16)
+#define road1Walls (objs + 17)
+#define road1exit (objs + 18)
+#define hastinapurcastle (objs + 19)
+#define guard (objs + 20)
+#define player (objs + 21)
 
-#define endOfObjs	(objs + 10)
+#define endOfObjs (objs + 21)
