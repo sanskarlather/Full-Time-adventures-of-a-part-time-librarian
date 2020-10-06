@@ -144,7 +144,7 @@ extern OBJECT objs[];
      description "only jungle"
      tags        "west","east"
      location    road
-	 textPass    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n"
+	 textPass    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
 	 weight      99999
 	 
 - road1exit
@@ -156,9 +156,39 @@ extern OBJECT objs[];
 	 weight      99999
 
 - hastinapurcastle
-     description "welcome to the castle"
+     description "Welcome to the castle"
      tags        "hastinapurcastle"
 	 textPass    "You are at the glorious castle"
+	 weight      99999
+
+- hastinapurcastlgate
+	 description "You were at the gate of the Castle\n"
+     tags        "east"
+     location    hastinapurcastle
+	 textPass    "You were at the Gate for Entering the Castle\n"
+	 weight      99999
+
+- hastinapurcastleentrance
+	 description "Entered to the Castle\n"
+     tags        "north"
+     location    hastinapurcastle
+	 destination meetinghall
+	 textPass    "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n  "
+	 weight      99999
+
+
+- meetinghall
+	 description "Meeting Hall\n"
+     tags        "meetinghall"
+	 textPass    "It's a Place where the game of Politics begins\n"
+	 weight      99999
+	 
+	 
+- meetinghallentrance
+	 description "Entrance"
+     tags        "south"
+     location    meetinghall
+	 textPass    "At the Entrance of the Meeting Hall\n"
 	 weight      99999
 
 

@@ -41,9 +41,17 @@ static const char* tags18[] = { "exit"
 , NULL };
 static const char* tags19[] = { "hastinapurcastle"
 , NULL };
-static const char* tags20[] = { "guard", "burly guard"
+static const char* tags20[] = { "east"
 , NULL };
-static const char* tags21[] = { "yourself"
+static const char* tags21[] = { "north"
+, NULL };
+static const char* tags22[] = { "meetinghall"
+, NULL };
+static const char* tags23[] = { "south"
+, NULL };
+static const char* tags24[] = { "guard", "burly guard"
+, NULL };
+static const char* tags25[] = { "yourself"
 , NULL };
 
 OBJECT objs[] = {
@@ -297,7 +305,7 @@ OBJECT objs[] = {
 		 road
 ,
 		NULL,
-		 "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n"
+		 "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
 ,
 		NULL,
 		 99999
@@ -319,7 +327,7 @@ OBJECT objs[] = {
 	},
 	{	/* 19 = hastinapurcastle
  */
-		 "welcome to the castle"
+		 "Welcome to the castle"
 ,
 		tags19,
 		NULL,
@@ -330,11 +338,67 @@ OBJECT objs[] = {
 		NULL,
 		 99999
 	},
-	{	/* 20 = guard
+	{	/* 20 = hastinapurcastlgate
+ */
+		 "You were at the gate of the Castle\n"
+,
+		tags20,
+		NULL,
+		 hastinapurcastle
+,
+		NULL,
+		 "You were at the Gate for Entering the Castle\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 21 = hastinapurcastleentrance
+ */
+		 "Entered to the Castle\n"
+,
+		tags21,
+		NULL,
+		 hastinapurcastle
+,
+		 meetinghall
+,
+		 "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n "
+,
+		NULL,
+		 99999
+	},
+	{	/* 22 = meetinghall
+ */
+		 "Meeting Hall\n"
+,
+		tags22,
+		NULL,
+		NULL,
+		NULL,
+		 "Place where the game of Politics begins\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 23 = meetinghallentrance
+ */
+		 "Entrance"
+,
+		tags23,
+		NULL,
+		 meetinghall
+,
+		NULL,
+		 "At the Entrance of the Meeting Hall\n"
+,
+		NULL,
+		 99999
+	},
+	{	/* 24 = guard
  */
 		 "a burly guard"
 ,
-		tags20,
+		tags24,
 		NULL,
 		NULL,
 		NULL,
@@ -342,11 +406,11 @@ OBJECT objs[] = {
 		NULL,
 		NULL
 	},
-	{	/* 21 = player
+	{	/* 25 = player
  */
 		 "yourself"
 ,
-		tags21,
+		tags25,
 		NULL,
 		 lakshagriha,
 		NULL,
