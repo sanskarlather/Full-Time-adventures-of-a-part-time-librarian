@@ -3,6 +3,7 @@
 #include <string.h>
 #include "location.h"
 #include "inventory.h"
+#include "tictac.h"
 
 bool parseAndExecute(char* input)
 {
@@ -57,6 +58,10 @@ bool parseAndExecute(char* input)
 		else if (strcmp(verb, "examine") == 0)
 		{
 			executeExamine(noun);
+		}
+		else if (strcmp(verb, "play") == 0)
+		{
+			playtictac();
 		}
 		else
 		{

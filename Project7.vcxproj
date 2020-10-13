@@ -151,6 +151,10 @@
     <ClCompile Include="parsexec.c">
       <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4996</DisableSpecificWarnings>
     </ClCompile>
+    <ClCompile Include="tictac.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4996</DisableSpecificWarnings>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+    </ClCompile>
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +166,7 @@
     <ClInclude Include="noun.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="parsexec.h" />
+    <ClInclude Include="tictac.h" />
     <ClInclude Include="use.h" />
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +176,6 @@
     <None Include="map.awk" />
     <None Include="map.gv" />
     <None Include="object.awk" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="map.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

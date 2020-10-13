@@ -45,6 +45,9 @@
     <ClCompile Include="use.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tictac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parsexec.h">
@@ -74,6 +77,9 @@
     <ClInclude Include="object.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tictac.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="object.txt">
@@ -90,10 +96,5 @@
     <None Include="map.gv">
       <Filter>Resource Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="map.png">
-      <Filter>Resource Files</Filter>
-    </Image>
   </ItemGroup>
 </Project>

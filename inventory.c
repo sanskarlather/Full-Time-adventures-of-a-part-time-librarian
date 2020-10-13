@@ -3,6 +3,7 @@
 #include "misc.h"
 #include "noun.h"
 #include "move.h"
+
 void executeGet(const char* noun)
 {
 	OBJECT* obj = getVisible("what you want to get", noun);

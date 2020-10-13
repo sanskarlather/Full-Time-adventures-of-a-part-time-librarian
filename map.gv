@@ -4,7 +4,19 @@ digraph map {
 	lakshagriha
  -> lakshagrihacastle
 	lakshagrihacastle
- -> lakshagriha
+ -> road
 	lakshagriha
+ -> road
+	road
+ -> lakshagriha
+	road
  -> village
+	village
+ -> road1
+	road1
+ -> hastinapurcastle
+	road1
+ -> village
+	hastinapurcastle
+ -> meetinghall
 }
