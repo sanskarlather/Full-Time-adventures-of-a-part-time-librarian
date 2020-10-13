@@ -136,12 +136,16 @@ static const char* tags120[] = { "table 1","west", NULL };
 static const char* tags121[] = { "table 2","north", NULL };
 static const char* tags122[] = { "table 2","south", NULL };
 static const char* tags123[] = { "book", NULL };
+static const char* tags124[] = { "surrounding", NULL };
+static const char* tags125[] = { "north", NULL };
+static const char* tags126[] = { "surrounding", NULL };
+static const char* tags127[] = { "surrounding", NULL };
 //hhd
 // misc
-static const char* tags124[] = { "surrounding", NULL };
+static const char* tags128[] = { "surrounding", NULL };
 //players	 
-static const char* tags125[] = { "guard", "burly guard", NULL };
-static const char* tags126[] = { "yourself", NULL };
+static const char* tags129[] = { "guard", "burly guard", NULL };
+static const char* tags130[] = { "yourself", NULL };
 
 OBJECT objs[] = {
 	//bathroom
@@ -1395,8 +1399,6 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-	//hhd
-	// misc
 		{	/* 124 = porcelianPalace */
 			 "a mysterious alley",
 			tags124,
@@ -1407,10 +1409,52 @@ OBJECT objs[] = {
 			 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
 			NULL
 		},
-	//players	 
-		{	/* 125 = guard */
-			 "a burly guard",
+		{	/* 125 = porcelianPalaceWalls_N */
+			 "multiple fossils",
 			tags125,
+			NULL,
+			NULL,
+			NULL,
+			 "You are facing multiple fossils",
+			 "Multiple fossils some familar ones like the dinosaurs but others look like the could be human",
+			NULL
+		},
+		{	/* 126 = porcelianPalaceWalls_S */
+			 "a wall with multiple paintings",
+			tags126,
+			NULL,
+			NULL,
+			NULL,
+			 "You cant get much closer than this",
+			 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
+			NULL
+		},
+		{	/* 127 = porcelianPalaceWalls_W */
+			 "a mysterious alley",
+			tags127,
+			NULL,
+			NULL,
+			NULL,
+			 "You cant get much closer than this",
+			 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
+			NULL
+		},
+	//hhd
+	// misc
+		{	/* 128 = porcelianPalaceWalls_E */
+			 "a mysterious alley",
+			tags128,
+			NULL,
+			NULL,
+			NULL,
+			 "You cant get much closer than this",
+			 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
+			NULL
+		},
+	//players	 
+		{	/* 129 = guard */
+			 "a burly guard",
+			tags129,
 			NULL,
 			NULL,
 			NULL,
@@ -1418,9 +1462,9 @@ OBJECT objs[] = {
 			NULL,
 			NULL
 		},
-		{	/* 126 = player */
+		{	/* 130 = player */
 			 "yourself",
-			tags126,
+			tags130,
 			NULL,
 			 bedroom,
 			NULL,

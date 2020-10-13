@@ -150,11 +150,15 @@ extern OBJECT objs[];
 #define table_2	(objs + 121)
 #define table_3	(objs + 122)
 #define level_3	(objs + 123)
+#define porcelianPalace	(objs + 124)
+#define porcelianPalaceWalls_N	(objs + 125)
+#define porcelianPalaceWalls_S	(objs + 126)
+#define porcelianPalaceWalls_W	(objs + 127)
 //hhd
 // misc
-#define porcelianPalace	(objs + 124)
+#define porcelianPalaceWalls_E	(objs + 128)
 //players	 
-#define guard	(objs + 125)
-#define player	(objs + 126)
+#define guard	(objs + 129)
+#define player	(objs + 130)
 
-#define endOfObjs	(objs + 127)
+#define endOfObjs	(objs + 131)
