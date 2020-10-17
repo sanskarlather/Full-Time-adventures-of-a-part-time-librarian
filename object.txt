@@ -91,6 +91,37 @@ extern OBJECT objs[];
      tags        "living hall","hall","back"
      location 	 bedroom 
 	 destination livinghall 
+	 
+- experimenttable
+     description "the Table where Sherlock Holmes does his experiment"
+
+- experimenttable_entrance
+     description "Experiment Table"
+     tags        "experiment table"
+     location 	 livinghall 
+	 destination experimenttable
+
+- experimenttable_exit
+     description "The Living Room"
+     tags        "living hall","hall","back"
+     location 	 experimenttable 
+	 destination livinghall 
+
+- diningtable
+     description "the Dining Table"
+
+- diningtable_entrance
+     description "Dining Table"
+     tags        "dining table"
+     location 	 livinghall 
+	 destination diningtable
+
+- diningtable_exit
+     description "The Living Room"
+     tags        "living hall","hall","back"
+     location 	 diningtable
+	 destination livinghall 	 
+ 	 
  
 
 

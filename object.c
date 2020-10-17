@@ -1,7 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "object.h"
-static const char *tags0[] = {NULL};
+static const char *tags0[] = { NULL};
 static const char *tags1[] = { "apartment","inside", NULL};
 static const char *tags2[] = { "card", NULL};
 static const char *tags3[] = { NULL};
@@ -9,14 +9,20 @@ static const char *tags4[] = { "outside","exit","back", NULL};
 static const char *tags5[] = { NULL};
 static const char *tags6[] = { "upstairs","up", NULL};
 static const char *tags7[] = { "downstairs","down","back", NULL};
-static const char *tags8[] = {NULL};
+static const char *tags8[] = { NULL};
 static const char *tags9[] = { "living hall","hall", NULL};
 static const char *tags10[] = { "upstairs","back", NULL};
 static const char *tags11[] = { NULL};
 static const char *tags12[] = { "bedroom", NULL};
 static const char *tags13[] = { "living hall","hall","back", NULL};
-static const char *tags14[] = { "guard", "burly guard", NULL};
-static const char *tags15[] = { "yourself", NULL};
+static const char *tags14[] = { NULL};
+static const char *tags15[] = { "experiment table", NULL};
+static const char *tags16[] = { "living hall","hall","back", NULL};
+static const char *tags17[] = { NULL};
+static const char *tags18[] = { "dining table", NULL};
+static const char *tags19[] = { "living hall","hall","back", NULL};
+static const char *tags20[] = { "guard", "burly guard", NULL};
+static const char *tags21[] = { "yourself", NULL};
 
 OBJECT objs[] = {
 	{	/* 0 = spawnlocation */
@@ -159,8 +165,8 @@ OBJECT objs[] = {
 		NULL,
 		NULL
 	},
-	{	/* 14 = guard */
-		 "a burly guard",
+	{	/* 14 = experimenttable */
+		 "the Table where Sherlock Holmes does his experiment",
 		tags14,
 		NULL,
 		NULL,
@@ -169,9 +175,69 @@ OBJECT objs[] = {
 		NULL,
 		NULL
 	},
-	{	/* 15 = player */
-		 "yourself",
+	{	/* 15 = experimenttable_entrance */
+		 "Experiment Table",
 		tags15,
+		NULL,
+		 livinghall ,
+		 experimenttable,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 16 = experimenttable_exit */
+		 "The Living Room",
+		tags16,
+		NULL,
+		 experimenttable ,
+		 livinghall ,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 17 = diningtable */
+		 "the Dining Table",
+		tags17,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 18 = diningtable_entrance */
+		 "Dining Table",
+		tags18,
+		NULL,
+		 livinghall ,
+		 diningtable,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 19 = diningtable_exit */
+		 "The Living Room",
+		tags19,
+		NULL,
+		 diningtable,
+		 livinghall ,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 20 = guard */
+		 "a burly guard",
+		tags20,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL
+	},
+	{	/* 21 = player */
+		 "yourself",
+		tags21,
 		NULL,
 		 spawnlocation,
 		NULL,

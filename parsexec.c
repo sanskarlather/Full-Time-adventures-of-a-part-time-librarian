@@ -59,6 +59,13 @@ bool parseAndExecute(char* input)
        {
            executeExamine(noun);
        }
+       else if (strcmp(verb, "play") == 0)
+       {
+           if (strcmp(noun, "tictac") == 0)
+           {
+               PlayTicTac();
+           }
+       }
        else
        {
             printf("I don't know how to '%s'.\n", verb);

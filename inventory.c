@@ -3,6 +3,9 @@
 #include "misc.h"
 #include "noun.h"
 #include "move.h"
+
+
+
 void executeGet(const char* noun)
 {
     OBJECT* obj = getVisible("what you want to get", noun);
@@ -55,4 +58,9 @@ void executeHelp()
     printf("1. Look Around- To checkout what is in your room\n");
     printf("2.Movement- To move around use command [go]followed by either a dierection or a location ");
     printf("3.To Open A book you encounter- [open] followed by the name of the book");
+}
+
+void PlayTicTac(const char* verb)
+{
+    play_tictac();
 }

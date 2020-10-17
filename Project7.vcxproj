@@ -141,7 +141,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="book.c" />
-    <ClCompile Include="inventory.c" />
+    <ClCompile Include="inventory.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">2085</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="item.c" />
     <ClCompile Include="location.c" />
     <ClCompile Include="main.c" />
@@ -149,7 +152,17 @@
     <ClCompile Include="move.c" />
     <ClCompile Include="noun.c" />
     <ClCompile Include="object.c" />
-    <ClCompile Include="parsexec.c" />
+    <ClCompile Include="parsexec.c">
+      <UndefinePreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </UndefinePreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+      </DisableSpecificWarnings>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="tictac.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">_CRT_SECURE_NO_WARNING</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">4996</DisableSpecificWarnings>
+    </ClCompile>
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +175,7 @@
     <ClInclude Include="noun.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="parsexec.h" />
+    <ClInclude Include="tictac.h" />
     <ClInclude Include="use.h" />
   </ItemGroup>
   <ItemGroup>

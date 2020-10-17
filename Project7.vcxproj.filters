@@ -48,6 +48,9 @@
     <ClCompile Include="book.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tictac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="parsexec.h">
@@ -78,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tictac.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
