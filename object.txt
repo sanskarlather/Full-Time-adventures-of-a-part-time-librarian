@@ -85,7 +85,7 @@ extern OBJECT objs[];
      description "Exit of the house"
      tags        "north","exit"
      location     bedroom
-     destination  road
+     destination  roadLibrary
 	 textPass    "You are on the road\n"
 	 weight       99999	 
 
@@ -102,7 +102,7 @@ extern OBJECT objs[];
      location     bedroom
 
 //road
-- road
+- roadLibrary
 	 description "the road to the library"
 	 tags 		 "road"
 	 textPass    "You are on the road"
@@ -110,14 +110,14 @@ extern OBJECT objs[];
 - roadWalls
      description "Some closed down shops"
      tags        "west","north","south"
-     location     road
+     location     roadLibrary
 	 textPass    "There is nothing but locked shops there\n"
 	 weight       99999
 	 
 - libraryEntrance
      description "Entrance of the library"
      tags        "entrance","east"
-     location     road
+     location     roadLibrary
      destination  library
 	 textPass    "You entred the library\n"
 	 weight       99999	  	 
@@ -134,7 +134,7 @@ extern OBJECT objs[];
      description "Exit of the library"
      tags        "exit","west"
      location     library
-     destination  road
+     destination  roadLibrary
 	 textPass    "You exited the library\n"
 	 weight       99999	  
 
@@ -551,21 +551,124 @@ extern OBJECT objs[];
      description  "A book on the floor"
 	 details      "It is a sherlock holmes book but why is it glowing"
 	 location     alt_toilet
-	 destination  levelSherlock
+	 destination  spawnlocation
 	 textPass     "What is this what apartment is this"
 	 weight       99999
 
-- levelSherlock
-     description  "221b placeholder text"
-	 tags          "book"
+
+
+	 
 	 
 	 
 - levelExit_1
 	 description "Exit of the level PLACEHOLDER"
 	 tags         "Exit"
-	 location     levelSherlock
+	 location     livinghall
 	 destination  alt_libraryToilet
+
+- spawnlocation
+     description "an unknown location"
+	 textPass    "You are in an unknown location where the surrounding is similar to Victoria England.\nYou see an apartment right in front of you.\nThere is also card on the ground.Perhaps you should 'examine' the card."
 	 
+	 
+- intobasement
+     description "An unknown apartment"
+	 tags        "apartment","inside"
+	 location    spawnlocation
+	 destination basement  	 
+	 textPass    "You are in 221B Baker Street where Sherlock Holmes lives.\nYou are currently in the basement of the Apartment.\nYou see stairs that leads to his Room."
+
+- card
+     description "Card lying on the ground"	
+	 tags        "card"
+     details     "The card reads 'Save and you shall leave'."
+     location    spawnlocation	 
+
+- basement
+     description "221 B Baker Street Aparatment Basement"
+	 
+- exit_apartment
+     description "The exit"
+     tags       "outside","exit","back"
+	 location    basement
+	 textPass   "The door is locked.You can't go outside.Moreover, nothing is visible outside.\nLike a void."
+
+- upstairs
+     description "stairs that lead to Sherlocks' Room"
+
+	 
+- upstairs_entrance
+     description "Stairs leading to Sherlocks' Room"
+	 tags        "upstairs","up"
+	 location    basement
+	 destination upstairs
+ 	 
+
+- upstairs_exit
+     description "Stairs leading to the basement"
+	 tags        "downstairs","down","back"
+	 location    upstairs
+	 destination basement
+	 
+- livinghall
+     description "The Living Room"
+
+- livinghall_entrance
+     description "The living room"
+     tags        "living hall","hall"
+     location 	 upstairs 
+	 destination livinghall
+
+- livinghall_exit
+     description "The Stairs"
+     tags        "upstairs","back"
+     location 	 livinghall 
+	 destination upstairs 
+	 
+- bedroomSherlock
+     description "The Bedroom"
+
+- bedroom_entranceSherlock
+     description "The bedroom"
+     tags        "bedroom"
+     location 	 livinghall 
+	 destination bedroomSherlock
+
+- bedroom_exitSherlock
+     description "The Living Room"
+     tags        "living hall","hall","back"
+     location 	 bedroomSherlock 
+	 destination livinghall 
+	 
+- experimenttable
+     description "the Table where Sherlock Holmes does his experiment"
+
+- experimenttable_entrance
+     description "Experiment Table"
+     tags        "experiment table"
+     location 	 livinghall 
+	 destination experimenttable
+
+- experimenttable_exit
+     description "The Living Room"
+     tags        "living hall","hall","back"
+     location 	 experimenttable 
+	 destination livinghall 
+
+- diningtable
+     description "the Dining Table"
+
+- diningtable_entrance
+     description "Dining Table"
+     tags        "dining table"
+     location 	 livinghall 
+	 destination diningtable
+
+- diningtable_exit
+     description "The Living Room"
+     tags        "living hall","hall","back"
+     location 	 diningtable
+	 destination livinghall 	  
 
 	 
 
@@ -765,16 +868,179 @@ extern OBJECT objs[];
 	 description "A mysterious book"
 	 tags        "book"
 	 location    secondFloorShelf_3
-	 destination levelMahabharat
+	 destination lakshagriha
 	 textPass    "What is this PLACEHOLDER"
 	 
-- levelMahabharat
-	 description "Placeholder"
+
+- lakshagriha
+     description "place with the burning castle"
+	 tags    "lakshagriha"
+	 textPass    "You are in the city of lakshagriha\n"
+	 weight      99999
+- lakshagrihaEntrance
+     description "Entrance of the lakshagriha area"
+     tags        "entrance"
+     location    lakshagriha
+    
+	 textPass    "You entred the lakshagriha area\n"
+	 weight      99999
+	 
+- lakshagrihacastle
+     description "lakshagrihacastle\n"
+     tags        "lakshagrihacastle"
+	 textPass    "You entred the lakshagrihacastle\n"
+	 weight      99999
+- lakshagrihacastleEntrance
+     description "Entrance of the lakshagrihacastle"
+     tags        "north","lakshagrihacastle"
+     location    lakshagriha
+     destination lakshagrihacastle
+	 textPass    "You entred the lakshagriha Castle\n"
+	 weight      99999	 
+	 
+- lakshagrihacastleWalls
+     description "lakshagrihacastle walls"
+     tags        "east","west"
+     location    lakshagrihacastle
+	 textPass    "There is nothing but walls there\n"
+	 weight      99999
+	 
+
+- lakshagrihacastleExit
+     description "Exit of the lakshagrihacastle"
+     tags        "south","exit"
+     location    lakshagrihacastle
+     destination roadMahabharat
+	 textPass    "You are on the road towards village\n"
+	 weight      99999		 
+
+- roadMahabharat
+	 description "the road leads to the village"
+	 tags 		 "road"
+	 textPass    "You are on the road that leads you to the village"
+
+- roadentranceMahabharat
+	 description "The Road leads to the Village"
+     tags        "road"
+     location    lakshagriha
+     destination roadMahabharat
+	 textPass    "You are on the road that leads to the Village\n"
+	 weight      99999
+
+
+- roadWallsMahabharat
+     description "only jungle"
+     tags        "west","east","north"
+     location    roadMahabharat
+	 textPass    "There is nothing but jungle all around and a narrow road that leads to small village\n"
+	 weight      99999
+	 
+- roadexit
+	 description "The exit "
+     tags        "exit"
+     location    roadMahabharat
+     destination lakshagriha
+	 textPass    "You are on the road that leads to the Village\n"
+	 weight      99999
+	 
+- village
+     description "an old small village"
+     tags        "village"
+	 textPass    "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
+	 weight      99999
+	 
+- villageEntrance
+     description "entrance to the village"
+     tags        "entrance","south"
+     location    roadMahabharat
+     destination village
+	 textPass    "You entred the village\n"
+	 weight      99999
+	 
+- villageWalls
+     description "surrounded by mountains"
+     tags        "west","east"
+     location    village
+	 textPass    "Whole village is surronded by the mountains and the jungle\n"
+	 weight      99999	 
+
+- villagexit
+	 description "exit to the village"
+     tags        "exit"
+     location    village
+     destination road1Mahabharat
+	 textPass    "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
+	 weight      99999	  
+	 
+- road1Mahabharat
+	 description "the road leads to the Hastinapur Castle\n"
+	 tags 		 "road"
+	 textPass    "You are on the road that leads you to the village"
+
+- road1entrance
+	 description "The Road leads to the Hatinapur Castle\n"
+     tags        "north"
+     location    road1Mahabharat
+     destination hastinapurcastle
+	 textPass    "You are on the road that leads to the Hastinapur Castle\n"
+	 weight      99999
+	 
+- road1WallsMahabharat
+     description "only jungle"
+     tags        "west","east"
+     location    road1Mahabharat
+	 textPass    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
+	 weight      99999
+	 
+- road1exitMahabharat
+	 description "back to village"
+     tags        "exit"
+     location    road1Mahabharat
+     destination village
+	 textPass    "back to village\n"
+	 weight      99999
+
+- hastinapurcastle
+     description "Welcome to the castle"
+     tags        "hastinapurcastle"
+	 textPass    "You are at the glorious castle"
+	 weight      99999
+
+- hastinapurcastlgate
+	 description "You were at the gate of the Castle\n"
+     tags        "east"
+     location    hastinapurcastle
+	 textPass    "You were at the Gate for Entering the Castle\n"
+	 weight      99999
+
+- hastinapurcastleentrance
+	 description "Entered to the Castle\n"
+     tags        "north"
+     location    hastinapurcastle
+	 destination meetinghall
+	 textPass    "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n  "
+	 weight      99999
+
+
+- meetinghall
+	 description "Meeting Hall\n"
+     tags        "meetinghall"
+	 textPass    "It's a Place where the game of Politics begins\n"
+	 weight      99999
+	 
+	 
+- meetinghallentrance
+	 description "Entrance"
+     tags        "south"
+     location    meetinghall
+	 textPass    "At the Entrance of the Meeting Hall\n"
+	 weight      99999
+
 	 
 - levelExit_2
 	 description  "Level Exit PLACEHOLDER"
 	 tags         "exit"
-	 location     levelMahabharat
+	 location     meetinghall
 	 destination  secondFloorShelf_3_alt
 
 - secondFloor_alt
@@ -920,8 +1186,20 @@ extern OBJECT objs[];
 - porcelianPalace
 	 description   "a mysterious alley"
 	 tags          "surrounding"
-	 details   "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
+	 details       "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
 	 textPass      "You cant get much closer than this"
+	
+- distantVoice
+	 description   "you hear pepole talking from far east"
+	 tags          "east"
+	 details       "There seems to be 2 pepole talking "
+	 textPass      "That little child looks wierd I wonder what it is"
+	 location      "porcelianPalace"
+	 destination   "porcelianPalaceHall"
+	
+- porcelianPalaceHall
+	 description   "A large dusty hall"
+	 
 	
 
 	 
@@ -940,10 +1218,4 @@ extern OBJECT objs[];
      description "yourself"
      tags        "yourself"
      location     bedroom
-
-
-	 
-	 
-	 
-	 
 

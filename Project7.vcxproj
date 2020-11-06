@@ -149,6 +149,7 @@
     <ClCompile Include="noun.c" />
     <ClCompile Include="object.c" />
     <ClCompile Include="parsexec.c" />
+    <ClCompile Include="tictac.c" />
     <ClCompile Include="use.c" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="noun.h" />
     <ClInclude Include="object.h" />
     <ClInclude Include="parsexec.h" />
+    <ClInclude Include="tictac.h" />
     <ClInclude Include="use.h" />
   </ItemGroup>
   <ItemGroup>
