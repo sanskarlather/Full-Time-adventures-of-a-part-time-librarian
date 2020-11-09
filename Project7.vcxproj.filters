@@ -15,69 +15,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="parsexec.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="location.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="object.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="noun.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="misc.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="inventory.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="move.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="item.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="use.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tictac.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="parsexec.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="location.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="noun.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="misc.h">
+    <ClInclude Include="tictac.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="inventory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="item.h">
+    <ClInclude Include="inventory2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="use.h">
+    <ClInclude Include="location.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="match.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="move.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tictac.h">
+    <ClInclude Include="noun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="openclose.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parsexec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="reach.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="talk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="toggle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,5 +78,49 @@
     <Image Include="map.png">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="inventory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="inventory2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="location.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="match.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="noun.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="object.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="openclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parsexec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="reach.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="talk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="toggle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="move.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

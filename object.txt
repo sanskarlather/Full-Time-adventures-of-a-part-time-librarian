@@ -1,84 +1,113 @@
-#include <stdbool.h>
 #include <stdio.h>
 #include "object.h"
-
+#include "toggle.h"
 
 typedef struct object {
+   int           level
+   bool         (*condition)(void);
    const char    *description;
-   const char   **tags;
    const char    *usage;
+   const char   **tags;
    struct object *location;
    struct object *destination;
-   const char 	 *textPass;
+   struct object *prospect;
    const char    *details;
-   int weight;
-
-   
+   const char    *contents;
+   const char    *textGo;
+   const char    *gossip;
+   const char    *gossip_1;
+   const char    *gossip_2;
+   const char    *gossip_3;
+   int            weight;
+   int            capacity;
+   int            health;
+   const char  *(*open)(void);
+   const char  *(*close)(void);
+   const char  *(*lock)(void);
+   const char  *(*unlock)(void);
 } OBJECT;
+
 
 extern OBJECT objs[];
 //bathroom
 - bathroom
      description "a smelly bathroom"
 	 tags        "bathroom"
-	 textPass    "You entred the bathroom\n"
+	 textGo    "You entred the bathroom\n"
 	 details     "The bathroom is crampped and has just the essentials"
-	 weight       99999
+	 capacity       99999
 
 - bathroomWallToilet
-     description "bathroom walls"
-     tags        "west","east","south"
-     location     bathroom
-	 textPass    "Their is nothing but walls here\n"
-	 details     "The bathroom wall is tiled with yellow and white tiles\n"
-	 weight       99999
+	 description "bathroom wall"
+     tags        "west", "north", "south", "forest", "east"
+     location    bathroom
+     details     "The field is surrounded by trees and undergrowth.\n"
+     textGo      "Dense forest is blocking the way.\n"
+     gossip      "You cannot go there, it is impenetrable."
+
+
+
+
+
 	 
 - bedroomEntrance
      description "Entrance of the bedroom"
      tags        "north"
      location     bathroom
      destination  bedroom
-	 textPass    "You entred the bedroom\n"
+	 textGo    "You entred the bedroom\n"
 	 weight       99999	 
 
 - toilet
+	 level        1
      description "a toilet with a bidet"
      tags        "washroom", "toilet"
      location     bathroom
-	 usage		 "You have used your toilet"
+	 
 
 - shower
      description "a shower"
      tags        "shower", "bath"
      location     bathroom
-	 usage		 "You have taken a shower"
+	 
 
 - toothbrush
      description "a chewed out toothbrush"
      tags        "toothbrush", "tooth brush", "brush"
      location     bathroom
-	 usage		 "You have brushed your teeth"
 
 //bedroom
 - bedroom
      description "Your bedroom"
      tags        "bedroom"
-	 textPass    "You entred the bedroom\n"
+	 textGo    "You entred the bedroom\n"
 	 weight       99999
-
-- bathroomEntrance
-     description "Entrance of the bathroom"
-     tags        "entrance","south"
-     location     bedroom
-     destination  bathroom
-	 textPass    "You entred the bathroom\n"
-	 weight       99999
+	 
+- openDoorToBackroom
+     description "an open door to the bathroom"
+     tags        "south", "door", "doorway"
+     destination bathroom
+     details     "The door is open.\n"
+     textGo      "You walk through the door into a backroom.\n"
+     open        isAlreadyOpen
+     close       toggleBackdoor
+	 
+- closedDoorToBackroom
+     description "a closed door to the bathroom"
+     tags        "south", "door", "doorway"
+     location    bedroom
+     prospect    bathroom
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
 	 	 
 - bedroomWalls
      description "Your bedroom walls"
      tags        "east","west"
      location     bedroom
-	 textPass    "There is nothing but walls there\n"
+	 prospect     bedroomWalls
+	 textGo    "There is nothing but walls there\n"
 	 weight       99999
 
 - bedroomExit
@@ -86,56 +115,83 @@ extern OBJECT objs[];
      tags        "north","exit"
      location     bedroom
      destination  roadLibrary
-	 textPass    "You are on the road\n"
+	 textGo    "You are on the road\n"
 	 weight       99999	 
 
-- backpack
+- backpack 
+     level       2
      description "a worn out backpack"
      tags        "backpack", "bag", "backpack"
      location     bedroom
-	 usage		 "You have packed your backpack"
+	 
 	 details     "The bag has many pockets to carry all your essentials"
 
-- keys
+- libraryKeys
      description "a set of keys with a sonic screwdriver keychain"
      tags        "keychain", "keys", "key set"
      location     bedroom
+	 details     "The key is really small and shiny.\n"
+     weight      1
 
 //road
 - roadLibrary
 	 description "the road to the library"
 	 tags 		 "road"
-	 textPass    "You are on the road"
+	 textGo    "You are on the road"
 
 - roadWalls
      description "Some closed down shops"
      tags        "west","north","south"
      location     roadLibrary
-	 textPass    "There is nothing but locked shops there\n"
+	 textGo    "There is nothing but locked shops there\n"
 	 weight       99999
 	 
-- libraryEntrance
-     description "Entrance of the library"
-     tags        "entrance","east"
-     location     roadLibrary
-     destination  library
-	 textPass    "You entred the library\n"
-	 weight       99999	  	 
+- openDoorToLibrary
+     description "an open door to the library"
+     tags        "south", "door", "doorway"
+     destination library
+     details     "The door is open.\n"
+     textGo      "You walk through the door into a backroom.\n"
+     open        isAlreadyOpen
+     close       toggleBackdoor
+	 
+- closedDoorToLibrary
+     description "a closed door to the library"
+     tags        "south", "door", "doorway"
+     
+     prospect    library
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
+	 
+- lockedDoorToLibrary
+     description "a closed door to the library"
+     tags        "south", "door", "doorway"
+     location    roadLibrary
+     prospect    library
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
+	 lock        isAlreadyLocked
+     unlock      toggleBoxLock
 	 
 //library
 - library
      description "an old dusty library"
      tags        "library"
-	 destination  libraryReception
-	 textPass    "You have entred the library"
+	
+	 textGo    "You have entred the library"
 	 weight       99999	 
+
 
 - libraryExit
      description "Exit of the library"
      tags        "exit","west"
      location     library
      destination  roadLibrary
-	 textPass    "You exited the library\n"
+	 textGo    "You exited the library\n"
 	 weight       99999	  
 
 - libraryReception
@@ -226,60 +282,60 @@ extern OBJECT objs[];
 	 
 - shelf_1_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"
 	 location	  shelf_1
 	 destination  libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - shelf_2_toilet
 	 description "Entrance of the toilet"
-	
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_2
 	 destination  libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - shelf_3_toilet
 	 description "Entrance of the toilet"
-	
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_3
 	 destination  libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 - shelf_4_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  shelf_4
 	 destination  libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 - shelf_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  libraryShelf
 	 destination  libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 //libraryToilet
 - libraryToilet
 	 description "The library toilet"
-	 tags 		  "toilet","east"
+	 tags 		  "east"
 	 details     "It's dirty and has some weird mass lying around urinal cabin 3. It is glowing with some wierd glow"
 	 weight       99999
 	 
 - sink
 	 description "Wash Basin"
 	 tags        "wash basin","sink","south"
-	 textPass    "You see the wash	basin and the urinal on this side of the toilet"
+	 textGo    "You see the wash	basin and the urinal on this side of the toilet"
 	 location    libraryToilet
 	 usage       "You have washed your hands and face"
 	 details     "The tap in the wash basin is leaking slowly and there is no way to close it properly"
@@ -297,7 +353,7 @@ extern OBJECT objs[];
 	 description "Supply Closet"
 	 tags        "supply closet","closet"
 	 location     libraryToilet
-	 textPass    "You see the supply closet on this side of the toilet"
+	 textGo    "You see the supply closet on this side of the toilet"
 	 usage       "The Supply Closet is locked"
 	 details     "The Supply Closet is locked"
 	 weight       99999
@@ -306,14 +362,14 @@ extern OBJECT objs[];
 	 description "Urinal Cabin 1"
 	 tags        "urinal cabin 1","cabin 1"
 	 location    libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 	 
 - urinalCabin_2
 	 description "Urinal Cabin 2"
 	 tags        "urinal cabin 2","cabin 2"
 	 location    libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 - urinalCabin_3_entrance
 	 description "Urinal Cabin 3"
@@ -331,7 +387,7 @@ extern OBJECT objs[];
 	 description "Urinal Cabin 4"
 	 tags        "urinal cabin 4","cabin 4"
 	 location    libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
 - libraryToiletExit
@@ -339,7 +395,7 @@ extern OBJECT objs[];
 	 tags        "exit","toilet exit"
 	 location     libraryToilet
 	 destination  libraryShelf
-	 textPass     "you have entered the book shelved"
+	 textGo     "you have entered the book shelved"
 
 - mysteryObject
 	 description "Body of a guard in mysterious uniform"
@@ -349,17 +405,17 @@ extern OBJECT objs[];
 	 
 - portal
 	 description "A portal type thing emanating green radiation"
-	 
+	 tags 		  "portal"
 	 location     urinalCabin_3
 	 destination  alt_toilet
 	 details     "The portal is making very ominous sounds. You cant see through it. You can go through it......maybe"
-	 textPass    "Where am I what is happening ? Where is the guard ? Where did the portal go ? Woah that was some strong acid yesterday"
+	 textGo    "Where am I what is happening ? Where is the guard ? Where did the portal go ? Woah that was some strong acid yesterday"
 
 - alt_toilet
 	 description "The library toilet"
 	 tags 		 "portal","north"
 	 details     "This toilet looks eerily similar to the one you were in but there is some ominous feeling about it"
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 //alt world
@@ -401,28 +457,28 @@ extern OBJECT objs[];
 	 description "Urinal Cabin 1"
 	 tags        "urinal cabin 1","cabin 1"
 	 location    alt_toilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 	 
 - alt_urinalCabin_2
 	 description "Urinal Cabin 2"
 	 tags        "urinal cabin 2","cabin 2"
 	 location    alt_toilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
 - alt_urinalCabin_3
 	 description "Urinal Cabin 3"
 	 tags        "urinal cabin 3","cabin 3"
 	 location    alt_toilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
 	 
 - alt_urinalCabin_4
 	 description "Urinal Cabin 4"
 	 tags        "urinal cabin 4","cabin 4"
 	 location    alt_toilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
 - alt_ToiletExit
@@ -430,7 +486,7 @@ extern OBJECT objs[];
 	 tags        "exit","toilet exit"
 	 location     alt_toilet
 	 
-	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+	 textGo     "This locked that is strange. Why not try opening the book it looks out of place"
 
 - alt_libraryShelf
 	 description "The section with the book shelves"
@@ -504,47 +560,47 @@ extern OBJECT objs[];
 	 
 - alt_shelf_1_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"
 	 location	  alt_shelf_1
 	 destination  alt_libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - alt_shelf_2_toilet
 	 description "Entrance of the toilet"
-	
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  alt_shelf_2
 	 destination  alt_libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 	 
 - alt_shelf_3_toilet
 	 description "Entrance of the toilet"
-	
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  alt_shelf_3
 	 destination  alt_libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 - alt_shelf_4_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  alt_shelf_4
 	 destination  alt_libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 - alt_shelf_toilet
 	 description "Entrance of the toilet"
-	 
+	 tags 		  "toilet"
 	 details     "This is the exit of this shelf. Exit to explore the other shelves"	 
 	 location	  alt_libraryShelf
 	 destination  alt_libraryToilet
-	 textPass    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
+	 textGo    "You have entred the bathroom. There is some wierd light coming from cabin 3. There is also something on the floor"
 	 weight       99999
 
 - level_1
@@ -552,7 +608,7 @@ extern OBJECT objs[];
 	 details      "It is a sherlock holmes book but why is it glowing"
 	 location     alt_toilet
 	 destination  spawnlocation
-	 textPass     "What is this what apartment is this"
+	 textGo     "What is this what apartment is this"
 	 weight       99999
 
 
@@ -568,15 +624,15 @@ extern OBJECT objs[];
 
 - spawnlocation
      description "an unknown location"
-	 textPass    "You are in an unknown location where the surrounding is similar to Victoria England.\nYou see an apartment right in front of you.\nThere is also card on the ground.Perhaps you should 'examine' the card."
+	 textGo    "You are in an unknown location where the surrounding is similar to Victoria England.\nYou see an apartment right in front of you.\nThere is also card on the ground.Perhaps you should 'examine' the card."
 	 
 	 
 - intobasement
      description "An unknown apartment"
-	 tags        "apartment","inside"
+	 tags        "apartment"
 	 location    spawnlocation
 	 destination basement  	 
-	 textPass    "You are in 221B Baker Street where Sherlock Holmes lives.\nYou are currently in the basement of the Apartment.\nYou see stairs that leads to his Room."
+	 textGo    "You are in 221B Baker Street where Sherlock Holmes lives.\nYou are currently in the basement of the Apartment.\nYou see stairs that leads to his Room."
 
 - card
      description "Card lying on the ground"	
@@ -586,20 +642,20 @@ extern OBJECT objs[];
 
 - basement
      description "221 B Baker Street Aparatment Basement"
-	 
+	 tags 		  "inside"
 - exit_apartment
      description "The exit"
      tags       "outside","exit","back"
 	 location    basement
-	 textPass   "The door is locked.You can't go outside.Moreover, nothing is visible outside.\nLike a void."
+	 textGo   "The door is locked.You can't go outside.Moreover, nothing is visible outside.\nLike a void."
 
 - upstairs
      description "stairs that lead to Sherlocks' Room"
-
+     tags 		  "up"
 	 
 - upstairs_entrance
      description "Stairs leading to Sherlocks' Room"
-	 tags        "upstairs","up"
+	 tags        "upstairs"
 	 location    basement
 	 destination upstairs
  	 
@@ -612,7 +668,8 @@ extern OBJECT objs[];
 	 
 - livinghall
      description "The Living Room"
-
+     tags 		  "hall"
+	 
 - livinghall_entrance
      description "The living room"
      tags        "living hall","hall"
@@ -627,6 +684,7 @@ extern OBJECT objs[];
 	 
 - bedroomSherlock
      description "The Bedroom"
+	 tags 		  "bedroom"
 
 - bedroom_entranceSherlock
      description "The bedroom"
@@ -642,6 +700,8 @@ extern OBJECT objs[];
 	 
 - experimenttable
      description "the Table where Sherlock Holmes does his experiment"
+	 tags 		  "table"
+	 
 
 - experimenttable_entrance
      description "Experiment Table"
@@ -657,6 +717,7 @@ extern OBJECT objs[];
 
 - diningtable
      description "the Dining Table"
+	 tags 		  "dinner table"
 
 - diningtable_entrance
      description "Dining Table"
@@ -701,28 +762,28 @@ extern OBJECT objs[];
 	 description "Urinal Cabin 1"
 	 tags        "urinal cabin 1","cabin 1"
 	 location    alt_libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 	 
 - alt_urinalCabin_2_level_exit
 	 description "Urinal Cabin 2"
 	 tags        "urinal cabin 2","cabin 2"
 	 location    alt_libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
 - alt_urinalCabin_3_level_exit
 	 description "Urinal Cabin 3"
 	 tags        "urinal cabin 3","cabin 3"
 	 location    alt_libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin"
 	 
 - alt_urinalCabin_4_level_exit
 	 description "Urinal Cabin 4"
 	 tags        "urinal cabin 4","cabin 4"
 	 location    alt_libraryToilet
-	 textPass    "The door is locked"
+	 textGo    "The door is locked"
 	 details     "The door is of blue color, it is locked from inside, it stinks very badly"
 
 - alt_ToiletExit_locked
@@ -730,28 +791,28 @@ extern OBJECT objs[];
 	 tags        "exit","toilet exit"
 	 location     alt_libraryToilet
 	 destination  alt_libraryShelf
-	 textPass     "This locked that is strange. Why not try opening the book it looks out of place"
+	 textGo     "This locked that is strange. Why not try opening the book it looks out of place"
 
 // alt_library
 
 - alt_library
      description "an old dusty library"
      tags        "library"
-	 textPass    "You have entred the library"
+	 textGo    "You have entred the library"
 	 weight       99999	 
 
 - alt_libraryExit
      description "Exit of the library"
      tags        "exit","west"
      location     alt_library
-     textPass    "It is locked"
+     textGo    "It is locked"
 	 weight       99999	  
 
 - alt_libraryReception
 	 description "The library reception"
 	 tags        "reception"
 	 location    alt_library
-	 textPass    "You are facing the reception"
+	 textGo    "You are facing the reception"
 	 details     "This is the reception of the library. This is your station you spend all your days here."
 	 weight       99999
 
@@ -776,13 +837,13 @@ extern OBJECT objs[];
 	 tags         "stairs","up"
 	 location      alt_library
 	 destination   secondFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 - firstFloor
 	 description  "The first floor stairs"
 	 tags          "down","stairs"
 	 location      secondFloor
 	 destination   alt_library
-	 textPass      "The first floor"
+	 textGo      "The first floor"
 	 
 
 //secondFloor
@@ -861,7 +922,7 @@ extern OBJECT objs[];
 	 tags         "computer","computer corner"
 	 location     secondFloor
 	 usage        "The power is down try again later"
-	 textPass     "You are in front of a computer"
+	 textGo     "You are in front of a computer"
 	    
 // level 2
 - level_2
@@ -869,40 +930,40 @@ extern OBJECT objs[];
 	 tags        "book"
 	 location    secondFloorShelf_3
 	 destination lakshagriha
-	 textPass    "What is this PLACEHOLDER"
+	 textGo    "What is this PLACEHOLDER"
 	 
 
 - lakshagriha
      description "place with the burning castle"
 	 tags    "lakshagriha"
-	 textPass    "You are in the city of lakshagriha\n"
+	 textGo    "You are in the city of lakshagriha\n"
 	 weight      99999
 - lakshagrihaEntrance
      description "Entrance of the lakshagriha area"
      tags        "entrance"
      location    lakshagriha
     
-	 textPass    "You entred the lakshagriha area\n"
+	 textGo    "You entred the lakshagriha area\n"
 	 weight      99999
 	 
 - lakshagrihacastle
      description "lakshagrihacastle\n"
      tags        "lakshagrihacastle"
-	 textPass    "You entred the lakshagrihacastle\n"
+	 textGo    "You entred the lakshagrihacastle\n"
 	 weight      99999
 - lakshagrihacastleEntrance
      description "Entrance of the lakshagrihacastle"
      tags        "north","lakshagrihacastle"
      location    lakshagriha
      destination lakshagrihacastle
-	 textPass    "You entred the lakshagriha Castle\n"
+	 textGo    "You entred the lakshagriha Castle\n"
 	 weight      99999	 
 	 
 - lakshagrihacastleWalls
      description "lakshagrihacastle walls"
      tags        "east","west"
      location    lakshagrihacastle
-	 textPass    "There is nothing but walls there\n"
+	 textGo    "There is nothing but walls there\n"
 	 weight      99999
 	 
 
@@ -911,20 +972,20 @@ extern OBJECT objs[];
      tags        "south","exit"
      location    lakshagrihacastle
      destination roadMahabharat
-	 textPass    "You are on the road towards village\n"
+	 textGo    "You are on the road towards village\n"
 	 weight      99999		 
 
 - roadMahabharat
 	 description "the road leads to the village"
 	 tags 		 "road"
-	 textPass    "You are on the road that leads you to the village"
+	 textGo    "You are on the road that leads you to the village"
 
 - roadentranceMahabharat
 	 description "The Road leads to the Village"
      tags        "road"
      location    lakshagriha
      destination roadMahabharat
-	 textPass    "You are on the road that leads to the Village\n"
+	 textGo    "You are on the road that leads to the Village\n"
 	 weight      99999
 
 
@@ -932,7 +993,7 @@ extern OBJECT objs[];
      description "only jungle"
      tags        "west","east","north"
      location    roadMahabharat
-	 textPass    "There is nothing but jungle all around and a narrow road that leads to small village\n"
+	 textGo    "There is nothing but jungle all around and a narrow road that leads to small village\n"
 	 weight      99999
 	 
 - roadexit
@@ -940,13 +1001,13 @@ extern OBJECT objs[];
      tags        "exit"
      location    roadMahabharat
      destination lakshagriha
-	 textPass    "You are on the road that leads to the Village\n"
+	 textGo    "You are on the road that leads to the Village\n"
 	 weight      99999
 	 
 - village
      description "an old small village"
      tags        "village"
-	 textPass    "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
+	 textGo    "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
 	 weight      99999
 	 
 - villageEntrance
@@ -954,14 +1015,14 @@ extern OBJECT objs[];
      tags        "entrance","south"
      location    roadMahabharat
      destination village
-	 textPass    "You entred the village\n"
+	 textGo    "You entred the village\n"
 	 weight      99999
 	 
 - villageWalls
      description "surrounded by mountains"
      tags        "west","east"
      location    village
-	 textPass    "Whole village is surronded by the mountains and the jungle\n"
+	 textGo    "Whole village is surronded by the mountains and the jungle\n"
 	 weight      99999	 
 
 - villagexit
@@ -969,27 +1030,27 @@ extern OBJECT objs[];
      tags        "exit"
      location    village
      destination road1Mahabharat
-	 textPass    "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
+	 textGo    "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
 	 weight      99999	  
 	 
 - road1Mahabharat
 	 description "the road leads to the Hastinapur Castle\n"
 	 tags 		 "road"
-	 textPass    "You are on the road that leads you to the village"
+	 textGo    "You are on the road that leads you to the village"
 
 - road1entrance
 	 description "The Road leads to the Hatinapur Castle\n"
      tags        "north"
      location    road1Mahabharat
      destination hastinapurcastle
-	 textPass    "You are on the road that leads to the Hastinapur Castle\n"
+	 textGo    "You are on the road that leads to the Hastinapur Castle\n"
 	 weight      99999
 	 
 - road1WallsMahabharat
      description "only jungle"
      tags        "west","east"
      location    road1Mahabharat
-	 textPass    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
+	 textGo    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
 	 weight      99999
 	 
 - road1exitMahabharat
@@ -997,20 +1058,20 @@ extern OBJECT objs[];
      tags        "exit"
      location    road1Mahabharat
      destination village
-	 textPass    "back to village\n"
+	 textGo    "back to village\n"
 	 weight      99999
 
 - hastinapurcastle
      description "Welcome to the castle"
      tags        "hastinapurcastle"
-	 textPass    "You are at the glorious castle"
+	 textGo    "You are at the glorious castle"
 	 weight      99999
 
 - hastinapurcastlgate
 	 description "You were at the gate of the Castle\n"
      tags        "east"
      location    hastinapurcastle
-	 textPass    "You were at the Gate for Entering the Castle\n"
+	 textGo    "You were at the Gate for Entering the Castle\n"
 	 weight      99999
 
 - hastinapurcastleentrance
@@ -1018,14 +1079,14 @@ extern OBJECT objs[];
      tags        "north"
      location    hastinapurcastle
 	 destination meetinghall
-	 textPass    "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n  "
+	 textGo    "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n  "
 	 weight      99999
 
 
 - meetinghall
 	 description "Meeting Hall\n"
      tags        "meetinghall"
-	 textPass    "It's a Place where the game of Politics begins\n"
+	 textGo    "It's a Place where the game of Politics begins\n"
 	 weight      99999
 	 
 	 
@@ -1033,7 +1094,7 @@ extern OBJECT objs[];
 	 description "Entrance"
      tags        "south"
      location    meetinghall
-	 textPass    "At the Entrance of the Meeting Hall\n"
+	 textGo    "At the Entrance of the Meeting Hall\n"
 	 weight      99999
 
 	 
@@ -1083,7 +1144,7 @@ extern OBJECT objs[];
 	 description  "Second floor Hall"
 	 tags           "hall","west"
 	 location      secondFloorShelf_alt
-	 textPass      "GO FORWARD EVERYTHING IS ON FIRE HERE"
+	 textGo      "GO FORWARD EVERYTHING IS ON FIRE HERE"
 	 
 	 
 - secondFloorShelf_1_exit_alt
@@ -1116,14 +1177,14 @@ extern OBJECT objs[];
 	 tags         "stairs","up"
 	 location      secondFloorShelf_alt
 	 destination   thirdFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 
 - stairs_floor_3_1	
 	 description  "The third floor stairs"
 	 tags         "stairs","up"
 	 location      secondFloorShelf_1_alt
 	 destination   thirdFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 	 
 	 	 
 - stairs_floor_3_2	
@@ -1131,21 +1192,21 @@ extern OBJECT objs[];
 	 tags         "stairs","up"
 	 location      secondFloorShelf_2_alt
 	 destination   thirdFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 	 
 - stairs_floor_3_3	
 	 description  "The third floor stairs"
 	 tags         "stairs","up"
 	 location      secondFloorShelf_3_alt
 	 destination   thirdFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 	 
 - stairs_floor_3_4	
 	 description  "The third floor stairs"
 	 tags         "stairs","up"
 	 location      secondFloorShelf_4_alt
 	 destination   thirdFloor
-	 textPass     "What these stairs were never here my library only had 1 floor"
+	 textGo     "What these stairs were never here my library only had 1 floor"
 
 - thirdFloor
 	 description  "the third floor reading room"
@@ -1156,55 +1217,56 @@ extern OBJECT objs[];
 	 tags          "down","east","second floor"
 	 location      thirdFloor
 	 destination   secondFloorShelf_alt
-	 textPass      "You went down the stairs to the shelf"
+	 textGo      "You went down the stairs to the shelf"
 	 
 - table_1
 	 description  "Reading room table 1"
 	 tags         "table 1","west"
 	 location     thirdFloor
-	 textPass     "You are facing table 1"
+	 textGo     "You are facing table 1"
 	 
 - table_2
 	 description  "Reading room table 2"
 	 tags         "table 2","north"
 	 location     thirdFloor
-	 textPass     "You are facing table 2"	 
+	 textGo     "You are facing table 2"	 
 	 
 - table_3
 	 description  "Reading room table 3"
 	 tags         "table 2","south"
 	 location     thirdFloor
-	 textPass     "You are facing table 3"
+	 textGo     "You are facing table 3"
 
 - level_3
 	 description  "A book on table 3"
 	 tags         "book"
 	 location     thirdFloor
 	 destination  porcelianPalace
-	 textPass     "What place is this why are there these paintings on the wall? What is it this time"
+	 textGo     "What place is this why are there these paintings on the wall? What is it this time"
 	 
 - porcelianPalace
 	 description   "a mysterious alley"
 	 tags          "surrounding"
 	 details       "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
-	 textPass      "You cant get much closer than this"
+	 textGo      "You cant get much closer than this"
 	
 - distantVoice
 	 description   "you hear pepole talking from far east"
 	 tags          "east"
 	 details       "There seems to be 2 pepole talking "
-	 textPass      "That little child looks wierd I wonder what it is"
-	 location      "porcelianPalace"
-	 destination   "porcelianPalaceHall"
+	 textGo      "That little child looks wierd I wonder what it is"
+	 location      porcelianPalace
+
 	
-- porcelianPalaceHall
-	 description   "A large dusty hall"
+
 	 
 	
 
 	 
 	 
 	 
+	 
+
 	 
 	 
 //hhd
@@ -1212,10 +1274,19 @@ extern OBJECT objs[];
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
+	 location     bedroom
+	 details     "You would need a mirror to look at yourself.\n"
+     contents    "You have"
+     health      100
+     capacity    20
 
 //players	 
 - player
      description "yourself"
      tags        "yourself"
      location     bedroom
+	 details     "You would need a mirror to look at yourself.\n"
+     contents    "You have"
+     health      100
+     capacity    20
 
