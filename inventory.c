@@ -1,58 +1,63 @@
 #include <stdio.h>
 #include "object.h"
 #include "misc.h"
+#include "match.h"
 #include "noun.h"
 #include "move.h"
-void executeGet(const char* noun)
+
+bool executeGet(void)
 {
-	OBJECT* obj = getVisible("what you want to get", noun);
-	switch (getDistance(player, obj))
-	{
-	case distSelf:
-		printf("You should not be doing that to %s.\n", obj->description);
-		break;
-	case distHeld:
-		printf("You already have %s.\n", obj->description);
-		break;
-	case distOverthere:
-		printf("Too far away, move closer please.\n");
-		break;
-	case distUnknownObject:
-		// already handled by getVisible
-		break;
-	default:
-		if (obj->location == guard)
-		{
-			printf("You should ask %s nicely.\n", obj->location->description);
-		}
-		else
-		{
-			moveObject(obj, player);
-		}
-	}
+   OBJECT *obj = getVisible("what you want to get", params[0]);
+   switch (getDistance(player, obj))
+   {
+   case distSelf:
+      printf("You should not be doing that to %s.\n", obj->description);
+      break;
+   case distHeld:
+      printf("You already have %s.\n", obj->description);
+      break;
+   case distOverthere:
+      printf("Too far away, move closer please.\n");
+      break;
+   case distUnknownObject:
+      // already handled by getVisible
+      break;
+   default:
+      if (obj->location != NULL && obj->location->health > 0)
+      {
+         printf("You should ask %s nicely.\n", obj->location->description);
+      }
+      else
+      {
+         moveObject(obj, player);
+      }
+   }
+   return true;
 }
-void executeDrop(const char* noun)
+
+bool executeDrop(void)
 {
-	moveObject(getPossession(player, "drop", noun), player->location);
+   moveObject(getPossession(player, "drop", params[0]), player->location);
+   return true;
 }
-void executeAsk(const char* noun)
+
+bool executeAsk(void)
 {
-	moveObject(getPossession(actorHere(), "ask", noun), player);
+   moveObject(getPossession(actorHere(), "ask", params[0]), player);
+   return true;
 }
-void executeGive(const char* noun)
+
+bool executeGive(void)
 {
-	moveObject(getPossession(player, "give", noun), actorHere());
+   moveObject(getPossession(player, "give", params[0]), actorHere());
+   return true;
 }
-void executeInventory(void)
+
+bool executeInventory(void)
 {
-	if (listObjectsAtLocation(player) == 0)
-	{
-		printf("You are empty-handed.\n");
-	}
-}
-void executeHelp()
-{
-	printf("1. Look Around- To checkout what is in your room\n");
-	printf("2.Movement- To move around use command [go]followed by either a dierection or a location ");
-	printf("3.To Open A book you encounter- [open] followed by the name of the book");
+   if (listObjectsAtLocation(player) == 0)
+   {
+      printf("You are empty-handed.\n");
+   }
+   return true;
 }
