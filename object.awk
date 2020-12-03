@@ -106,3 +106,4 @@ function outputRecord(separator)
       count++;
    }
 }
+

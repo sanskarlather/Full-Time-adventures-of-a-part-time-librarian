@@ -156,9 +156,6 @@
     <ClInclude Include="toggle.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="object.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="map.awk" />
     <None Include="map.gv" />
     <None Include="object.awk" />
@@ -181,6 +178,9 @@
     <ClCompile Include="reach.c" />
     <ClCompile Include="talk.c" />
     <ClCompile Include="toggle.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="object.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
