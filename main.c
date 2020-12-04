@@ -12,10 +12,8 @@ static bool getInput(void)
 
 int main()
 {
-    printf("Welcome to the Full-Time Adventures of a Part-Time Librarian\n");
-
-    printf("You wake up and see your alarm telling you to get ready and head to your boring, mundane, and part-time job as a librarian \n");
-    printf("Everyday is the same, everyday you just sit on your thumbs at the library and wait for people to come and get their books. \n Everyday you just sit there hoping for something exciting to happen, but nothing ever does\n");
+    printf("You are inside of a firetruck, going in top most speed towards a burning house.\n");
+    printf("You see that your friend Guy Montag is alongside you and his Captain,Captain Beatty is driving the fully loaded \n firetruck from all the firemen from the department in full zest. \n"); 
 
     while (parseAndExecute(input) && getInput());
     printf("\nBye!\n");

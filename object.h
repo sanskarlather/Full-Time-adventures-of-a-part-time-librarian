@@ -1,207 +1,56 @@
 #include <stdbool.h>
 
 typedef struct object {
-    int           level;
-    bool         (*condition)(void);
-    const char* description;
-    const char* usage;
-    const char** tags;
-    struct object* location;
-    struct object* destination;
-    struct object* prospect;
-    const char* details;
-    const char* contents;
-    const char* textGo;
-    const char* gossip;
-    const char* gossip_1;
-    const char* gossip_2;
-    const char* gossip_3;
-    int            weight;
-    int            capacity;
-    int            health;
-    const char* (*open)(void);
-    const char* (*close)(void);
-    const char* (*lock)(void);
-    const char* (*unlock)(void);
+	int           level;
+	bool         (*condition)(void);
+	const char* description;
+	const char* usage;
+	const char** tags;
+	struct object* location;
+	struct object* destination;
+	struct object* prospect;
+	const char* details;
+	const char* contents;
+	const char* textGo;
+	const char* gossip;
+	const char* gossip_1;
+	const char* gossip_2;
+	const char* gossip_3;
+	int            weight;
+	int            capacity;
+	int            health;
+	const char* (*open)(void);
+	const char* (*close)(void);
+	const char* (*lock)(void);
+	const char* (*unlock)(void);
 } OBJECT;
 
-
 extern OBJECT objs[];
-//bathroom
-#define bathroom	(objs + 0)
-#define bathroomWallToilet	(objs + 1)
-#define bedroomEntrance	(objs + 2)
-#define toilet	(objs + 3)
-#define shower	(objs + 4)
-#define toothbrush	(objs + 5)
-#define bedroom	(objs + 6)
-#define openDoorToBackroom	(objs + 7)
-#define closedDoorToBackroom	(objs + 8)
-#define bedroomWalls	(objs + 9)
-#define bedroomExit	(objs + 10)
-#define backpack	(objs + 11)
-#define libraryKeys	(objs + 12)
-#define roadLibrary	(objs + 13)
-#define roadWalls	(objs + 14)
-#define openDoorToLibrary	(objs + 15)
-#define closedDoorToLibrary	(objs + 16)
-#define lockedDoorToLibrary	(objs + 17)
-#define library	(objs + 18)
-#define libraryExit	(objs + 19)
-#define libraryReception	(objs + 20)
-#define libraryShelfEntrance	(objs + 21)
-#define libraryShelf	(objs + 22)
-#define shelf_1	(objs + 23)
-#define shelf_2	(objs + 24)
-#define shelf_3	(objs + 25)
-#define shelf_4	(objs + 26)
-#define shelf_1_exit	(objs + 27)
-#define shelf_2_exit	(objs + 28)
-#define shelf_3_exit	(objs + 29)
-#define shelf_4_exit	(objs + 30)
-#define shelf_1_toilet	(objs + 31)
-#define shelf_2_toilet	(objs + 32)
-#define shelf_3_toilet	(objs + 33)
-#define shelf_4_toilet	(objs + 34)
-#define shelf_toilet	(objs + 35)
-#define libraryToilet	(objs + 36)
-#define sink	(objs + 37)
-#define urinal	(objs + 38)
-#define supplyCloset	(objs + 39)
-#define urinalCabin_1	(objs + 40)
-#define urinalCabin_2	(objs + 41)
-#define urinalCabin_3_entrance	(objs + 42)
-#define urinalCabin_3	(objs + 43)
-#define urinalCabin_4	(objs + 44)
-#define libraryToiletExit	(objs + 45)
-#define mysteryObject	(objs + 46)
-#define portal	(objs + 47)
-#define alt_toilet	(objs + 48)
-#define alt_libraryToilet	(objs + 49)
-#define alt_sink	(objs + 50)
-#define alt_urinal	(objs + 51)
-#define alt_supplyCloset	(objs + 52)
-#define alt_urinalCabin_1	(objs + 53)
-#define alt_urinalCabin_2	(objs + 54)
-#define alt_urinalCabin_3	(objs + 55)
-#define alt_urinalCabin_4	(objs + 56)
-#define alt_ToiletExit	(objs + 57)
-#define alt_libraryShelf	(objs + 58)
-#define alt_shelf_1	(objs + 59)
-#define alt_shelf_2	(objs + 60)
-#define alt_shelf_3	(objs + 61)
-#define alt_shelf_4	(objs + 62)
-#define alt_shelf_1_exit	(objs + 63)
-#define alt_shelf_2_exit	(objs + 64)
-#define alt_shelf_3_exit	(objs + 65)
-#define alt_shelf_4_exit	(objs + 66)
-#define alt_shelf_1_toilet	(objs + 67)
-#define alt_shelf_2_toilet	(objs + 68)
-#define alt_shelf_3_toilet	(objs + 69)
-#define alt_shelf_4_toilet	(objs + 70)
-#define alt_shelf_toilet	(objs + 71)
-#define level_1	(objs + 72)
-#define levelExit_1	(objs + 73)
-#define spawnlocation	(objs + 74)
-#define intobasement	(objs + 75)
-#define card	(objs + 76)
-#define basement	(objs + 77)
-#define exit_apartment	(objs + 78)
-#define upstairs	(objs + 79)
-#define upstairs_entrance	(objs + 80)
-#define upstairs_exit	(objs + 81)
-#define livinghall	(objs + 82)
-#define livinghall_entrance	(objs + 83)
-#define livinghall_exit	(objs + 84)
-#define bedroomSherlock	(objs + 85)
-#define bedroom_entranceSherlock	(objs + 86)
-#define bedroom_exitSherlock	(objs + 87)
-#define experimenttable	(objs + 88)
-#define experimenttable_entrance	(objs + 89)
-#define experimenttable_exit	(objs + 90)
-#define diningtable	(objs + 91)
-#define diningtable_entrance	(objs + 92)
-#define diningtable_exit	(objs + 93)
-#define alt_sink_level_exit	(objs + 94)
-#define alt_urinal_level_exit	(objs + 95)
-#define alt_supplyCloset_level_exit	(objs + 96)
-#define alt_urinalCabin_1_level_exit	(objs + 97)
-#define alt_urinalCabin_2_level_exit	(objs + 98)
-#define alt_urinalCabin_3_level_exit	(objs + 99)
-#define alt_urinalCabin_4_level_exit	(objs + 100)
-#define alt_ToiletExit_locked	(objs + 101)
-#define alt_library	(objs + 102)
-#define alt_libraryExit	(objs + 103)
-#define alt_libraryReception	(objs + 104)
-#define alt_libraryShelfEntrance	(objs + 105)
-#define alt_libraryShelfExit	(objs + 106)
-#define stairs_floor_2	(objs + 107)
-#define firstFloor	(objs + 108)
-#define secondFloor	(objs + 109)
-#define secondFloorShelf	(objs + 110)
-#define secondFloorShelf_1	(objs + 111)
-#define secondFloorShelf_2	(objs + 112)
-#define secondFloorShelf_3	(objs + 113)
-#define secondFloorShelf_4	(objs + 114)
-#define secondFloorShelf_hall	(objs + 115)
-#define secondFloorShelf_1_exit	(objs + 116)
-#define secondFloorShelf_2_exit	(objs + 117)
-#define secondFloorShelf_3_exit	(objs + 118)
-#define secondFloorShelf_4_exit	(objs + 119)
-#define computerCorner	(objs + 120)
-#define level_2	(objs + 121)
-#define lakshagriha	(objs + 122)
-#define lakshagrihaEntrance	(objs + 123)
-#define lakshagrihacastle	(objs + 124)
-#define lakshagrihacastleEntrance	(objs + 125)
-#define lakshagrihacastleWalls	(objs + 126)
-#define lakshagrihacastleExit	(objs + 127)
-#define roadMahabharat	(objs + 128)
-#define roadentranceMahabharat	(objs + 129)
-#define roadWallsMahabharat	(objs + 130)
-#define roadexit	(objs + 131)
-#define village	(objs + 132)
-#define villageEntrance	(objs + 133)
-#define villageWalls	(objs + 134)
-#define villagexit	(objs + 135)
-#define road1Mahabharat	(objs + 136)
-#define road1entrance	(objs + 137)
-#define road1WallsMahabharat	(objs + 138)
-#define road1exitMahabharat	(objs + 139)
-#define hastinapurcastle	(objs + 140)
-#define hastinapurcastlgate	(objs + 141)
-#define hastinapurcastleentrance	(objs + 142)
-#define meetinghall	(objs + 143)
-#define meetinghallentrance	(objs + 144)
-#define levelExit_2	(objs + 145)
-#define secondFloor_alt	(objs + 146)
-#define secondFloorShelf_alt	(objs + 147)
-#define secondFloorShelf_1_alt	(objs + 148)
-#define secondFloorShelf_2_alt	(objs + 149)
-#define secondFloorShelf_3_alt	(objs + 150)
-#define secondFloorShelf_4_alt	(objs + 151)
-#define secondFloorShelf_hall_alt	(objs + 152)
-#define secondFloorShelf_1_exit_alt	(objs + 153)
-#define secondFloorShelf_2_exit	(objs + 154)
-#define secondFloorShelf_3_exit	(objs + 155)
-#define secondFloorShelf_4_exit	(objs + 156)
-#define stairs_floor_3_1	(objs + 157)
-#define stairs_floor_3_1	(objs + 158)
-#define stairs_floor_3_2	(objs + 159)
-#define stairs_floor_3_3	(objs + 160)
-#define stairs_floor_3_4	(objs + 161)
-#define thirdFloor	(objs + 162)
-#define stairsSecondFloorDown	(objs + 163)
-#define table_1	(objs + 164)
-#define table_2	(objs + 165)
-#define table_3	(objs + 166)
-#define level_3	(objs + 167)
-#define porcelianPalace	(objs + 168)
-#define distantVoice	(objs + 169)
-#define guard	(objs + 170)
-#define player	(objs + 171)
 
-#define endOfObjs	(objs + 172)
+#define firetruck (objs + 0)
+#define firetruckinterior (objs + 1)
+#define firetruckHandle (objs + 2)
+#define street (objs + 3)
+#define street2 (objs + 4)
+#define houseEntrance (objs + 5)
+#define Montagslivingroom (objs + 6)
+#define livingroomWalls (objs + 7)
+#define livingroomExit (objs + 8)
+#define Montagsbedroom (objs + 9)
+#define bedroomWalls (objs + 10)
+#define bed (objs + 11)
+#define telephone (objs + 12)
+#define bedroomexit (objs + 13)
+#define firetruckPosterior (objs + 14)
+#define Faber	(objs + 15)
+#define Granger	(objs + 16)
+#define CaptainBeatty (objs + 17)
+#define Hound (objs + 18)
+#define fireman1 (objs + 19)
+#define Flamethrower (objs + 20)
+#define player (objs + 21)
+
+#define endOfObjs	(objs + 22)
 
 #define validObject(obj)	((obj) != NULL && (*(obj)->condition)())
 

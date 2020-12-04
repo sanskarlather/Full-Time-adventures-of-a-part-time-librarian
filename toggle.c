@@ -20,20 +20,20 @@ const char *isAlreadyUnlocked(void) { return "That is already unlocked.\n"; }
 const char *isStillOpen(void)       { return "That is still open.\n";       }
 const char *isStillLocked(void)     { return "That is locked.\n";           }
 
-const char *toggleBackdoor(void)
+/*const char *toggleBackdoor(void)
 {
    swapLocations(openDoorToBackroom, closedDoorToBackroom);
   //swapLocations(openDoorToCave, closedDoorToCave);
    return "OK.\n";
-}
+}*/
 
 const char *toggleBox(void)
 {
-  swapLocations(openDoorToLibrary, closedDoorToLibrary);
+  //sqapLocations(openDoorToLibrary, closedDoorToLibrary);
    return "OK.\n";
 }
 
-const char* toggleBoxLock(void)
+/*const char* toggleBoxLock(void)
 {
     if (libraryKeys->location == player)
     {
@@ -44,4 +44,4 @@ const char* toggleBoxLock(void)
     {
         return "You don't have a key.\n";
     }
-}
+}*/
