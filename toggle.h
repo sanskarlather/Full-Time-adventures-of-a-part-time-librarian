@@ -14,3 +14,5 @@ extern const char *isStillLocked(void);
 extern const char *toggleBackdoor(void);
 extern const char *toggleBox(void);
 extern const char *toggleBoxLock(void);
+extern const char* toggleSherLock(void);
+extern const char* toggleSecLock(void);
