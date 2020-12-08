@@ -1,2 +1,2 @@
 #pragma once
-extern void playtictac();
+extern bool playtictac(void);

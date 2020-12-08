@@ -25,13 +25,14 @@ static void talk(const char* about, OBJECT* to)
                 topic == to ? "I don't want to talk about myself."
                 : topic->gossip_2);
         }
+        
 
         else
         {
             printf("You hear %s say: '%s'\n",
                 to->description,
                 topic == to ? "I don't want to talk about myself."
-                : topic->gossip);
+                : topic->gossip_3);
         }
 
         

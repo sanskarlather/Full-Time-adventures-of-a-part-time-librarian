@@ -14,165 +14,252 @@ static const char* tags9[] = { "east","west", NULL };
 static const char* tags10[] = { "north","exit", NULL };
 static const char* tags11[] = { "backpack", "bag", "backpack", NULL };
 static const char* tags12[] = { "keychain", "keys", "key set", NULL };
-static const char* tags13[] = { "road", NULL };
-static const char* tags14[] = { "west","north","south", NULL };
-static const char* tags15[] = { "south", "door", "doorway", NULL };
+static const char* tags13[] = { "prayer", "prayer book", NULL };
+static const char* tags14[] = { "road", NULL };
+static const char* tags15[] = { "west","north","south", NULL };
 static const char* tags16[] = { "south", "door", "doorway", NULL };
 static const char* tags17[] = { "south", "door", "doorway", NULL };
-static const char* tags18[] = { "library", NULL };
-static const char* tags19[] = { "exit","west", NULL };
-static const char* tags20[] = { "reception", NULL };
-static const char* tags21[] = { "east", NULL };
-static const char* tags22[] = { "book shelf","shelves","shelf", NULL };
-static const char* tags23[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags24[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags25[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags26[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags27[] = { "exit", NULL };
+static const char* tags18[] = { "south", "door", "doorway", NULL };
+static const char* tags19[] = { "library", NULL };
+static const char* tags20[] = { "exit","west", NULL };
+static const char* tags21[] = { "reception", NULL };
+static const char* tags22[] = { "east", NULL };
+static const char* tags23[] = { "book shelf","shelves","shelf", NULL };
+static const char* tags24[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags25[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags26[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags27[] = { "book shelf 4","shelf 4", NULL };
 static const char* tags28[] = { "exit", NULL };
 static const char* tags29[] = { "exit", NULL };
 static const char* tags30[] = { "exit", NULL };
-static const char* tags31[] = { "toilet", NULL };
+static const char* tags31[] = { "exit", NULL };
 static const char* tags32[] = { "toilet", NULL };
 static const char* tags33[] = { "toilet", NULL };
 static const char* tags34[] = { "toilet", NULL };
 static const char* tags35[] = { "toilet", NULL };
-static const char* tags36[] = { "east", NULL };
-static const char* tags37[] = { "wash basin","sink","south", NULL };
-static const char* tags38[] = { "urinal","urinals", NULL };
-static const char* tags39[] = { "supply closet","closet", NULL };
-static const char* tags40[] = { "urinal cabin 1","cabin 1", NULL };
-static const char* tags41[] = { "urinal cabin 2","cabin 2", NULL };
-static const char* tags42[] = { "urinal cabin 3","cabin 3","north", NULL };
-static const char* tags43[] = { "urinal cabin 3","cabin 3", NULL };
-static const char* tags44[] = { "urinal cabin 4","cabin 4", NULL };
-static const char* tags45[] = { "exit","toilet exit", NULL };
-static const char* tags46[] = { "body","mysterious body","guard", NULL };
-static const char* tags47[] = { "portal", NULL };
-static const char* tags48[] = { "portal","north", NULL };
-static const char* tags49[] = { "toilet","east", NULL };
-static const char* tags50[] = { "wash basin","sink", NULL };
-static const char* tags51[] = { "urinal","urinals", NULL };
-static const char* tags52[] = { "supply closet","closet", NULL };
-static const char* tags53[] = { "urinal cabin 1","cabin 1", NULL };
-static const char* tags54[] = { "urinal cabin 2","cabin 2", NULL };
-static const char* tags55[] = { "urinal cabin 3","cabin 3", NULL };
-static const char* tags56[] = { "urinal cabin 4","cabin 4", NULL };
-static const char* tags57[] = { "exit","toilet exit", NULL };
-static const char* tags58[] = { "book shelf","shelves","shelf", NULL };
-static const char* tags59[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags60[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags61[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags62[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags63[] = { "exit", NULL };
+static const char* tags36[] = { "toilet", NULL };
+static const char* tags37[] = { "east", NULL };
+static const char* tags38[] = { "wash basin","sink","south", NULL };
+static const char* tags39[] = { "urinal","urinals", NULL };
+static const char* tags40[] = { "supply closet","closet", NULL };
+static const char* tags41[] = { "urinal cabin 1","cabin 1", NULL };
+static const char* tags42[] = { "urinal cabin 2","cabin 2", NULL };
+static const char* tags43[] = { "urinal cabin 3","cabin 3","north", NULL };
+static const char* tags44[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags45[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags46[] = { "exit","toilet exit", NULL };
+static const char* tags47[] = { "body","mysterious body","guard", NULL };
+static const char* tags48[] = { "portal", NULL };
+static const char* tags49[] = { "portal","north", NULL };
+static const char* tags50[] = { "toilet","east", NULL };
+static const char* tags51[] = { "wash basin","sink", NULL };
+static const char* tags52[] = { "urinal","urinals", NULL };
+static const char* tags53[] = { "supply closet","closet", NULL };
+static const char* tags54[] = { "urinal cabin 1","cabin 1", NULL };
+static const char* tags55[] = { "urinal cabin 2","cabin 2", NULL };
+static const char* tags56[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags57[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags58[] = { "exit","toilet exit", NULL };
+static const char* tags59[] = { "book shelf","shelves","shelf", NULL };
+static const char* tags60[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags61[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags62[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags63[] = { "book shelf 4","shelf 4", NULL };
 static const char* tags64[] = { "exit", NULL };
 static const char* tags65[] = { "exit", NULL };
 static const char* tags66[] = { "exit", NULL };
-static const char* tags67[] = { "toilet", NULL };
+static const char* tags67[] = { "exit", NULL };
 static const char* tags68[] = { "toilet", NULL };
 static const char* tags69[] = { "toilet", NULL };
 static const char* tags70[] = { "toilet", NULL };
 static const char* tags71[] = { "toilet", NULL };
-static const char* tags72[] = { NULL };
-static const char* tags73[] = { "Exit", NULL };
-static const char* tags74[] = { NULL };
-static const char* tags75[] = { "apartment", NULL };
-static const char* tags76[] = { "card", NULL };
-static const char* tags77[] = { "inside", NULL };
-static const char* tags78[] = { "outside","exit","back", NULL };
-static const char* tags79[] = { "up", NULL };
-static const char* tags80[] = { "upstairs", NULL };
-static const char* tags81[] = { "downstairs","down","back", NULL };
-static const char* tags82[] = { "hall", NULL };
-static const char* tags83[] = { "living hall","hall", NULL };
-static const char* tags84[] = { "upstairs","back", NULL };
-static const char* tags85[] = { "bedroom", NULL };
-static const char* tags86[] = { "bedroom", NULL };
-static const char* tags87[] = { "living hall","hall","back", NULL };
-static const char* tags88[] = { "table", NULL };
-static const char* tags89[] = { "experiment table", NULL };
-static const char* tags90[] = { "living hall","hall","back", NULL };
-static const char* tags91[] = { "dinner table", NULL };
-static const char* tags92[] = { "dining table", NULL };
-static const char* tags93[] = { "living hall","hall","back", NULL };
-static const char* tags94[] = { "wash basin","sink", NULL };
-static const char* tags95[] = { "urinal","urinals", NULL };
-static const char* tags96[] = { "supply closet","closet", NULL };
-static const char* tags97[] = { "urinal cabin 1","cabin 1", NULL };
-static const char* tags98[] = { "urinal cabin 2","cabin 2", NULL };
-static const char* tags99[] = { "urinal cabin 3","cabin 3", NULL };
-static const char* tags100[] = { "urinal cabin 4","cabin 4", NULL };
-static const char* tags101[] = { "exit","toilet exit", NULL };
-static const char* tags102[] = { "library", NULL };
-static const char* tags103[] = { "exit","west", NULL };
-static const char* tags104[] = { "reception", NULL };
-static const char* tags105[] = { "east", NULL };
-static const char* tags106[] = { "west","hall", NULL };
-static const char* tags107[] = { "stairs","up", NULL };
-static const char* tags108[] = { "down","stairs", NULL };
-static const char* tags109[] = { "second floor", NULL };
-static const char* tags110[] = { "shelf","east", NULL };
-static const char* tags111[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags112[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags113[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags114[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags115[] = { "hall","west", NULL };
-static const char* tags116[] = { "exit","west", NULL };
-static const char* tags117[] = { "exit","west", NULL };
+static const char* tags72[] = { "toilet", NULL };
+static const char* tags73[] = { "book", NULL };
+static const char* tags74[] = { "south", "door", "doorway", NULL };
+static const char* tags75[] = { "south", "door", "doorway", NULL };
+static const char* tags76[] = { "south", "door", "doorway", NULL };
+static const char* tags77[] = { "spawn", NULL };
+static const char* tags78[] = { "apartment","north", NULL };
+static const char* tags79[] = { "card", NULL };
+static const char* tags80[] = { "inside", NULL };
+static const char* tags81[] = { "card", NULL };
+static const char* tags82[] = { "up", NULL };
+static const char* tags83[] = { "outside","exit","back", NULL };
+static const char* tags84[] = { "upstairs", NULL };
+static const char* tags85[] = { "downstairs","down","back", NULL };
+static const char* tags86[] = { "west", NULL };
+static const char* tags87[] = { "living hall","hall", NULL };
+static const char* tags88[] = { "upstairs","back", NULL };
+static const char* tags89[] = { "card", NULL };
+static const char* tags90[] = { "bedroom", NULL };
+static const char* tags91[] = { "north", NULL };
+static const char* tags92[] = { "living hall","hall","back","east", NULL };
+static const char* tags93[] = { "table", NULL };
+static const char* tags94[] = { "card", NULL };
+static const char* tags95[] = { "box", "wooden box", NULL };
+static const char* tags96[] = { "box", "wooden box", NULL };
+static const char* tags97[] = { "metal box","box", NULL };
+static const char* tags98[] = { "metal box","box", NULL };
+static const char* tags99[] = { "glass box","box", NULL };
+static const char* tags100[] = { "glass box","box", NULL };
+static const char* tags101[] = { "gold box","box", NULL };
+static const char* tags102[] = { "gold box","box", NULL };
+static const char* tags103[] = { "key", "keyscard", NULL };
+static const char* tags104[] = { "experiment lab","lab","south", NULL };
+static const char* tags105[] = { "living hall","hall","back", NULL };
+static const char* tags106[] = { "dinner table","north", NULL };
+static const char* tags107[] = { "dining table", NULL };
+static const char* tags108[] = { "living hall","hall","back","south", NULL };
+static const char* tags109[] = { "wash basin","sink", NULL };
+static const char* tags110[] = { "urinal","urinals", NULL };
+static const char* tags111[] = { "supply closet","closet", NULL };
+static const char* tags112[] = { "urinal cabin 1","cabin 1", NULL };
+static const char* tags113[] = { "urinal cabin 2","cabin 2", NULL };
+static const char* tags114[] = { "urinal cabin 3","cabin 3", NULL };
+static const char* tags115[] = { "urinal cabin 4","cabin 4", NULL };
+static const char* tags116[] = { "exit","toilet exit", NULL };
+static const char* tags117[] = { "library", NULL };
 static const char* tags118[] = { "exit","west", NULL };
-static const char* tags119[] = { "exit","west", NULL };
-static const char* tags120[] = { "computer","computer corner", NULL };
-static const char* tags121[] = { "book", NULL };
-static const char* tags122[] = { "lakshagriha", NULL };
-static const char* tags123[] = { "entrance", NULL };
-static const char* tags124[] = { "lakshagrihacastle", NULL };
-static const char* tags125[] = { "north","lakshagrihacastle", NULL };
-static const char* tags126[] = { "east","west", NULL };
-static const char* tags127[] = { "south","exit", NULL };
-static const char* tags128[] = { "road", NULL };
-static const char* tags129[] = { "road", NULL };
-static const char* tags130[] = { "west","east","north", NULL };
-static const char* tags131[] = { "exit", NULL };
-static const char* tags132[] = { "village", NULL };
-static const char* tags133[] = { "entrance","south", NULL };
-static const char* tags134[] = { "west","east", NULL };
-static const char* tags135[] = { "exit", NULL };
-static const char* tags136[] = { "road", NULL };
-static const char* tags137[] = { "north", NULL };
-static const char* tags138[] = { "west","east", NULL };
-static const char* tags139[] = { "exit", NULL };
-static const char* tags140[] = { "hastinapurcastle", NULL };
-static const char* tags141[] = { "east", NULL };
-static const char* tags142[] = { "north", NULL };
-static const char* tags143[] = { "meetinghall", NULL };
-static const char* tags144[] = { "south", NULL };
-static const char* tags145[] = { "exit", NULL };
-static const char* tags146[] = { "second floor", NULL };
-static const char* tags147[] = { "shelf","east", NULL };
-static const char* tags148[] = { "book shelf 1","shelf 1", NULL };
-static const char* tags149[] = { "book shelf 2","shelf 2", NULL };
-static const char* tags150[] = { "book shelf 3","shelf 3", NULL };
-static const char* tags151[] = { "book shelf 4","shelf 4", NULL };
-static const char* tags152[] = { "hall","west", NULL };
-static const char* tags153[] = { "exit","west", NULL };
-static const char* tags154[] = { "exit","west", NULL };
-static const char* tags155[] = { "exit","west", NULL };
-static const char* tags156[] = { "exit","west", NULL };
-static const char* tags157[] = { "stairs","up", NULL };
-static const char* tags158[] = { "stairs","up", NULL };
-static const char* tags159[] = { "stairs","up", NULL };
-static const char* tags160[] = { "stairs","up", NULL };
-static const char* tags161[] = { "stairs","up", NULL };
-static const char* tags162[] = { "third floor", NULL };
-static const char* tags163[] = { "down","east","second floor", NULL };
-static const char* tags164[] = { "table 1","west", NULL };
-static const char* tags165[] = { "table 2","north", NULL };
-static const char* tags166[] = { "table 2","south", NULL };
-static const char* tags167[] = { "book", NULL };
-static const char* tags168[] = { "surrounding", NULL };
-static const char* tags169[] = { "east", NULL };
-static const char* tags170[] = { "guard", "burly guard", NULL };
-static const char* tags171[] = { "yourself", NULL };
+static const char* tags119[] = { "reception", NULL };
+static const char* tags120[] = { "east", NULL };
+static const char* tags121[] = { "west","hall", NULL };
+static const char* tags122[] = { "stairs","up", NULL };
+static const char* tags123[] = { "down","stairs", NULL };
+static const char* tags124[] = { "second floor", NULL };
+static const char* tags125[] = { "shelf","east", NULL };
+static const char* tags126[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags127[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags128[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags129[] = { "book shelf 4","shelf 4", NULL };
+static const char* tags130[] = { "hall","west", NULL };
+static const char* tags131[] = { "exit","west", NULL };
+static const char* tags132[] = { "exit","west", NULL };
+static const char* tags133[] = { "exit","west", NULL };
+static const char* tags134[] = { "exit","west", NULL };
+static const char* tags135[] = { "computer","computer corner", NULL };
+static const char* tags136[] = { "book", NULL };
+static const char* tags137[] = { "lakshagriha", NULL };
+static const char* tags138[] = { "entrance", NULL };
+static const char* tags139[] = { "village", NULL };
+static const char* tags140[] = { "north","lakshagriha village", NULL };
+static const char* tags141[] = { "east","west", NULL };
+static const char* tags142[] = { "south","exit", NULL };
+static const char* tags143[] = { "hastinapur", NULL };
+static const char* tags144[] = { "road", NULL };
+static const char* tags145[] = { "west","east","north", NULL };
+static const char* tags146[] = { "exit","path", NULL };
+static const char* tags147[] = { "hastinapurcastle", NULL };
+static const char* tags148[] = { "east", NULL };
+static const char* tags149[] = { "north","hall", NULL };
+static const char* tags150[] = { "meetinghall", NULL };
+static const char* tags151[] = { "south", NULL };
+static const char* tags152[] = { "game", "tic","tac","toe", NULL };
+static const char* tags153[] = { "exit", "door", "doorway", NULL };
+static const char* tags154[] = { "exit", "door", "doorway", NULL };
+static const char* tags155[] = { "exit", "door", "doorway", NULL };
+static const char* tags156[] = { "second floor", NULL };
+static const char* tags157[] = { "shelf","east", NULL };
+static const char* tags158[] = { "book shelf 1","shelf 1", NULL };
+static const char* tags159[] = { "book shelf 2","shelf 2", NULL };
+static const char* tags160[] = { "book shelf 3","shelf 3", NULL };
+static const char* tags161[] = { "book shelf 4","shelf 4", NULL };
+static const char* tags162[] = { "hall","west", NULL };
+static const char* tags163[] = { "exit","west", NULL };
+static const char* tags164[] = { "exit","west", NULL };
+static const char* tags165[] = { "exit","west", NULL };
+static const char* tags166[] = { "exit","west", NULL };
+static const char* tags167[] = { "stairs","up", NULL };
+static const char* tags168[] = { "stairs","up", NULL };
+static const char* tags169[] = { "stairs","up", NULL };
+static const char* tags170[] = { "stairs","up", NULL };
+static const char* tags171[] = { "stairs","up", NULL };
+static const char* tags172[] = { "third floor", NULL };
+static const char* tags173[] = { "down","east","second floor", NULL };
+static const char* tags174[] = { "table 1","west", NULL };
+static const char* tags175[] = { "table 2","north", NULL };
+static const char* tags176[] = { "table 2","south", NULL };
+static const char* tags177[] = { "book", NULL };
+static const char* tags178[] = { "surrounding", NULL };
+static const char* tags179[] = { "east", NULL };
+static const char* tags180[] = { "hall", NULL };
+static const char* tags181[] = { "little kid", "child", "girl", NULL };
+static const char* tags182[] = { "man", "steampunk guy", "steampunk", "guy", NULL };
+static const char* tags183[] = { "east","cave", NULL };
+static const char* tags184[] = { "entrnace", NULL };
+static const char* tags185[] = { "exit","west", NULL };
+static const char* tags186[] = { "north", NULL };
+static const char* tags187[] = { "south", NULL };
+static const char* tags188[] = { "east", NULL };
+static const char* tags189[] = { "maize", NULL };
+static const char* tags190[] = { "west", NULL };
+static const char* tags191[] = { "north", NULL };
+static const char* tags192[] = { "south", NULL };
+static const char* tags193[] = { "east", NULL };
+static const char* tags194[] = { "maize", NULL };
+static const char* tags195[] = { "west", NULL };
+static const char* tags196[] = { "north", NULL };
+static const char* tags197[] = { "south", NULL };
+static const char* tags198[] = { "east", NULL };
+static const char* tags199[] = { "maize", NULL };
+static const char* tags200[] = { "west", NULL };
+static const char* tags201[] = { "north", NULL };
+static const char* tags202[] = { "south", NULL };
+static const char* tags203[] = { "east", NULL };
+static const char* tags204[] = { "maize", NULL };
+static const char* tags205[] = { "west", NULL };
+static const char* tags206[] = { "north", NULL };
+static const char* tags207[] = { "south", NULL };
+static const char* tags208[] = { "east", NULL };
+static const char* tags209[] = { "maize", NULL };
+static const char* tags210[] = { "west", NULL };
+static const char* tags211[] = { "north", NULL };
+static const char* tags212[] = { "south", NULL };
+static const char* tags213[] = { "east", NULL };
+static const char* tags214[] = { "maize", NULL };
+static const char* tags215[] = { "west", NULL };
+static const char* tags216[] = { "north", NULL };
+static const char* tags217[] = { "south", NULL };
+static const char* tags218[] = { "east", NULL };
+static const char* tags219[] = { "maize", NULL };
+static const char* tags220[] = { "west", NULL };
+static const char* tags221[] = { "north", NULL };
+static const char* tags222[] = { "south", NULL };
+static const char* tags223[] = { "east", NULL };
+static const char* tags224[] = { "garden", NULL };
+static const char* tags225[] = { "little kid", "child", "girl","weena", NULL };
+static const char* tags226[] = { "man", "steampunk guy", "steampunk", "guy", NULL };
+static const char* tags227[] = { "north","south","east","west","portal", NULL };
+static const char* tags228[] = { "third floor", NULL };
+static const char* tags229[] = { "down","east","second floor", NULL };
+static const char* tags230[] = { "table 1","west", NULL };
+static const char* tags231[] = { "table 2","north", NULL };
+static const char* tags232[] = { "table 2","south", NULL };
+static const char* tags233[] = { "roof", NULL };
+static const char* tags234[] = { "door", NULL };
+static const char* tags235[] = { "book", NULL };
+static const char* tags236[] = { "firetruck", NULL };
+static const char* tags237[] = { "firetruckinterior", NULL };
+static const char* tags238[] = { "handle","left","east", NULL };
+static const char* tags239[] = { "west","south", NULL };
+static const char* tags240[] = { "west","north","south", NULL };
+static const char* tags241[] = { "house","east", NULL };
+static const char* tags242[] = { "east","Living Room", NULL };
+static const char* tags243[] = { "north","south", NULL };
+static const char* tags244[] = { "west","exit","street", NULL };
+static const char* tags245[] = { "bedroom","east", NULL };
+static const char* tags246[] = { "south","north", NULL };
+static const char* tags247[] = { "bed","east", NULL };
+static const char* tags248[] = { "telephone", NULL };
+static const char* tags249[] = { "bedroom exit","west", NULL };
+static const char* tags250[] = { "firetruck", NULL };
+static const char* tags251[] = { "Captain Beatty","Captain", NULL };
+static const char* tags252[] = { "Captain Beatty","Captain", NULL };
+static const char* tags253[] = { "Captain Beatty","Captain", NULL };
+static const char* tags254[] = { "Hound", NULL };
+static const char* tags255[] = { " tall fireman","fireman", NULL };
+static const char* tags256[] = { "west","flamethrower", NULL };
+static const char* tags257[] = { "guard", "burly guard", NULL };
+static const char* tags258[] = { "yourself", NULL };
 
 static bool alwaysTrue(void) { return true; }
 
@@ -489,12 +576,36 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 13 = roadLibrary */
+	{	/* 13 = secretBook */
+		0,
+		alwaysTrue,
+		 "a prayer book",
+		"That is something that can not be used\n",
+		tags13,
+		 bedroom,
+		NULL,
+		NULL,
+		 "A prayer book without which you never leave the house you beilve it will help you in everyday adventures\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 1,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 14 = roadLibrary */
 		0,
 		alwaysTrue,
 		 "the road to the library",
 		"That is something that can not be used\n",
-		tags13,
+		tags14,
 		NULL,
 		NULL,
 		NULL,
@@ -513,12 +624,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 14 = roadWalls */
+	{	/* 15 = roadWalls */
 		0,
 		alwaysTrue,
 		 "Some closed down shops",
 		"That is something that can not be used\n",
-		tags14,
+		tags15,
 		 roadLibrary,
 		NULL,
 		NULL,
@@ -537,12 +648,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 15 = openDoorToLibrary */
+	{	/* 16 = openDoorToLibrary */
 		0,
 		alwaysTrue,
 		 "an open door to the library",
 		"That is something that can not be used\n",
-		tags15,
+		tags16,
 		NULL,
 		 library,
 		 library,
@@ -561,12 +672,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 16 = closedDoorToLibrary */
+	{	/* 17 = closedDoorToLibrary */
 		0,
 		alwaysTrue,
 		 "a closed door to the library",
 		"That is something that can not be used\n",
-		tags16,
+		tags17,
 		NULL,
 		NULL,
 		 library,
@@ -585,12 +696,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 17 = lockedDoorToLibrary */
+	{	/* 18 = lockedDoorToLibrary */
 		0,
 		alwaysTrue,
 		 "a closed door to the library",
 		"That is something that can not be used\n",
-		tags17,
+		tags18,
 		 roadLibrary,
 		NULL,
 		 library,
@@ -609,12 +720,12 @@ OBJECT objs[] = {
 		 isAlreadyLocked,
 		 toggleBoxLock
 	},
-	{	/* 18 = library */
+	{	/* 19 = library */
 		0,
 		alwaysTrue,
 		 "an old dusty library",
 		"That is something that can not be used\n",
-		tags18,
+		tags19,
 		NULL,
 		NULL,
 		NULL,
@@ -633,12 +744,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 19 = libraryExit */
+	{	/* 20 = libraryExit */
 		0,
 		alwaysTrue,
 		 "Exit of the library",
 		"That is something that can not be used\n",
-		tags19,
+		tags20,
 		 library,
 		 roadLibrary,
 		 roadLibrary,
@@ -657,12 +768,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 20 = libraryReception */
+	{	/* 21 = libraryReception */
 		0,
 		alwaysTrue,
 		 "The library reception",
 		"That is something that can not be used\n",
-		tags20,
+		tags21,
 		NULL,
 		NULL,
 		NULL,
@@ -681,12 +792,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 21 = libraryShelfEntrance */
+	{	/* 22 = libraryShelfEntrance */
 		0,
 		alwaysTrue,
 		 "The section with the book shelves",
 		"That is something that can not be used\n",
-		tags21,
+		tags22,
 		 library,
 		 libraryShelf,
 		 libraryShelf,
@@ -705,12 +816,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 22 = libraryShelf */
+	{	/* 23 = libraryShelf */
 		0,
 		alwaysTrue,
 		 "The section with the book shelves",
 		"That is something that can not be used\n",
-		tags22,
+		tags23,
 		NULL,
 		NULL,
 		NULL,
@@ -729,12 +840,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 23 = shelf_1 */
+	{	/* 24 = shelf_1 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 1\n",
 		"That is something that can not be used\n",
-		tags23,
+		tags24,
 		 libraryShelf,
 		 shelf_1,
 		 shelf_1,
@@ -753,12 +864,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 24 = shelf_2 */
+	{	/* 25 = shelf_2 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 2\n",
 		"That is something that can not be used\n",
-		tags24,
+		tags25,
 		 libraryShelf,
 		 shelf_2,
 		 shelf_2,
@@ -777,12 +888,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 25 = shelf_3 */
+	{	/* 26 = shelf_3 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 3\n",
 		"That is something that can not be used\n",
-		tags25,
+		tags26,
 		 libraryShelf,
 		 shelf_3,
 		 shelf_3,
@@ -801,12 +912,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 26 = shelf_4 */
+	{	/* 27 = shelf_4 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 4\n",
 		"That is something that can not be used\n",
-		tags26,
+		tags27,
 		 libraryShelf,
 		 shelf_4,
 		 shelf_4,
@@ -825,36 +936,36 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 27 = shelf_1_exit */
-		0,
-		alwaysTrue,
-		 "Exit of the shelf",
-		"That is something that can not be used\n",
-		tags27,
-		 shelf_1,
-		 libraryShelf,
-		 libraryShelf,
-		 "This is the exit of this shelf. Exit to explore the other shelves",
-		"You see",
-		"You can't get much closer than this.\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 28 = shelf_2_exit */
+	{	/* 28 = shelf_1_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
 		tags28,
+		 shelf_1,
+		 libraryShelf,
+		 libraryShelf,
+		 "This is the exit of this shelf. Exit to explore the other shelves",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 29 = shelf_2_exit */
+		0,
+		alwaysTrue,
+		 "Exit of the shelf",
+		"That is something that can not be used\n",
+		tags29,
 		 shelf_2,
 		 libraryShelf,
 		 libraryShelf,
@@ -873,12 +984,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 29 = shelf_3_exit */
+	{	/* 30 = shelf_3_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags29,
+		tags30,
 		 shelf_3,
 		 libraryShelf,
 		 libraryShelf,
@@ -897,12 +1008,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 30 = shelf_4_exit */
+	{	/* 31 = shelf_4_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags30,
+		tags31,
 		 shelf_4,
 		 libraryShelf,
 		 libraryShelf,
@@ -921,12 +1032,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 31 = shelf_1_toilet */
+	{	/* 32 = shelf_1_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags31,
+		tags32,
 		 shelf_1,
 		 libraryToilet,
 		 libraryToilet,
@@ -945,12 +1056,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 32 = shelf_2_toilet */
+	{	/* 33 = shelf_2_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags32,
+		tags33,
 		 shelf_2,
 		 libraryToilet,
 		 libraryToilet,
@@ -969,12 +1080,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 33 = shelf_3_toilet */
+	{	/* 34 = shelf_3_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags33,
+		tags34,
 		 shelf_3,
 		 libraryToilet,
 		 libraryToilet,
@@ -993,12 +1104,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 34 = shelf_4_toilet */
+	{	/* 35 = shelf_4_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags34,
+		tags35,
 		 shelf_4,
 		 libraryToilet,
 		 libraryToilet,
@@ -1017,12 +1128,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 35 = shelf_toilet */
+	{	/* 36 = shelf_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags35,
+		tags36,
 		 libraryShelf,
 		 libraryToilet,
 		 libraryToilet,
@@ -1041,12 +1152,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 36 = libraryToilet */
+	{	/* 37 = libraryToilet */
 		0,
 		alwaysTrue,
 		 "The library toilet",
 		"That is something that can not be used\n",
-		tags36,
+		tags37,
 		NULL,
 		NULL,
 		NULL,
@@ -1065,12 +1176,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 37 = sink */
+	{	/* 38 = sink */
 		0,
 		alwaysTrue,
 		 "Wash Basin",
 		 "You have washed your hands and face",
-		tags37,
+		tags38,
 		 libraryToilet,
 		NULL,
 		NULL,
@@ -1089,12 +1200,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 38 = urinal */
+	{	/* 39 = urinal */
 		0,
 		alwaysTrue,
 		 "Urinals",
 		 "You have used the urinal",
-		tags38,
+		tags39,
 		 libraryToilet,
 		NULL,
 		NULL,
@@ -1113,12 +1224,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 39 = supplyCloset */
+	{	/* 40 = supplyCloset */
 		0,
 		alwaysTrue,
 		 "Supply Closet",
 		 "The Supply Closet is locked",
-		tags39,
+		tags40,
 		 libraryToilet,
 		NULL,
 		NULL,
@@ -1137,34 +1248,10 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 40 = urinalCabin_1 */
+	{	/* 41 = urinalCabin_1 */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 1",
-		"That is something that can not be used\n",
-		tags40,
-		 libraryToilet,
-		NULL,
-		NULL,
-		 "The door is of blue color, it is locked from inside, it stinks very badly",
-		"You see",
-		 "The door is locked",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 41 = urinalCabin_2 */
-		0,
-		alwaysTrue,
-		 "Urinal Cabin 2",
 		"That is something that can not be used\n",
 		tags41,
 		 libraryToilet,
@@ -1185,60 +1272,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 42 = urinalCabin_3_entrance */
+	{	/* 42 = urinalCabin_2 */
 		0,
 		alwaysTrue,
-		 "Urinal Cabin 3",
+		 "Urinal Cabin 2",
 		"That is something that can not be used\n",
 		tags42,
-		 libraryToilet,
-		 urinalCabin_3,
-		 urinalCabin_3,
-		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
-		"You see",
-		"You can't get much closer than this.\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 43 = urinalCabin_3 */
-		0,
-		alwaysTrue,
-		 "Urinal Cabin 3",
-		"That is something that can not be used\n",
-		tags43,
-		NULL,
-		NULL,
-		NULL,
-		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
-		"You see",
-		"You can't get much closer than this.\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 44 = urinalCabin_4 */
-		0,
-		alwaysTrue,
-		 "Urinal Cabin 4",
-		"That is something that can not be used\n",
-		tags44,
 		 libraryToilet,
 		NULL,
 		NULL,
@@ -1257,12 +1296,84 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 45 = libraryToiletExit */
+	{	/* 43 = urinalCabin_3_entrance */
+		0,
+		alwaysTrue,
+		 "Urinal Cabin 3",
+		"That is something that can not be used\n",
+		tags43,
+		 libraryToilet,
+		 urinalCabin_3,
+		 urinalCabin_3,
+		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 44 = urinalCabin_3 */
+		0,
+		alwaysTrue,
+		 "Urinal Cabin 3",
+		"That is something that can not be used\n",
+		tags44,
+		NULL,
+		NULL,
+		NULL,
+		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 45 = urinalCabin_4 */
+		0,
+		alwaysTrue,
+		 "Urinal Cabin 4",
+		"That is something that can not be used\n",
+		tags45,
+		 libraryToilet,
+		NULL,
+		NULL,
+		 "The door is of blue color, it is locked from inside, it stinks very badly",
+		"You see",
+		 "The door is locked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 46 = libraryToiletExit */
 		0,
 		alwaysTrue,
 		 "Exit of the toilet",
 		"That is something that can not be used\n",
-		tags45,
+		tags46,
 		 libraryToilet,
 		 libraryShelf,
 		 libraryShelf,
@@ -1281,12 +1392,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 46 = mysteryObject */
+	{	/* 47 = mysteryObject */
 		0,
 		alwaysTrue,
 		 "Body of a guard in mysterious uniform",
 		"That is something that can not be used\n",
-		tags46,
+		tags47,
 		 urinalCabin_3,
 		NULL,
 		NULL,
@@ -1305,12 +1416,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 47 = portal */
+	{	/* 48 = portal */
 		0,
 		alwaysTrue,
 		 "A portal type thing emanating green radiation",
 		"That is something that can not be used\n",
-		tags47,
+		tags48,
 		 urinalCabin_3,
 		 alt_toilet,
 		 alt_toilet,
@@ -1329,12 +1440,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 48 = alt_toilet */
+	{	/* 49 = alt_toilet */
 		0,
 		alwaysTrue,
 		 "The library toilet",
 		"That is something that can not be used\n",
-		tags48,
+		tags49,
 		NULL,
 		NULL,
 		NULL,
@@ -1353,12 +1464,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 49 = alt_libraryToilet */
+	{	/* 50 = alt_libraryToilet */
 		0,
 		alwaysTrue,
 		 "The library toilet",
 		"That is something that can not be used\n",
-		tags49,
+		tags50,
 		NULL,
 		NULL,
 		NULL,
@@ -1377,12 +1488,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 50 = alt_sink */
+	{	/* 51 = alt_sink */
 		0,
 		alwaysTrue,
 		 "Wash Basin",
 		 "You have washed your hands and face",
-		tags50,
+		tags51,
 		 alt_toilet,
 		NULL,
 		NULL,
@@ -1401,12 +1512,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 51 = alt_urinal */
+	{	/* 52 = alt_urinal */
 		0,
 		alwaysTrue,
 		 "Urinals",
 		 "You have used the urinal",
-		tags51,
+		tags52,
 		 alt_toilet,
 		NULL,
 		NULL,
@@ -1425,12 +1536,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 52 = alt_supplyCloset */
+	{	/* 53 = alt_supplyCloset */
 		0,
 		alwaysTrue,
 		 "Supply Closet",
 		 "The Supply Closet is locked",
-		tags52,
+		tags53,
 		 alt_toilet,
 		NULL,
 		NULL,
@@ -1449,34 +1560,10 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 53 = alt_urinalCabin_1 */
+	{	/* 54 = alt_urinalCabin_1 */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 1",
-		"That is something that can not be used\n",
-		tags53,
-		 alt_toilet,
-		NULL,
-		NULL,
-		 "The door is of blue color, it is locked from inside, it stinks very badly",
-		"You see",
-		 "The door is locked",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 54 = alt_urinalCabin_2 */
-		0,
-		alwaysTrue,
-		 "Urinal Cabin 2",
 		"That is something that can not be used\n",
 		tags54,
 		 alt_toilet,
@@ -1497,36 +1584,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 55 = alt_urinalCabin_3 */
+	{	/* 55 = alt_urinalCabin_2 */
 		0,
 		alwaysTrue,
-		 "Urinal Cabin 3",
+		 "Urinal Cabin 2",
 		"That is something that can not be used\n",
 		tags55,
-		 alt_toilet,
-		NULL,
-		NULL,
-		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
-		"You see",
-		 "The door is locked",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 56 = alt_urinalCabin_4 */
-		0,
-		alwaysTrue,
-		 "Urinal Cabin 4",
-		"That is something that can not be used\n",
-		tags56,
 		 alt_toilet,
 		NULL,
 		NULL,
@@ -1545,12 +1608,60 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 57 = alt_ToiletExit */
+	{	/* 56 = alt_urinalCabin_3 */
+		0,
+		alwaysTrue,
+		 "Urinal Cabin 3",
+		"That is something that can not be used\n",
+		tags56,
+		 alt_toilet,
+		NULL,
+		NULL,
+		 "The door is of blue color, it is open , it stinks very badly, there is a wierd glow eminating from the cabin,there also seems to be a mysterious object on the floor of the cabin",
+		"You see",
+		 "The door is locked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 57 = alt_urinalCabin_4 */
+		0,
+		alwaysTrue,
+		 "Urinal Cabin 4",
+		"That is something that can not be used\n",
+		tags57,
+		 alt_toilet,
+		NULL,
+		NULL,
+		 "The door is of blue color, it is locked from inside, it stinks very badly",
+		"You see",
+		 "The door is locked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 58 = alt_ToiletExit */
 		0,
 		alwaysTrue,
 		 "Exit of the toilet",
 		"That is something that can not be used\n",
-		tags57,
+		tags58,
 		 alt_toilet,
 		NULL,
 		NULL,
@@ -1569,12 +1680,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 58 = alt_libraryShelf */
+	{	/* 59 = alt_libraryShelf */
 		0,
 		alwaysTrue,
 		 "The section with the book shelves",
 		"That is something that can not be used\n",
-		tags58,
+		tags59,
 		NULL,
 		NULL,
 		NULL,
@@ -1593,12 +1704,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 59 = alt_shelf_1 */
+	{	/* 60 = alt_shelf_1 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 1\n",
 		"That is something that can not be used\n",
-		tags59,
+		tags60,
 		 alt_libraryShelf,
 		 alt_shelf_1,
 		 alt_shelf_1,
@@ -1617,12 +1728,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 60 = alt_shelf_2 */
+	{	/* 61 = alt_shelf_2 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 2\n",
 		"That is something that can not be used\n",
-		tags60,
+		tags61,
 		 alt_libraryShelf,
 		 alt_shelf_2,
 		 alt_shelf_2,
@@ -1641,12 +1752,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 61 = alt_shelf_3 */
+	{	/* 62 = alt_shelf_3 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 3\n",
 		"That is something that can not be used\n",
-		tags61,
+		tags62,
 		 alt_libraryShelf,
 		 alt_shelf_3,
 		 alt_shelf_3,
@@ -1665,12 +1776,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 62 = alt_shelf_4 */
+	{	/* 63 = alt_shelf_4 */
 		0,
 		alwaysTrue,
 		 "Book Shelf Number 4\n",
 		"That is something that can not be used\n",
-		tags62,
+		tags63,
 		 alt_libraryShelf,
 		 alt_shelf_4,
 		 alt_shelf_4,
@@ -1689,36 +1800,36 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 63 = alt_shelf_1_exit */
-		0,
-		alwaysTrue,
-		 "Exit of the shelf",
-		"That is something that can not be used\n",
-		tags63,
-		 alt_shelf_1,
-		 alt_libraryShelf,
-		 alt_libraryShelf,
-		 "This is the exit of this shelf. Exit to explore the other shelves",
-		"You see",
-		"You can't get much closer than this.\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 64 = alt_shelf_2_exit */
+	{	/* 64 = alt_shelf_1_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
 		tags64,
+		 alt_shelf_1,
+		 alt_libraryShelf,
+		 alt_libraryShelf,
+		 "This is the exit of this shelf. Exit to explore the other shelves",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 65 = alt_shelf_2_exit */
+		0,
+		alwaysTrue,
+		 "Exit of the shelf",
+		"That is something that can not be used\n",
+		tags65,
 		 alt_shelf_2,
 		 alt_libraryShelf,
 		 alt_libraryShelf,
@@ -1737,12 +1848,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 65 = alt_shelf_3_exit */
+	{	/* 66 = alt_shelf_3_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags65,
+		tags66,
 		 alt_shelf_3,
 		 alt_libraryShelf,
 		 alt_libraryShelf,
@@ -1761,12 +1872,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 66 = alt_shelf_4_exit */
+	{	/* 67 = alt_shelf_4_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags66,
+		tags67,
 		 alt_shelf_4,
 		 alt_libraryShelf,
 		 alt_libraryShelf,
@@ -1785,12 +1896,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 67 = alt_shelf_1_toilet */
+	{	/* 68 = alt_shelf_1_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags67,
+		tags68,
 		 alt_shelf_1,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
@@ -1809,12 +1920,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 68 = alt_shelf_2_toilet */
+	{	/* 69 = alt_shelf_2_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags68,
+		tags69,
 		 alt_shelf_2,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
@@ -1833,12 +1944,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 69 = alt_shelf_3_toilet */
+	{	/* 70 = alt_shelf_3_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags69,
+		tags70,
 		 alt_shelf_3,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
@@ -1857,12 +1968,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 70 = alt_shelf_4_toilet */
+	{	/* 71 = alt_shelf_4_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags70,
+		tags71,
 		 alt_shelf_4,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
@@ -1881,12 +1992,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 71 = alt_shelf_toilet */
+	{	/* 72 = alt_shelf_toilet */
 		0,
 		alwaysTrue,
 		 "Entrance of the toilet",
 		"That is something that can not be used\n",
-		tags71,
+		tags72,
 		 alt_libraryShelf,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
@@ -1905,18 +2016,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 72 = level_1 */
+	{	/* 73 = level_1 */
 		0,
 		alwaysTrue,
 		 "A book on the floor",
 		"That is something that can not be used\n",
-		tags72,
+		tags73,
 		 alt_toilet,
 		 spawnlocation,
 		 spawnlocation,
 		 "It is a sherlock holmes book but why is it glowing",
 		"You see",
-		 "What is this what apartment is this",
+		 "You are in an unknown location where the surrounding is similar to Victoria England.\n",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -1929,18 +2040,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 73 = levelExit_1 */
+	{	/* 74 = openDoorToSherlock */
 		0,
 		alwaysTrue,
-		 "Exit of the level PLACEHOLDER",
+		 "an open door to the library",
 		"That is something that can not be used\n",
-		tags73,
-		 livinghall,
+		tags74,
+		NULL,
 		 alt_libraryToilet,
 		 alt_libraryToilet,
-		"You see nothing special.\n",
+		 "The door is open.\n",
 		"You see",
-		"You can't get much closer than this.\n",
+		 "You walk through the door into a backroom.\n",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -1948,17 +2059,65 @@ OBJECT objs[] = {
 		99,
 		0,
 		0,
-		cannotBeOpened,
-		cannotBeClosed,
+		 isAlreadyOpen,
+		 toggleBackdoor,
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 74 = spawnlocation */
+	{	/* 75 = closedDoorToSherlock */
+		0,
+		alwaysTrue,
+		 "a closed door out of this place",
+		"That is something that can not be used\n",
+		tags75,
+		NULL,
+		NULL,
+		 alt_libraryToilet,
+		 "The door is closed.\n",
+		"You see",
+		 "The door is closed.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		 toggleBackdoor,
+		 isAlreadyClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 76 = lockedDoorToSherlock */
+		0,
+		alwaysTrue,
+		 "a locked door out of this place",
+		"That is something that can not be used\n",
+		tags76,
+		 bedroomSherlock,
+		NULL,
+		 alt_libraryToilet,
+		 "The door is closed.\n",
+		"You see",
+		 "The door is closed.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		 toggleBackdoor,
+		 isAlreadyClosed,
+		 isAlreadyLocked,
+		 toggleSherLock
+	},
+	{	/* 77 = spawnlocation */
 		0,
 		alwaysTrue,
 		 "an unknown location",
 		"That is something that can not be used\n",
-		tags74,
+		tags77,
 		NULL,
 		NULL,
 		NULL,
@@ -1977,18 +2136,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 75 = intobasement */
+	{	/* 78 = intobasement */
 		0,
 		alwaysTrue,
 		 "An unknown apartment",
 		"That is something that can not be used\n",
-		tags75,
+		tags78,
 		 spawnlocation,
 		 basement,
 		 basement,
 		"You see nothing special.\n",
 		"You see",
-		 "You are in 221B Baker Street where Sherlock Holmes lives.\nYou are currently in the basement of the Apartment.\nYou see stairs that leads to his Room.",
+		 "You are currently in the basement of the Apartment.\n",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -2001,12 +2160,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 76 = card */
+	{	/* 79 = card */
 		0,
 		alwaysTrue,
 		 "Card lying on the ground",
 		"That is something that can not be used\n",
-		tags76,
+		tags79,
 		 spawnlocation,
 		NULL,
 		NULL,
@@ -2025,12 +2184,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 77 = basement */
+	{	/* 80 = basement */
 		0,
 		alwaysTrue,
 		 "221 B Baker Street Aparatment Basement",
 		"That is something that can not be used\n",
-		tags77,
+		tags80,
 		NULL,
 		NULL,
 		NULL,
@@ -2049,12 +2208,60 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 78 = exit_apartment */
+	{	/* 81 = riddle_1 */
 		0,
 		alwaysTrue,
-		 "The exit",
+		 "Card lying on the ground",
 		"That is something that can not be used\n",
-		tags78,
+		tags81,
+		 basement,
+		NULL,
+		NULL,
+		 "You will encounter me all around this wretched house, \n my answer is me myself lets see if you can figure me out.",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 82 = upstairs */
+		0,
+		alwaysTrue,
+		 "stairs that lead to Sherlocks' Room",
+		"That is something that can not be used\n",
+		tags82,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "On the stairs",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 83 = exit_apartment */
+		0,
+		alwaysTrue,
+		 "The exit of the apartment",
+		"That is something that can not be used\n",
+		tags83,
 		 basement,
 		NULL,
 		NULL,
@@ -2073,36 +2280,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 79 = upstairs */
-		0,
-		alwaysTrue,
-		 "stairs that lead to Sherlocks' Room",
-		"That is something that can not be used\n",
-		tags79,
-		NULL,
-		NULL,
-		NULL,
-		"You see nothing special.\n",
-		"You see",
-		"You can't get much closer than this.\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 80 = upstairs_entrance */
+	{	/* 84 = upstairs_entrance */
 		0,
 		alwaysTrue,
 		 "Stairs leading to Sherlocks' Room",
 		"That is something that can not be used\n",
-		tags80,
+		tags84,
 		 basement,
 		 upstairs,
 		 upstairs,
@@ -2121,12 +2304,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 81 = upstairs_exit */
+	{	/* 85 = upstairs_exit */
 		0,
 		alwaysTrue,
 		 "Stairs leading to the basement",
 		"That is something that can not be used\n",
-		tags81,
+		tags85,
 		 upstairs,
 		 basement,
 		 basement,
@@ -2145,12 +2328,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 82 = livinghall */
+	{	/* 86 = livinghall */
 		0,
 		alwaysTrue,
 		 "The Living Room",
 		"That is something that can not be used\n",
-		tags82,
+		tags86,
 		NULL,
 		NULL,
 		NULL,
@@ -2169,12 +2352,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 83 = livinghall_entrance */
+	{	/* 87 = livinghall_entrance */
 		0,
 		alwaysTrue,
 		 "The living room",
 		"That is something that can not be used\n",
-		tags83,
+		tags87,
 		 upstairs,
 		 livinghall,
 		 livinghall,
@@ -2193,12 +2376,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 84 = livinghall_exit */
+	{	/* 88 = livinghall_exit */
 		0,
 		alwaysTrue,
 		 "The Stairs",
 		"That is something that can not be used\n",
-		tags84,
+		tags88,
 		 livinghall,
 		 upstairs,
 		 upstairs,
@@ -2217,12 +2400,36 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 85 = bedroomSherlock */
+	{	/* 89 = riddle_2 */
+		0,
+		alwaysTrue,
+		 "Card lying on the ground",
+		"That is something that can not be used\n",
+		tags89,
+		 livinghall,
+		NULL,
+		NULL,
+		 " I do not eat I do not sleep,\n I have been cut yet do not bleed, \n Not with a code but with me \n you can leave this abode of a dead man yet to be \n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 90 = bedroomSherlock */
 		0,
 		alwaysTrue,
 		 "The Bedroom",
 		"That is something that can not be used\n",
-		tags85,
+		tags90,
 		NULL,
 		NULL,
 		NULL,
@@ -2241,12 +2448,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 86 = bedroom_entranceSherlock */
+	{	/* 91 = bedroom_entranceSherlock */
 		0,
 		alwaysTrue,
 		 "The bedroom",
 		"That is something that can not be used\n",
-		tags86,
+		tags91,
 		 livinghall,
 		 bedroomSherlock,
 		 bedroomSherlock,
@@ -2265,12 +2472,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 87 = bedroom_exitSherlock */
+	{	/* 92 = bedroom_exitSherlock */
 		0,
 		alwaysTrue,
 		 "The Living Room",
 		"That is something that can not be used\n",
-		tags87,
+		tags92,
 		 bedroomSherlock,
 		 livinghall,
 		 livinghall,
@@ -2289,12 +2496,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 88 = experimenttable */
+	{	/* 93 = experimenttable */
 		0,
 		alwaysTrue,
 		 "the Table where Sherlock Holmes does his experiment",
 		"That is something that can not be used\n",
-		tags88,
+		tags93,
 		NULL,
 		NULL,
 		NULL,
@@ -2313,12 +2520,252 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 89 = experimenttable_entrance */
+	{	/* 94 = riddle_3 */
 		0,
 		alwaysTrue,
-		 "Experiment Table",
+		 "Card lying on the ground",
 		"That is something that can not be used\n",
-		tags89,
+		tags94,
+		 experimenttable,
+		NULL,
+		NULL,
+		 " Box here box there boxes everywhere, \n You need the thing to set you free,\n Knock on me it just might be, \n A change in your misfortunes. ",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 95 = openBoxWood */
+		0,
+		alwaysTrue,
+		 "a wooden box",
+		"That is something that can not be used\n",
+		tags95,
+		NULL,
+		NULL,
+		NULL,
+		 "The box is open.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		 10,
+		0,
+		 isAlreadyOpen,
+		 toggleBox,
+		 isStillOpen,
+		 isAlreadyOpen
+	},
+	{	/* 96 = closedBoxWood */
+		0,
+		alwaysTrue,
+		 "a wooden box",
+		"That is something that can not be used\n",
+		tags96,
+		 experimenttable,
+		NULL,
+		NULL,
+		 "The box is closed.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		0,
+		0,
+		 toggleBox,
+		 isAlreadyClosed,
+		 toggleBoxLock,
+		 isAlreadyUnlocked
+	},
+	{	/* 97 = openBoxMetal */
+		0,
+		alwaysTrue,
+		 "a metal box",
+		"That is something that can not be used\n",
+		tags97,
+		NULL,
+		NULL,
+		NULL,
+		 "The box is open.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		 10,
+		0,
+		 isAlreadyOpen,
+		 toggleBox,
+		 isStillOpen,
+		 isAlreadyOpen
+	},
+	{	/* 98 = closedBoxMetal */
+		0,
+		alwaysTrue,
+		 "a metal box",
+		"That is something that can not be used\n",
+		tags98,
+		 experimenttable,
+		NULL,
+		NULL,
+		 "The box is closed.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		0,
+		0,
+		 toggleBox,
+		 isAlreadyClosed,
+		 toggleBoxLock,
+		 isAlreadyUnlocked
+	},
+	{	/* 99 = openBoxGlass */
+		0,
+		alwaysTrue,
+		 "a glass box",
+		"That is something that can not be used\n",
+		tags99,
+		NULL,
+		NULL,
+		NULL,
+		 "The box is open.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		 10,
+		0,
+		 isAlreadyOpen,
+		 toggleBox,
+		 isStillOpen,
+		 isAlreadyOpen
+	},
+	{	/* 100 = closedBoxGlass */
+		0,
+		alwaysTrue,
+		 "a glass box",
+		"That is something that can not be used\n",
+		tags100,
+		 experimenttable,
+		NULL,
+		NULL,
+		 "The box is closed.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		0,
+		0,
+		 toggleBox,
+		 isAlreadyClosed,
+		 toggleBoxLock,
+		 isAlreadyUnlocked
+	},
+	{	/* 101 = openBoxGold */
+		0,
+		alwaysTrue,
+		 "a gold box",
+		"That is something that can not be used\n",
+		tags101,
+		NULL,
+		NULL,
+		NULL,
+		 "The box is open.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		 10,
+		0,
+		 isAlreadyOpen,
+		 toggleBox,
+		 isStillOpen,
+		 isAlreadyOpen
+	},
+	{	/* 102 = closedBoxGold */
+		0,
+		alwaysTrue,
+		 "a gold box",
+		"That is something that can not be used\n",
+		tags102,
+		 experimenttable,
+		NULL,
+		NULL,
+		 "The box is closed.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 5,
+		0,
+		0,
+		 toggleBox,
+		 isAlreadyClosed,
+		 toggleBoxLock,
+		 isAlreadyUnlocked
+	},
+	{	/* 103 = sherlockKey */
+		0,
+		alwaysTrue,
+		 "keycard",
+		"That is something that can not be used\n",
+		tags103,
+		 openBoxWood,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 1,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 104 = experimenttable_entrance */
+		0,
+		alwaysTrue,
+		 "Experiment Lab",
+		"That is something that can not be used\n",
+		tags104,
 		 livinghall,
 		 experimenttable,
 		 experimenttable,
@@ -2337,12 +2784,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 90 = experimenttable_exit */
+	{	/* 105 = experimenttable_exit */
 		0,
 		alwaysTrue,
 		 "The Living Room",
 		"That is something that can not be used\n",
-		tags90,
+		tags105,
 		 experimenttable,
 		 livinghall,
 		 livinghall,
@@ -2361,12 +2808,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 91 = diningtable */
+	{	/* 106 = diningtable */
 		0,
 		alwaysTrue,
-		 "the Dining Table",
+		 "the Dining room",
 		"That is something that can not be used\n",
-		tags91,
+		tags106,
 		NULL,
 		NULL,
 		NULL,
@@ -2385,12 +2832,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 92 = diningtable_entrance */
+	{	/* 107 = diningtable_entrance */
 		0,
 		alwaysTrue,
 		 "Dining Table",
 		"That is something that can not be used\n",
-		tags92,
+		tags107,
 		 livinghall,
 		 diningtable,
 		 diningtable,
@@ -2409,12 +2856,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 93 = diningtable_exit */
+	{	/* 108 = diningtable_exit */
 		0,
 		alwaysTrue,
 		 "The Living Room",
 		"That is something that can not be used\n",
-		tags93,
+		tags108,
 		 diningtable,
 		 livinghall,
 		 livinghall,
@@ -2433,12 +2880,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 94 = alt_sink_level_exit */
+	{	/* 109 = alt_sink_level_exit */
 		0,
 		alwaysTrue,
 		 "Wash Basin",
 		 "You have washed your hands and face",
-		tags94,
+		tags109,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2457,12 +2904,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 95 = alt_urinal_level_exit */
+	{	/* 110 = alt_urinal_level_exit */
 		0,
 		alwaysTrue,
 		 "Urinals",
 		 "You have used the urinal",
-		tags95,
+		tags110,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2481,12 +2928,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 96 = alt_supplyCloset_level_exit */
+	{	/* 111 = alt_supplyCloset_level_exit */
 		0,
 		alwaysTrue,
 		 "Supply Closet",
 		 "The Supply Closet is locked",
-		tags96,
+		tags111,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2505,12 +2952,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 97 = alt_urinalCabin_1_level_exit */
+	{	/* 112 = alt_urinalCabin_1_level_exit */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 1",
 		"That is something that can not be used\n",
-		tags97,
+		tags112,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2529,12 +2976,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 98 = alt_urinalCabin_2_level_exit */
+	{	/* 113 = alt_urinalCabin_2_level_exit */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 2",
 		"That is something that can not be used\n",
-		tags98,
+		tags113,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2553,12 +3000,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 99 = alt_urinalCabin_3_level_exit */
+	{	/* 114 = alt_urinalCabin_3_level_exit */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 3",
 		"That is something that can not be used\n",
-		tags99,
+		tags114,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2577,12 +3024,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 100 = alt_urinalCabin_4_level_exit */
+	{	/* 115 = alt_urinalCabin_4_level_exit */
 		0,
 		alwaysTrue,
 		 "Urinal Cabin 4",
 		"That is something that can not be used\n",
-		tags100,
+		tags115,
 		 alt_libraryToilet,
 		NULL,
 		NULL,
@@ -2601,12 +3048,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 101 = alt_ToiletExit_locked */
+	{	/* 116 = alt_ToiletExit_locked */
 		0,
 		alwaysTrue,
 		 "Exit of the toilet",
 		"That is something that can not be used\n",
-		tags101,
+		tags116,
 		 alt_libraryToilet,
 		 alt_libraryShelf,
 		 alt_libraryShelf,
@@ -2625,12 +3072,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 102 = alt_library */
+	{	/* 117 = alt_library */
 		0,
 		alwaysTrue,
 		 "an old dusty library",
 		"That is something that can not be used\n",
-		tags102,
+		tags117,
 		NULL,
 		NULL,
 		NULL,
@@ -2649,12 +3096,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 103 = alt_libraryExit */
+	{	/* 118 = alt_libraryExit */
 		0,
 		alwaysTrue,
 		 "Exit of the library",
 		"That is something that can not be used\n",
-		tags103,
+		tags118,
 		 alt_library,
 		NULL,
 		NULL,
@@ -2673,12 +3120,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 104 = alt_libraryReception */
+	{	/* 119 = alt_libraryReception */
 		0,
 		alwaysTrue,
 		 "The library reception",
 		"That is something that can not be used\n",
-		tags104,
+		tags119,
 		 alt_library,
 		NULL,
 		NULL,
@@ -2697,12 +3144,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 105 = alt_libraryShelfEntrance */
+	{	/* 120 = alt_libraryShelfEntrance */
 		0,
 		alwaysTrue,
 		 "The gorund floor book shelves",
 		"That is something that can not be used\n",
-		tags105,
+		tags120,
 		 alt_library,
 		 alt_libraryShelf,
 		 alt_libraryShelf,
@@ -2721,12 +3168,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 106 = alt_libraryShelfExit */
+	{	/* 121 = alt_libraryShelfExit */
 		0,
 		alwaysTrue,
 		 "The library hall",
 		"That is something that can not be used\n",
-		tags106,
+		tags121,
 		 alt_libraryShelf,
 		 alt_library,
 		 alt_library,
@@ -2745,12 +3192,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 107 = stairs_floor_2 */
+	{	/* 122 = stairs_floor_2 */
 		0,
 		alwaysTrue,
 		 "The second floor stairs",
 		"That is something that can not be used\n",
-		tags107,
+		tags122,
 		 alt_library,
 		 secondFloor,
 		 secondFloor,
@@ -2769,12 +3216,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 108 = firstFloor */
+	{	/* 123 = firstFloor */
 		0,
 		alwaysTrue,
 		 "The first floor stairs",
 		"That is something that can not be used\n",
-		tags108,
+		tags123,
 		 secondFloor,
 		 alt_library,
 		 alt_library,
@@ -2793,12 +3240,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 109 = secondFloor */
+	{	/* 124 = secondFloor */
 		0,
 		alwaysTrue,
 		 "The second floor",
 		"That is something that can not be used\n",
-		tags109,
+		tags124,
 		NULL,
 		NULL,
 		NULL,
@@ -2817,12 +3264,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 110 = secondFloorShelf */
+	{	/* 125 = secondFloorShelf */
 		0,
 		alwaysTrue,
 		 "Second Floor book shelves",
 		"That is something that can not be used\n",
-		tags110,
+		tags125,
 		 secondFloor,
 		 secondFloorShelf,
 		 secondFloorShelf,
@@ -2841,12 +3288,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 111 = secondFloorShelf_1 */
+	{	/* 126 = secondFloorShelf_1 */
 		0,
 		alwaysTrue,
 		 "Book Shelf 1",
 		"That is something that can not be used\n",
-		tags111,
+		tags126,
 		 secondFloorShelf,
 		 secondFloorShelf_1,
 		 secondFloorShelf_1,
@@ -2865,12 +3312,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 112 = secondFloorShelf_2 */
+	{	/* 127 = secondFloorShelf_2 */
 		0,
 		alwaysTrue,
 		 "Book Shelf 2",
 		"That is something that can not be used\n",
-		tags112,
+		tags127,
 		 secondFloorShelf,
 		 secondFloorShelf_2,
 		 secondFloorShelf_2,
@@ -2889,12 +3336,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 113 = secondFloorShelf_3 */
+	{	/* 128 = secondFloorShelf_3 */
 		0,
 		alwaysTrue,
 		 "Book Shelf 3",
 		"That is something that can not be used\n",
-		tags113,
+		tags128,
 		 secondFloorShelf,
 		 secondFloorShelf_3,
 		 secondFloorShelf_3,
@@ -2913,12 +3360,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 114 = secondFloorShelf_4 */
+	{	/* 129 = secondFloorShelf_4 */
 		0,
 		alwaysTrue,
 		 "Book Shelf 4",
 		"That is something that can not be used\n",
-		tags114,
+		tags129,
 		 secondFloorShelf,
 		 secondFloorShelf_4,
 		 secondFloorShelf_4,
@@ -2937,12 +3384,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 115 = secondFloorShelf_hall */
+	{	/* 130 = secondFloorShelf_hall */
 		0,
 		alwaysTrue,
 		 "Second floor Hall",
 		"That is something that can not be used\n",
-		tags115,
+		tags130,
 		 secondFloorShelf,
 		 secondFloor,
 		 secondFloor,
@@ -2961,12 +3408,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 116 = secondFloorShelf_1_exit */
+	{	/* 131 = secondFloorShelf_1_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags116,
+		tags131,
 		 secondFloorShelf_1,
 		 secondFloorShelf,
 		 secondFloorShelf,
@@ -2985,12 +3432,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 117 = secondFloorShelf_2_exit */
+	{	/* 132 = secondFloorShelf_2_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags117,
+		tags132,
 		 secondFloorShelf_2,
 		 secondFloorShelf,
 		 secondFloorShelf,
@@ -3009,12 +3456,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 118 = secondFloorShelf_3_exit */
+	{	/* 133 = secondFloorShelf_3_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags118,
+		tags133,
 		 secondFloorShelf_3,
 		 secondFloorShelf,
 		 secondFloorShelf,
@@ -3033,12 +3480,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 119 = secondFloorShelf_4_exit */
+	{	/* 134 = secondFloorShelf_4_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags119,
+		tags134,
 		 secondFloorShelf_4,
 		 secondFloorShelf,
 		 secondFloorShelf,
@@ -3057,12 +3504,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 120 = computerCorner */
+	{	/* 135 = computerCorner */
 		0,
 		alwaysTrue,
 		 "Computer area for research",
 		 "The power is down try again later",
-		tags120,
+		tags135,
 		 secondFloor,
 		NULL,
 		NULL,
@@ -3081,12 +3528,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 121 = level_2 */
+	{	/* 136 = level_2 */
 		0,
 		alwaysTrue,
 		 "A mysterious book",
 		"That is something that can not be used\n",
-		tags121,
+		tags136,
 		 secondFloorShelf_3,
 		 lakshagriha,
 		 lakshagriha,
@@ -3105,12 +3552,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 122 = lakshagriha */
+	{	/* 137 = lakshagriha */
 		0,
 		alwaysTrue,
-		 "place with the burning castle",
+		 "a burning lakshagriha castle",
 		"That is something that can not be used\n",
-		tags122,
+		tags137,
 		NULL,
 		NULL,
 		NULL,
@@ -3129,18 +3576,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 123 = lakshagrihaEntrance */
+	{	/* 138 = lakshagrihaEntrance */
 		0,
 		alwaysTrue,
-		 "Entrance of the lakshagriha area",
+		 "Front entrance of the lakshagriha castle",
 		"That is something that can not be used\n",
-		tags123,
+		tags138,
 		 lakshagriha,
 		NULL,
 		NULL,
 		"You see nothing special.\n",
 		"You see",
-		 "You entred the lakshagriha area\n",
+		 "You cant go out from here its on fire try the back",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -3153,12 +3600,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 124 = lakshagrihacastle */
+	{	/* 139 = lakshagrihacastle */
 		0,
 		alwaysTrue,
-		 "lakshagrihacastle\n",
+		 "Lakshagriha village\n",
 		"That is something that can not be used\n",
-		tags124,
+		tags139,
 		NULL,
 		NULL,
 		NULL,
@@ -3177,18 +3624,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 125 = lakshagrihacastleEntrance */
+	{	/* 140 = lakshagrihacastleEntrance */
 		0,
 		alwaysTrue,
-		 "Entrance of the lakshagrihacastle",
+		 "Entrance of the lakshagriha village",
 		"That is something that can not be used\n",
-		tags125,
+		tags140,
 		 lakshagriha,
 		 lakshagrihacastle,
 		 lakshagrihacastle,
 		"You see nothing special.\n",
 		"You see",
-		 "You entred the lakshagriha Castle\n",
+		 "You entred the lakshagriha village\n",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -3201,12 +3648,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 126 = lakshagrihacastleWalls */
+	{	/* 141 = lakshagrihacastleWalls */
 		0,
 		alwaysTrue,
-		 "lakshagrihacastle walls",
+		 "lakshagriha village walls",
 		"That is something that can not be used\n",
-		tags126,
+		tags141,
 		 lakshagrihacastle,
 		NULL,
 		NULL,
@@ -3225,18 +3672,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 127 = lakshagrihacastleExit */
+	{	/* 142 = lakshagrihacastleExit */
 		0,
 		alwaysTrue,
-		 "Exit of the lakshagrihacastle",
+		 "Entrance of the lakshagriha castle",
 		"That is something that can not be used\n",
-		tags127,
+		tags142,
 		 lakshagrihacastle,
-		 roadMahabharat,
-		 roadMahabharat,
+		 lakshagriha,
+		 lakshagriha,
 		"You see nothing special.\n",
 		"You see",
-		 "You are on the road towards village\n",
+		 "You are on the road towards hastinapur\n",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -3249,12 +3696,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 128 = roadMahabharat */
+	{	/* 143 = roadMahabharat */
 		0,
 		alwaysTrue,
-		 "the road leads to the village",
+		 "the road leads to the hastinapur village",
 		"That is something that can not be used\n",
-		tags128,
+		tags143,
 		NULL,
 		NULL,
 		NULL,
@@ -3273,15 +3720,15 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 129 = roadentranceMahabharat */
+	{	/* 144 = roadentranceMahabharat */
 		0,
 		alwaysTrue,
-		 "The Road leads to the Village",
+		 "The Road leads to Hastinapur Village",
 		"That is something that can not be used\n",
-		tags129,
-		 lakshagriha,
-		 roadMahabharat,
-		 roadMahabharat,
+		tags144,
+		 lakshagrihacastle,
+		 hastinapurcastle,
+		 hastinapurcastle,
 		"You see nothing special.\n",
 		"You see",
 		 "You are on the road that leads to the Village\n",
@@ -3297,12 +3744,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 130 = roadWallsMahabharat */
+	{	/* 145 = roadWallsMahabharat */
 		0,
 		alwaysTrue,
 		 "only jungle",
 		"That is something that can not be used\n",
-		tags130,
+		tags145,
 		 roadMahabharat,
 		NULL,
 		NULL,
@@ -3321,12 +3768,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 131 = roadexit */
+	{	/* 146 = roadexit */
 		0,
 		alwaysTrue,
-		 "The exit ",
+		 "The path to lakshigrah village ",
 		"That is something that can not be used\n",
-		tags131,
+		tags146,
 		 roadMahabharat,
 		 lakshagriha,
 		 lakshagriha,
@@ -3345,204 +3792,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 132 = village */
+	{	/* 147 = hastinapurcastle */
 		0,
 		alwaysTrue,
-		 "an old small village",
+		 "Hastinapur Castle",
 		"That is something that can not be used\n",
-		tags132,
-		NULL,
-		NULL,
-		NULL,
-		"You see nothing special.\n",
-		"You see",
-		 "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 133 = villageEntrance */
-		0,
-		alwaysTrue,
-		 "entrance to the village",
-		"That is something that can not be used\n",
-		tags133,
-		 roadMahabharat,
-		 village,
-		 village,
-		"You see nothing special.\n",
-		"You see",
-		 "You entred the village\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 134 = villageWalls */
-		0,
-		alwaysTrue,
-		 "surrounded by mountains",
-		"That is something that can not be used\n",
-		tags134,
-		 village,
-		NULL,
-		NULL,
-		"You see nothing special.\n",
-		"You see",
-		 "Whole village is surronded by the mountains and the jungle\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 135 = villagexit */
-		0,
-		alwaysTrue,
-		 "exit to the village",
-		"That is something that can not be used\n",
-		tags135,
-		 village,
-		 road1Mahabharat,
-		 road1Mahabharat,
-		"You see nothing special.\n",
-		"You see",
-		 "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 136 = road1Mahabharat */
-		0,
-		alwaysTrue,
-		 "the road leads to the Hastinapur Castle\n",
-		"That is something that can not be used\n",
-		tags136,
-		NULL,
-		NULL,
-		NULL,
-		"You see nothing special.\n",
-		"You see",
-		 "You are on the road that leads you to the village",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		99,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 137 = road1entrance */
-		0,
-		alwaysTrue,
-		 "The Road leads to the Hatinapur Castle\n",
-		"That is something that can not be used\n",
-		tags137,
-		 road1Mahabharat,
-		 hastinapurcastle,
-		 hastinapurcastle,
-		"You see nothing special.\n",
-		"You see",
-		 "You are on the road that leads to the Hastinapur Castle\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 138 = road1WallsMahabharat */
-		0,
-		alwaysTrue,
-		 "only jungle",
-		"That is something that can not be used\n",
-		tags138,
-		 road1Mahabharat,
-		NULL,
-		NULL,
-		"You see nothing special.\n",
-		"You see",
-		 "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n ",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 139 = road1exitMahabharat */
-		0,
-		alwaysTrue,
-		 "back to village",
-		"That is something that can not be used\n",
-		tags139,
-		 road1Mahabharat,
-		 village,
-		 village,
-		"You see nothing special.\n",
-		"You see",
-		 "back to village\n",
-		"I dont know anything about it.\n",
-		"Level 1\n",
-		"Level 2\n",
-		"I dont know anything about it.\n",
-		 99999,
-		0,
-		0,
-		cannotBeOpened,
-		cannotBeClosed,
-		cannotBeLocked,
-		cannotBeUnlocked
-	},
-	{	/* 140 = hastinapurcastle */
-		0,
-		alwaysTrue,
-		 "Welcome to the castle",
-		"That is something that can not be used\n",
-		tags140,
+		tags147,
 		NULL,
 		NULL,
 		NULL,
@@ -3561,18 +3816,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 141 = hastinapurcastlgate */
+	{	/* 148 = hastinapurcastlgate */
 		0,
 		alwaysTrue,
-		 "You were at the gate of the Castle\n",
+		 "Gate of the castle",
 		"That is something that can not be used\n",
-		tags141,
+		tags148,
 		 hastinapurcastle,
 		NULL,
 		NULL,
 		"You see nothing special.\n",
 		"You see",
-		 "You were at the Gate for Entering the Castle\n",
+		 "It has been boarded shut",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -3585,12 +3840,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 142 = hastinapurcastleentrance */
+	{	/* 149 = hastinapurcastleentrance */
 		0,
 		alwaysTrue,
-		 "Entered to the Castle\n",
+		 "Meeting Hall",
 		"That is something that can not be used\n",
-		tags142,
+		tags149,
 		 hastinapurcastle,
 		 meetinghall,
 		 meetinghall,
@@ -3609,12 +3864,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 143 = meetinghall */
+	{	/* 150 = meetinghall */
 		0,
 		alwaysTrue,
 		 "Meeting Hall\n",
 		"That is something that can not be used\n",
-		tags143,
+		tags150,
 		NULL,
 		NULL,
 		NULL,
@@ -3633,18 +3888,18 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 144 = meetinghallentrance */
+	{	/* 151 = meetinghallentrance */
 		0,
 		alwaysTrue,
-		 "Entrance",
+		 "Gate of the meeting hall",
 		"That is something that can not be used\n",
-		tags144,
+		tags151,
 		 meetinghall,
 		NULL,
 		NULL,
 		"You see nothing special.\n",
 		"You see",
-		 "At the Entrance of the Meeting Hall\n",
+		 "It is blocked somehow",
 		"I dont know anything about it.\n",
 		"Level 1\n",
 		"Level 2\n",
@@ -3657,15 +3912,15 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 145 = levelExit_2 */
+	{	/* 152 = tic */
 		0,
 		alwaysTrue,
-		 "Level Exit PLACEHOLDER",
+		 "A game of tic tac toe",
 		"That is something that can not be used\n",
-		tags145,
+		tags152,
 		 meetinghall,
-		 secondFloorShelf_3_alt,
-		 secondFloorShelf_3_alt,
+		NULL,
+		NULL,
 		"You see nothing special.\n",
 		"You see",
 		"You can't get much closer than this.\n",
@@ -3673,7 +3928,7 @@ OBJECT objs[] = {
 		"Level 1\n",
 		"Level 2\n",
 		"I dont know anything about it.\n",
-		99,
+		 99999,
 		0,
 		0,
 		cannotBeOpened,
@@ -3681,12 +3936,84 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 146 = secondFloor_alt */
+	{	/* 153 = openDoorToSeclock */
+		0,
+		alwaysTrue,
+		 "an open secret exit",
+		"That is something that can not be used\n",
+		tags153,
+		NULL,
+		 secondFloorShelf_3_alt,
+		 secondFloorShelf_3_alt,
+		 "The door is open.\n",
+		"You see",
+		 "You walk through the door into a backroom.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		 isAlreadyOpen,
+		 toggleBackdoor,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 154 = closedDoorToSeclock */
+		0,
+		alwaysTrue,
+		 "a closed secret exit",
+		"That is something that can not be used\n",
+		tags154,
+		NULL,
+		NULL,
+		 alt_libraryToilet,
+		 "The door is closed.\n",
+		"You see",
+		 "The door is closed.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		 toggleBackdoor,
+		 isAlreadyClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 155 = lockedDoorToSeclock */
+		0,
+		alwaysTrue,
+		 "a locked secret exit",
+		"That is something that can not be used\n",
+		tags155,
+		 meetinghall,
+		NULL,
+		 secondFloorShelf_3_alt,
+		 "The door is closed.\n",
+		"You see",
+		 "You should have kept your prayer book with you\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		 toggleBackdoor,
+		 isAlreadyClosed,
+		 isAlreadyLocked,
+		 toggleSecLock
+	},
+	{	/* 156 = secondFloor_alt */
 		0,
 		alwaysTrue,
 		 "The second floor",
 		"That is something that can not be used\n",
-		tags146,
+		tags156,
 		NULL,
 		NULL,
 		NULL,
@@ -3705,12 +4032,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 147 = secondFloorShelf_alt */
+	{	/* 157 = secondFloorShelf_alt */
 		0,
 		alwaysTrue,
 		 "Second Floor book shelves",
 		"That is something that can not be used\n",
-		tags147,
+		tags157,
 		 secondFloor_alt,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -3729,12 +4056,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 148 = secondFloorShelf_1_alt */
+	{	/* 158 = secondFloorShelf_1_alt */
 		0,
 		alwaysTrue,
 		 "Book Shelf 1",
 		"That is something that can not be used\n",
-		tags148,
+		tags158,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_1_alt,
 		 secondFloorShelf_1_alt,
@@ -3753,12 +4080,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 149 = secondFloorShelf_2_alt */
+	{	/* 159 = secondFloorShelf_2_alt */
 		0,
 		alwaysTrue,
 		 "Book Shelf 2",
 		"That is something that can not be used\n",
-		tags149,
+		tags159,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_2_alt,
 		 secondFloorShelf_2_alt,
@@ -3777,12 +4104,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 150 = secondFloorShelf_3_alt */
+	{	/* 160 = secondFloorShelf_3_alt */
 		0,
 		alwaysTrue,
 		 "Book Shelf 3",
 		"That is something that can not be used\n",
-		tags150,
+		tags160,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_3_alt,
 		 secondFloorShelf_3_alt,
@@ -3801,12 +4128,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 151 = secondFloorShelf_4_alt */
+	{	/* 161 = secondFloorShelf_4_alt */
 		0,
 		alwaysTrue,
 		 "Book Shelf 4",
 		"That is something that can not be used\n",
-		tags151,
+		tags161,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_4_alt,
 		 secondFloorShelf_4_alt,
@@ -3825,12 +4152,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 152 = secondFloorShelf_hall_alt */
+	{	/* 162 = secondFloorShelf_hall_alt */
 		0,
 		alwaysTrue,
 		 "Second floor Hall",
 		"That is something that can not be used\n",
-		tags152,
+		tags162,
 		 secondFloorShelf_alt,
 		NULL,
 		NULL,
@@ -3849,12 +4176,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 153 = secondFloorShelf_1_exit_alt */
+	{	/* 163 = secondFloorShelf_1_exit_alt */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags153,
+		tags163,
 		 secondFloorShelf_1_alt,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -3873,12 +4200,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 154 = secondFloorShelf_2_exit */
+	{	/* 164 = secondFloorShelf_2_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags154,
+		tags164,
 		 secondFloorShelf_2_alt,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -3897,12 +4224,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 155 = secondFloorShelf_3_exit */
+	{	/* 165 = secondFloorShelf_3_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags155,
+		tags165,
 		 secondFloorShelf_3_alt,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -3921,12 +4248,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 156 = secondFloorShelf_4_exit */
+	{	/* 166 = secondFloorShelf_4_exit */
 		0,
 		alwaysTrue,
 		 "Exit of the shelf",
 		"That is something that can not be used\n",
-		tags156,
+		tags166,
 		 secondFloorShelf_4_alt,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -3945,12 +4272,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 157 = stairs_floor_3_1 */
+	{	/* 167 = stairs_floor_3_1 */
 		0,
 		alwaysTrue,
 		 "The third floor stairs",
 		"That is something that can not be used\n",
-		tags157,
+		tags167,
 		 secondFloorShelf_alt,
 		 thirdFloor,
 		 thirdFloor,
@@ -3969,12 +4296,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 158 = stairs_floor_3_1 */
+	{	/* 168 = stairs_floor_3_1 */
 		0,
 		alwaysTrue,
 		 "The third floor stairs",
 		"That is something that can not be used\n",
-		tags158,
+		tags168,
 		 secondFloorShelf_1_alt,
 		 thirdFloor,
 		 thirdFloor,
@@ -3993,12 +4320,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 159 = stairs_floor_3_2 */
+	{	/* 169 = stairs_floor_3_2 */
 		0,
 		alwaysTrue,
 		 "The third floor stairs",
 		"That is something that can not be used\n",
-		tags159,
+		tags169,
 		 secondFloorShelf_2_alt,
 		 thirdFloor,
 		 thirdFloor,
@@ -4017,12 +4344,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 160 = stairs_floor_3_3 */
+	{	/* 170 = stairs_floor_3_3 */
 		0,
 		alwaysTrue,
 		 "The third floor stairs",
 		"That is something that can not be used\n",
-		tags160,
+		tags170,
 		 secondFloorShelf_3_alt,
 		 thirdFloor,
 		 thirdFloor,
@@ -4041,12 +4368,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 161 = stairs_floor_3_4 */
+	{	/* 171 = stairs_floor_3_4 */
 		0,
 		alwaysTrue,
 		 "The third floor stairs",
 		"That is something that can not be used\n",
-		tags161,
+		tags171,
 		 secondFloorShelf_4_alt,
 		 thirdFloor,
 		 thirdFloor,
@@ -4065,12 +4392,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 162 = thirdFloor */
+	{	/* 172 = thirdFloor */
 		0,
 		alwaysTrue,
 		 "the third floor reading room",
 		"That is something that can not be used\n",
-		tags162,
+		tags172,
 		NULL,
 		NULL,
 		NULL,
@@ -4089,12 +4416,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 163 = stairsSecondFloorDown */
+	{	/* 173 = stairsSecondFloorDown */
 		0,
 		alwaysTrue,
 		 "Stairs to the second floor",
 		"That is something that can not be used\n",
-		tags163,
+		tags173,
 		 thirdFloor,
 		 secondFloorShelf_alt,
 		 secondFloorShelf_alt,
@@ -4113,12 +4440,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 164 = table_1 */
+	{	/* 174 = table_1 */
 		0,
 		alwaysTrue,
 		 "Reading room table 1",
 		"That is something that can not be used\n",
-		tags164,
+		tags174,
 		 thirdFloor,
 		NULL,
 		NULL,
@@ -4137,12 +4464,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 165 = table_2 */
+	{	/* 175 = table_2 */
 		0,
 		alwaysTrue,
 		 "Reading room table 2",
 		"That is something that can not be used\n",
-		tags165,
+		tags175,
 		 thirdFloor,
 		NULL,
 		NULL,
@@ -4161,12 +4488,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 166 = table_3 */
+	{	/* 176 = table_3 */
 		0,
 		alwaysTrue,
 		 "Reading room table 3",
 		"That is something that can not be used\n",
-		tags166,
+		tags176,
 		 thirdFloor,
 		NULL,
 		NULL,
@@ -4185,12 +4512,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 167 = level_3 */
+	{	/* 177 = level_3 */
 		0,
 		alwaysTrue,
 		 "A book on table 3",
 		"That is something that can not be used\n",
-		tags167,
+		tags177,
 		 thirdFloor,
 		 porcelianPalace,
 		 porcelianPalace,
@@ -4209,12 +4536,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 168 = porcelianPalace */
+	{	/* 178 = porcelianPalace */
 		0,
 		alwaysTrue,
 		 "a mysterious alley",
 		"That is something that can not be used\n",
-		tags168,
+		tags178,
 		NULL,
 		NULL,
 		NULL,
@@ -4233,15 +4560,15 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 169 = distantVoice */
+	{	/* 179 = distantVoice */
 		0,
 		alwaysTrue,
 		 "you hear pepole talking from far east",
 		"That is something that can not be used\n",
-		tags169,
+		tags179,
 		 porcelianPalace,
-		NULL,
-		NULL,
+		 porcelianPalaceHall,
+		 porcelianPalaceHall,
 		 "There seems to be 2 pepole talking ",
 		"You see",
 		 "That little child looks wierd I wonder what it is",
@@ -4257,16 +4584,1864 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 170 = guard */
+	{	/* 180 = porcelianPalaceHall */
+		0,
+		alwaysTrue,
+		 "a mysterious alley",
+		"That is something that can not be used\n",
+		tags180,
+		NULL,
+		NULL,
+		NULL,
+		 "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize",
+		"You see",
+		 "You cant get much closer than this",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 181 = child */
+		0,
+		alwaysTrue,
+		 "a weird child",
+		"That is something that can not be used\n",
+		tags181,
+		 porcelianPalaceHall,
+		NULL,
+		NULL,
+		 "She looks like no child you have ever seen\n",
+		 "You have",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		 "Her name is Weena and she is from the future here this is how humans evolved to be",
+		99,
+		 20,
+		 100,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 182 = stranger */
+		0,
+		alwaysTrue,
+		 "an eccentric steampunk looking guy",
+		"That is something that can not be used\n",
+		tags182,
+		 porcelianPalaceHall,
+		NULL,
+		NULL,
+		 "He looks like someone who could help you\n",
+		 "You have",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		 "He is the time traveller he is from a world ages away from yours or mine",
+		99,
+		 20,
+		 100,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 183 = mysterious_entrance */
+		 3,
+		alwaysTrue,
+		 "entrance to dark cave towards the east",
+		"That is something that can not be used\n",
+		tags183,
+		 porcelianPalaceHall,
+		 maize_1,
+		 maize_1,
+		 "It looks like a dark cave who knows where it goes",
+		"You see",
+		 "You cant get much closer than this",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		 "That is a trecharous maze in the cave you go in I will meet you on the other side",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 184 = maize_1 */
+		0,
+		alwaysTrue,
+		 "The maize",
+		"That is something that can not be used\n",
+		tags184,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You have entred some kind of maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 185 = maize_1_top */
+		0,
+		alwaysTrue,
+		 "blocked entrance to the cave you just entered",
+		"That is something that can not be used\n",
+		tags185,
+		 maize_1,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The entrance is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 186 = maize_1_left */
+		0,
+		alwaysTrue,
+		 "left wall",
+		"That is something that can not be used\n",
+		tags186,
+		 maize_1,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Left wall of the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 187 = maize_1_right */
+		0,
+		alwaysTrue,
+		 "right wall",
+		"That is something that can not be used\n",
+		tags187,
+		 maize_1,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Right wall of the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 188 = maize_1_bottom */
+		0,
+		alwaysTrue,
+		 "opening to the east",
+		"That is something that can not be used\n",
+		tags188,
+		 maize_1,
+		 maize_2,
+		 maize_2,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 189 = maize_2 */
+		0,
+		alwaysTrue,
+		 "Still in the maize",
+		"That is something that can not be used\n",
+		tags189,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 190 = maize_2_top */
+		0,
+		alwaysTrue,
+		 "open area from whence you came",
+		"That is something that can not be used\n",
+		tags190,
+		 maize_2,
+		 maize_1,
+		 maize_1,
+		"You see nothing special.\n",
+		"You see",
+		 "You are where you began from",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 191 = maize_2_left */
+		0,
+		alwaysTrue,
+		 "opening to the north",
+		"That is something that can not be used\n",
+		tags191,
+		 maize_2,
+		 maize_3,
+		 maize_3,
+		"You see nothing special.\n",
+		"You see",
+		 "You have entered another section of the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 192 = maize_2_right */
+		0,
+		alwaysTrue,
+		 "left wall",
+		"That is something that can not be used\n",
+		tags192,
+		 maize_2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Left wall of the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 193 = maize_2_bottom */
+		0,
+		alwaysTrue,
+		 "opening to the east",
+		"That is something that can not be used\n",
+		tags193,
+		 maize_2,
+		 maize_5,
+		 maize_5,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 194 = maize_3 */
+		0,
+		alwaysTrue,
+		 "Still in the maize",
+		"That is something that can not be used\n",
+		tags194,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 195 = maize_3_top */
+		0,
+		alwaysTrue,
+		 "blocked area to the west",
+		"That is something that can not be used\n",
+		tags195,
+		 maize_3,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 196 = maize_3_left */
+		0,
+		alwaysTrue,
+		 "blocked area to the north",
+		"That is something that can not be used\n",
+		tags196,
+		 maize_3,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 197 = maize_3_right */
+		0,
+		alwaysTrue,
+		 "opening to the south",
+		"That is something that can not be used\n",
+		tags197,
+		 maize_3,
+		 maize_2,
+		 maize_2,
+		"You see nothing special.\n",
+		"You see",
+		 "Left wall of the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 198 = maize_3_bottom */
+		0,
+		alwaysTrue,
+		 "opening to the east",
+		"That is something that can not be used\n",
+		tags198,
+		 maize_3,
+		 maize_4,
+		 maize_4,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 199 = maize_4 */
+		0,
+		alwaysTrue,
+		 "Still in the maize",
+		"That is something that can not be used\n",
+		tags199,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 200 = maize_4_top */
+		0,
+		alwaysTrue,
+		 "opening to the west",
+		"That is something that can not be used\n",
+		tags200,
+		 maize_4,
+		 maize_3,
+		 maize_3,
+		"You see nothing special.\n",
+		"You see",
+		 "",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 201 = maize_4_left */
+		0,
+		alwaysTrue,
+		 "blocked area to the north",
+		"That is something that can not be used\n",
+		tags201,
+		 maize_4,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 202 = maize_4_right */
+		0,
+		alwaysTrue,
+		 "blocked area to the south",
+		"That is something that can not be used\n",
+		tags202,
+		 maize_4,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 203 = maize_4_bottom */
+		0,
+		alwaysTrue,
+		 "blocked area to the east",
+		"That is something that can not be used\n",
+		tags203,
+		 maize_4,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 204 = maize_5 */
+		0,
+		alwaysTrue,
+		 "Still in the maize",
+		"That is something that can not be used\n",
+		tags204,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 205 = maize_5_top */
+		0,
+		alwaysTrue,
+		 "opening to the west",
+		"That is something that can not be used\n",
+		tags205,
+		 maize_5,
+		 maize_2,
+		 maize_2,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 206 = maize_5_left */
+		0,
+		alwaysTrue,
+		 "blocked area to the north",
+		"That is something that can not be used\n",
+		tags206,
+		 maize_5,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 207 = maize_5_right */
+		0,
+		alwaysTrue,
+		 "blocked area to the south",
+		"That is something that can not be used\n",
+		tags207,
+		 maize_5,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 208 = maize_5_bottom */
+		0,
+		alwaysTrue,
+		 "opening to the east",
+		"That is something that can not be used\n",
+		tags208,
+		 maize_5,
+		 maize_6,
+		 maize_6,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 209 = maize_6 */
+		0,
+		alwaysTrue,
+		 "Still in the maze",
+		"That is something that can not be used\n",
+		tags209,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 210 = maize_6_top */
+		0,
+		alwaysTrue,
+		 "opening to the west",
+		"That is something that can not be used\n",
+		tags210,
+		 maize_6,
+		 maize_5,
+		 maize_5,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 211 = maize_6_left */
+		0,
+		alwaysTrue,
+		 "opening to the north",
+		"That is something that can not be used\n",
+		tags211,
+		 maize_6,
+		 maize_7,
+		 maize_7,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 212 = maize_6_right */
+		0,
+		alwaysTrue,
+		 "opening to the south",
+		"That is something that can not be used\n",
+		tags212,
+		 maize_6,
+		 maize_8,
+		 maize_8,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 213 = maize_6_bottom */
+		0,
+		alwaysTrue,
+		 "blocked area to the east",
+		"That is something that can not be used\n",
+		tags213,
+		 maize_6,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 214 = maize_7 */
+		0,
+		alwaysTrue,
+		 "Still in the maze",
+		"That is something that can not be used\n",
+		tags214,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 215 = maize_7_top */
+		0,
+		alwaysTrue,
+		 "blocked area to the west",
+		"That is something that can not be used\n",
+		tags215,
+		 maize_7,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 216 = maize_7_left */
+		0,
+		alwaysTrue,
+		 "blocked area to the north",
+		"That is something that can not be used\n",
+		tags216,
+		 maize_7,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 217 = maize_7_right */
+		0,
+		alwaysTrue,
+		 "opening to the south",
+		"That is something that can not be used\n",
+		tags217,
+		 maize_7,
+		 maize_6,
+		 maize_6,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 218 = maize_7_bottom */
+		0,
+		alwaysTrue,
+		 "blocked area to the east",
+		"That is something that can not be used\n",
+		tags218,
+		 maize_6,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 219 = maize_8 */
+		0,
+		alwaysTrue,
+		 "Still in the maze",
+		"That is something that can not be used\n",
+		tags219,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 220 = maize_8_top */
+		0,
+		alwaysTrue,
+		 "blocked area to the west",
+		"That is something that can not be used\n",
+		tags220,
+		 maize_8,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 221 = maize_8_left */
+		0,
+		alwaysTrue,
+		 "opening to the north",
+		"That is something that can not be used\n",
+		tags221,
+		 maize_8,
+		 maize_6,
+		 maize_6,
+		"You see nothing special.\n",
+		"You see",
+		 "Still in the maze",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 222 = maize_8_right */
+		0,
+		alwaysTrue,
+		 "blocked area to the south",
+		"That is something that can not be used\n",
+		tags222,
+		 maize_8,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The area is blocked",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 223 = maize_8_bottom */
+		0,
+		alwaysTrue,
+		 "opening to the east",
+		"That is something that can not be used\n",
+		tags223,
+		 maize_8,
+		 maize_exit_hall,
+		 maize_exit_hall,
+		"You see nothing special.\n",
+		"You see",
+		 "Finaly out of the maize",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 224 = maize_exit_hall */
+		0,
+		alwaysTrue,
+		 "Garden outside the musesum",
+		"That is something that can not be used\n",
+		tags224,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 225 = weena */
+		0,
+		alwaysTrue,
+		 "weena",
+		"That is something that can not be used\n",
+		tags225,
+		 maize_exit_hall,
+		NULL,
+		NULL,
+		 "She looks like no child you have ever seen\n",
+		 "You have",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		 "Her name is Weena and she is from the future here this is how humans evolved to be",
+		99,
+		 20,
+		 100,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 226 = the_time_traveller */
+		0,
+		alwaysTrue,
+		 "The time traveller",
+		"That is something that can not be used\n",
+		tags226,
+		 maize_exit_hall,
+		NULL,
+		NULL,
+		 "He looks like someone who could help you\n",
+		 "You have",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		 "He is the time traveller he is from a world ages away from yours or mine",
+		99,
+		 20,
+		 100,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 227 = portal_level_3 */
+		0,
+		alwaysTrue,
+		 "A portal made by the time traveller",
+		"That is something that can not be used\n",
+		tags227,
+		 maize_exit_hall,
+		 thirdFloor_alt,
+		 thirdFloor_alt,
+		"You see nothing special.\n",
+		"You see",
+		 "Back in the burning library",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 228 = thirdFloor_alt */
+		0,
+		alwaysTrue,
+		 "the third floor reading room",
+		"That is something that can not be used\n",
+		tags228,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 229 = stairsSecondFloorDown_alt */
+		0,
+		alwaysTrue,
+		 "Stairs to the second floor",
+		"That is something that can not be used\n",
+		tags229,
+		 thirdFloor_alt,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Go forward these stairs are on fire",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 230 = table_1_alt */
+		0,
+		alwaysTrue,
+		 "Reading room table 1",
+		"That is something that can not be used\n",
+		tags230,
+		 thirdFloor_alt,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are facing table 1",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 231 = table_2_alt */
+		0,
+		alwaysTrue,
+		 "Reading room table 2",
+		"That is something that can not be used\n",
+		tags231,
+		 thirdFloor_alt,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are facing table 2",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 232 = table_3_alt */
+		0,
+		alwaysTrue,
+		 "Reading room table 3",
+		"That is something that can not be used\n",
+		tags232,
+		 thirdFloor_alt,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are facing table 3",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 233 = roof_door */
+		0,
+		alwaysTrue,
+		 "Door to the roof",
+		"That is something that can not be used\n",
+		tags233,
+		 thirdFloor_alt,
+		 roof,
+		 roof,
+		"You see nothing special.\n",
+		"You see",
+		 "You are on the roof",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 234 = roof */
+		0,
+		alwaysTrue,
+		 "The roof",
+		"That is something that can not be used\n",
+		tags234,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are on the roof",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 235 = book_4 */
+		0,
+		alwaysTrue,
+		 "A sizziling book",
+		"That is something that can not be used\n",
+		tags235,
+		 roof,
+		 firetruck,
+		 firetruck,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 236 = firetruck */
+		0,
+		alwaysTrue,
+		 "The Firetruck.",
+		"That is something that can not be used\n",
+		tags236,
+		 street,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 237 = firetruckinterior */
+		0,
+		alwaysTrue,
+		 "Gyu Montag's house in flames",
+		"That is something that can not be used\n",
+		tags237,
+		 firetruck,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You look around and see that your friend Montag's house in flames\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 238 = firetruckHandle */
+		0,
+		alwaysTrue,
+		 "Firetruck door handle",
+		 "You have opened the firetruck door",
+		tags238,
+		 firetruck,
+		 street,
+		 street,
+		"You see nothing special.\n",
+		"You see",
+		 "You are in the street and feel the warmth of the burning house infont.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 239 = street */
+		0,
+		alwaysTrue,
+		 "street",
+		"That is something that can not be used\n",
+		tags239,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Their is nothing but blocks of apartment running along the street\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 240 = street2 */
+		0,
+		alwaysTrue,
+		 "You have called Granger and Faber a while ago, they may have approached till now while you were struggling your way out of the house.\n You should find yourself a wapon in order to defend yourself from the Hound",
+		"That is something that can not be used\n",
+		tags240,
+		NULL,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Their is nothing but blocks of apartment running along the street\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 241 = houseEntrance */
+		0,
+		alwaysTrue,
+		 "Entrance of Montag's house",
+		"That is something that can not be used\n",
+		tags241,
+		 street,
+		 Montagslivingroom,
+		 Montagslivingroom,
+		"You see nothing special.\n",
+		"You see",
+		 "You are in front of Montag's house. You should probably find the boooks you have given to Guy Montag in order to go back to your World.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 242 = Montagslivingroom */
+		0,
+		alwaysTrue,
+		 "Montag's Living Room is in flames",
+		"That is something that can not be used\n",
+		tags242,
+		 Montagslivingroom,
+		 Montagsbedroom,
+		 Montagsbedroom,
+		"You see nothing special.\n",
+		"You see",
+		 "You entred Montag's Living Room\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 243 = livingroomWalls */
+		0,
+		alwaysTrue,
+		 "Livingroom walls all wrapped up in flames",
+		"That is something that can not be used\n",
+		tags243,
+		 Montagslivingroom,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "There is nothing but burning walls there\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 244 = livingroomExit */
+		0,
+		alwaysTrue,
+		 "Exit of Montag's living room",
+		"That is something that can not be used\n",
+		tags244,
+		 Montagslivingroom,
+		 street2,
+		 street2,
+		"You see nothing special.\n",
+		"You see",
+		 "You are in the streets with Guy Montag\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 245 = Montagsbedroom */
+		0,
+		alwaysTrue,
+		 "Montag's bedroom",
+		"That is something that can not be used\n",
+		tags245,
+		 Montagsbedroom,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You are in Montag's bedroom and everything is in fire.\n There is very less probability to get back the books admist the flames,Captain Beatty must have taken the books with him.",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 246 = bedroomWalls_montag */
+		0,
+		alwaysTrue,
+		 "bedroom walls all covered in fire",
+		"That is something that can not be used\n",
+		tags246,
+		 Montagsbedroom,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "There is nothing but bedroom walls there\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 247 = bed_montag */
+		0,
+		alwaysTrue,
+		 "Bed where the flames had reached and a telephone beside it where the flames have not yet reached. \nYou can use the telephone to call Faber and Granger for HELP",
+		"That is something that can not be used\n",
+		tags247,
+		 Montagsbedroom,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You see a burning bed",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 248 = telephone */
+		0,
+		alwaysTrue,
+		 "A telephone, yet away from the flames and can be used.If your books are with Captain Beatty use it to call Faber and Granger for support.",
+		 "You used the telephone to call Faber and Granger",
+		tags248,
+		 Montagsbedroom,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Use the telephone to call faber and granger for Help\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 249 = bedroomexit */
+		0,
+		alwaysTrue,
+		 "exit to the living room",
+		"That is something that can not be used\n",
+		tags249,
+		 Montagsbedroom,
+		 Montagslivingroom,
+		 Montagslivingroom,
+		"You see nothing special.\n",
+		"You see",
+		 "you are in the living room\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 250 = firetruckPosterior */
+		0,
+		alwaysTrue,
+		 "The Firetruck posterior, with many fire emergency equipments and a firethrower.",
+		"That is something that can not be used\n",
+		tags250,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 251 = Faber */
+		0,
+		alwaysTrue,
+		 "Faber who has taken hold of 2 firemen.",
+		"That is something that can not be used\n",
+		tags251,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 252 = Granger */
+		0,
+		alwaysTrue,
+		 "Granger with his comrades is dealing with the remaining firemen.",
+		"That is something that can not be used\n",
+		tags252,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 253 = CaptainBeatty */
+		0,
+		alwaysTrue,
+		 "Captain Beatty who is now aware of the situation,has ordered the beast to hunt and kill you and Montag.",
+		"That is something that can not be used\n",
+		tags253,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 254 = Hound */
+		0,
+		alwaysTrue,
+		 "A Large Mechanical Hound, a monstrous machine which is on its way to kill you and Montag. \n",
+		"That is something that can not be used\n",
+		tags254,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "The Hound has been set by Captain Beatty to kill you and Guy Montag",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 255 = fireman1 */
+		0,
+		alwaysTrue,
+		 "a tall and lean fireman grasped by Granger",
+		"That is something that can not be used\n",
+		tags255,
+		 street2,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		"You can't get much closer than this.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		99,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 256 = Flamethrower */
+		0,
+		alwaysTrue,
+		 "Flamethrower",
+		 "You have the flamethrower and can use it to produce flames",
+		tags256,
+		 firetruckPosterior,
+		NULL,
+		NULL,
+		"You see nothing special.\n",
+		"You see",
+		 "You see The Hound approachig you and Montag.\n You've noticed that your books are inside Captain Beatty waist coat.\n You've use the flame thrower on the hound, burning the beast into ashes.\n",
+		"I dont know anything about it.\n",
+		"Level 1\n",
+		"Level 2\n",
+		"I dont know anything about it.\n",
+		 99999,
+		0,
+		0,
+		cannotBeOpened,
+		cannotBeClosed,
+		cannotBeLocked,
+		cannotBeUnlocked
+	},
+	{	/* 257 = guard */
 		0,
 		alwaysTrue,
 		 "a burly guard",
 		"That is something that can not be used\n",
-		tags170,
+		tags257,
 		 bedroom,
 		NULL,
 		NULL,
-		 "You would need a mirror to look at yourself.\n",
+		 "A large guard",
 		 "You have",
 		"You can't get much closer than this.\n",
 		"I dont know anything about it.\n",
@@ -4281,12 +6456,12 @@ OBJECT objs[] = {
 		cannotBeLocked,
 		cannotBeUnlocked
 	},
-	{	/* 171 = player */
+	{	/* 258 = player */
 		0,
 		alwaysTrue,
 		 "yourself",
 		"That is something that can not be used\n",
-		tags171,
+		tags258,
 		 bedroom,
 		NULL,
 		NULL,

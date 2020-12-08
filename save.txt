@@ -1,0 +1,90 @@
+get keys
+get prayer
+go north
+unlock door
+open door
+go library
+go east
+go east
+go north
+go north
+go book
+go north
+examine card
+go up
+go west
+examine card
+go lab
+open box
+examine box
+go north
+go hall
+go lab
+open box
+open wood box
+open wooden box
+examine box
+examine wooden box
+get keys
+look around
+go east
+go north
+examine wooden box
+get key
+go hall
+go bedroom
+unlock door
+look around
+open door
+look around
+inventory
+unlock door
+lock door
+unlock door
+look around
+go door
+go exit
+go hall
+go up
+go shelf
+go shelf 3
+open book
+go book
+go village
+go road
+go hall
+
+look around
+go north
+go portal
+go book
+go level
+go exit
+unlock secret exit
+unlock door
+look around
+open door
+go exit
+go up
+go book
+help
+go east
+talk cave with man
+talk east with man
+talk
+talk about east with man
+talk about cave with man
+go east
+go east
+go east
+go east
+go south
+go east
+go portal
+go roof
+go book
+go house
+go south
+go house
+go exit
+use flamethrower

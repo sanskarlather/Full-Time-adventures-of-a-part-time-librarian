@@ -57,11 +57,9 @@
     <ClInclude Include="toggle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="object.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <ClInclude Include="usage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="object.awk">
@@ -122,5 +120,19 @@
     <ClCompile Include="move.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="usage.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tictac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="object.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="save.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

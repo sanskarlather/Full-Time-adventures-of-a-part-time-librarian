@@ -8,6 +8,8 @@
 #include "inventory2.h"
 #include "openclose.h"
 #include "talk.h"
+#include "tictac.h"
+#include "usage.h"
 
 typedef struct
 {
@@ -62,6 +64,9 @@ bool parseAndExecute(const char *input)
       { "talk about A with B" , executeTalkTo     },
       { "talk about A"        , executeTalk       },
       { "talk A"              , executeTalk       },
+      { "use A"               , executeUse        },
+      { "help"                , executeHelp       },
+      { "play"                , playtictac      },
       { "A"                   , executeNoMatch    }
    };
    const COMMAND *cmd;

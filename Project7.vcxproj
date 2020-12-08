@@ -152,11 +152,9 @@
     <ClInclude Include="parsexec.h" />
     <ClInclude Include="reach.h" />
     <ClInclude Include="talk.h" />
+    <ClInclude Include="usage.h" />
     <ClInclude Include="tictac.h" />
     <ClInclude Include="toggle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="object.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="map.awk" />
@@ -180,7 +178,13 @@
     <ClCompile Include="parsexec.c" />
     <ClCompile Include="reach.c" />
     <ClCompile Include="talk.c" />
+    <ClCompile Include="tictac.c" />
+    <ClCompile Include="usage.c" />
     <ClCompile Include="toggle.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="object.txt" />
+    <Text Include="save.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

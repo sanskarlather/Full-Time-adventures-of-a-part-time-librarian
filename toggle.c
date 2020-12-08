@@ -23,13 +23,15 @@ const char *isStillLocked(void)     { return "That is locked.\n";           }
 const char *toggleBackdoor(void)
 {
    swapLocations(openDoorToBackroom, closedDoorToBackroom);
-  //swapLocations(openDoorToCave, closedDoorToCave);
+   swapLocations(openDoorToLibrary, closedDoorToLibrary);
+  swapLocations(openDoorToSherlock, closedDoorToSherlock);
+  swapLocations(openDoorToSeclock, closedDoorToSeclock);
    return "OK.\n";
 }
 
 const char *toggleBox(void)
 {
-  swapLocations(openDoorToLibrary, closedDoorToLibrary);
+  swapLocations(openBoxWood, closedBoxWood);
    return "OK.\n";
 }
 
@@ -40,8 +42,40 @@ const char* toggleBoxLock(void)
         swapLocations(closedDoorToLibrary, lockedDoorToLibrary);
         return "OK.\n";
     }
+    
+   
     else
     {
         return "You don't have a key.\n";
     }
 }
+
+const char* toggleSherLock(void)
+{
+    if (sherlockKey->location == player)
+    {
+        swapLocations(closedDoorToSherlock, lockedDoorToSherlock);
+        return "OK.\n";
+    }
+
+    else
+    {
+        return "You don't have a key.\n";
+    }
+}
+
+const char* toggleSecLock(void)
+{
+    if (secretBook->location == player)
+    {
+        swapLocations(closedDoorToSeclock, lockedDoorToSeclock);
+        return "OK.\n";
+    }
+
+    else
+    {
+        return "You don't have a key.\n";
+    }
+}
+
+ 
