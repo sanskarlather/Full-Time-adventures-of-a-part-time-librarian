@@ -82,3 +82,9 @@ go south
 go east
 go portal
 go roof
+go book
+go house
+go south
+go house
+go exit
+use flamethrower

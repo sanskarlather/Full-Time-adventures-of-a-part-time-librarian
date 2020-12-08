@@ -3,7 +3,7 @@
 #include "toggle.h"
 
 typedef struct object {
-   int           level
+   int           level;
    bool         (*condition)(void);
    const char    *description;
    const char    *usage;
@@ -131,6 +131,13 @@ extern OBJECT objs[];
      tags        "keychain", "keys", "key set"
      location     bedroom
 	 details     "The key is really small and shiny.\n"
+     weight      1
+	 
+- secretBook
+     description "a prayer book"
+     tags        "prayer", "prayer book"
+     location     bedroom
+	 details     "A prayer book without which you never leave the house you beilve it will help you in everyday adventures\n"
      weight      1
 
 //road
@@ -605,34 +612,55 @@ extern OBJECT objs[];
 
 - level_1
      description  "A book on the floor"
+	 tags         "book"
 	 details      "It is a sherlock holmes book but why is it glowing"
 	 location     alt_toilet
 	 destination  spawnlocation
-	 textGo     "What is this what apartment is this"
+	 textGo     "You are in an unknown location where the surrounding is similar to Victoria England.\n"
 	 weight       99999
 
-
-
+- openDoorToSherlock
+     description "an open door to the library"
+     tags        "south", "door", "doorway"
+     destination alt_libraryToilet
+     details     "The door is open.\n"
+     textGo      "You walk through the door into a backroom.\n"
+     open        isAlreadyOpen
+     close       toggleBackdoor
 	 
+- closedDoorToSherlock
+     description "a closed door out of this place"
+     tags        "south", "door", "doorway"
+     prospect    alt_libraryToilet
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
 	 
-	 
-- levelExit_1
-	 description "Exit of the level PLACEHOLDER"
-	 tags         "Exit"
-	 location     livinghall
-	 destination  alt_libraryToilet
+- lockedDoorToSherlock
+     description "a locked door out of this place"
+     tags        "south", "door", "doorway"
+     location    bedroomSherlock
+     prospect    alt_libraryToilet
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
+	 lock        isAlreadyLocked
+     unlock      toggleSherLock
 
 - spawnlocation
      description "an unknown location"
+	 tags        "spawn"
 	 textGo    "You are in an unknown location where the surrounding is similar to Victoria England.\nYou see an apartment right in front of you.\nThere is also card on the ground.Perhaps you should 'examine' the card."
 	 
 	 
 - intobasement
      description "An unknown apartment"
-	 tags        "apartment"
+	 tags        "apartment","north"
 	 location    spawnlocation
 	 destination basement  	 
-	 textGo    "You are in 221B Baker Street where Sherlock Holmes lives.\nYou are currently in the basement of the Apartment.\nYou see stairs that leads to his Room."
+	 textGo    "You are currently in the basement of the Apartment.\n"
 
 - card
      description "Card lying on the ground"	
@@ -643,15 +671,25 @@ extern OBJECT objs[];
 - basement
      description "221 B Baker Street Aparatment Basement"
 	 tags 		  "inside"
+	
+- riddle_1
+	  description "Card lying on the ground"
+	  tags        "card"
+	  details     "You will encounter me all around this wretched house, \n my answer is me myself lets see if you can figure me out."
+	  location    basement
+	  
+- upstairs
+     description "stairs that lead to Sherlocks' Room"
+     tags 		  "up"
+	 textGo       "On the stairs"
+	 
 - exit_apartment
-     description "The exit"
+     description "The exit of the apartment"
      tags       "outside","exit","back"
 	 location    basement
 	 textGo   "The door is locked.You can't go outside.Moreover, nothing is visible outside.\nLike a void."
 
-- upstairs
-     description "stairs that lead to Sherlocks' Room"
-     tags 		  "up"
+
 	 
 - upstairs_entrance
      description "Stairs leading to Sherlocks' Room"
@@ -668,7 +706,7 @@ extern OBJECT objs[];
 	 
 - livinghall
      description "The Living Room"
-     tags 		  "hall"
+     tags 		  "west"
 	 
 - livinghall_entrance
      description "The living room"
@@ -681,6 +719,12 @@ extern OBJECT objs[];
      tags        "upstairs","back"
      location 	 livinghall 
 	 destination upstairs 
+
+- riddle_2
+	  description "Card lying on the ground"
+	  tags        "card"
+	  details     " I do not eat I do not sleep,\n I have been cut yet do not bleed, \n Not with a code but with me \n you can leave this abode of a dead man yet to be \n"
+	  location    livinghall
 	 
 - bedroomSherlock
      description "The Bedroom"
@@ -688,24 +732,123 @@ extern OBJECT objs[];
 
 - bedroom_entranceSherlock
      description "The bedroom"
-     tags        "bedroom"
+     tags        "north"
      location 	 livinghall 
 	 destination bedroomSherlock
 
 - bedroom_exitSherlock
      description "The Living Room"
-     tags        "living hall","hall","back"
+     tags        "living hall","hall","back","east"
      location 	 bedroomSherlock 
 	 destination livinghall 
 	 
 - experimenttable
      description "the Table where Sherlock Holmes does his experiment"
 	 tags 		  "table"
+
+- riddle_3
+	  description "Card lying on the ground"
+	  tags        "card"
+	  details     " Box here box there boxes everywhere, \n You need the thing to set you free,\n Knock on me it just might be, \n A change in your misfortunes. "
+	  location    experimenttable	 
+
+- openBoxWood
+     description "a wooden box"
+     tags        "box", "wooden box"
+     details     "The box is open.\n"
+     weight      5
+     capacity    10
+     open        isAlreadyOpen
+     close       toggleBox
+     lock        isStillOpen
+     unlock      isAlreadyOpen
+
+- closedBoxWood
+     description "a wooden box"
+     tags        "box", "wooden box"
+     details     "The box is closed.\n"
+	 location    experimenttable
+     weight      5
+     open        toggleBox
+     close       isAlreadyClosed
+     lock        toggleBoxLock
+     unlock      isAlreadyUnlocked
+
+- openBoxMetal
+     description "a metal box"
+     tags        "metal box","box" 
+     details     "The box is open.\n"
+     weight      5
+     capacity    10
+     open        isAlreadyOpen
+     close       toggleBox
+     lock        isStillOpen
+     unlock      isAlreadyOpen
+
+- closedBoxMetal
+     description "a metal box"
+     tags        "metal box","box" 
+     details     "The box is closed.\n"
+	 location    experimenttable
+     weight      5
+     open        toggleBox
+     close       isAlreadyClosed
+     lock        toggleBoxLock
+     unlock      isAlreadyUnlocked
 	 
+- openBoxGlass
+     description "a glass box"
+     tags        "glass box","box"
+     details     "The box is open.\n"
+     weight      5
+     capacity    10
+     open        isAlreadyOpen
+     close       toggleBox
+     lock        isStillOpen
+     unlock      isAlreadyOpen
+
+- closedBoxGlass
+     description "a glass box"
+     tags        "glass box","box"
+     details     "The box is closed.\n"
+	 location    experimenttable
+     weight      5
+     open        toggleBox
+     close       isAlreadyClosed
+     lock        toggleBoxLock
+     unlock      isAlreadyUnlocked
+
+- openBoxGold
+     description "a gold box"
+     tags        "gold box","box"
+     details     "The box is open.\n"
+     weight      5
+     capacity    10
+     open        isAlreadyOpen
+     close       toggleBox
+     lock        isStillOpen
+     unlock      isAlreadyOpen
+
+- closedBoxGold
+     description "a gold box"
+     tags        "gold box","box"
+     details     "The box is closed.\n"
+	 location    experimenttable
+     weight      5
+     open        toggleBox
+     close       isAlreadyClosed
+     lock        toggleBoxLock
+     unlock      isAlreadyUnlocked
+
+- sherlockKey
+     description "keycard"
+	 tags        "key", "keyscard"
+	 location    openBoxWood
+	 weight      1
 
 - experimenttable_entrance
-     description "Experiment Table"
-     tags        "experiment table"
+     description "Experiment Lab"
+     tags        "experiment lab","lab","south"
      location 	 livinghall 
 	 destination experimenttable
 
@@ -716,8 +859,8 @@ extern OBJECT objs[];
 	 destination livinghall 
 
 - diningtable
-     description "the Dining Table"
-	 tags 		  "dinner table"
+     description "the Dining room"
+	 tags 		  "dinner table","north"
 
 - diningtable_entrance
      description "Dining Table"
@@ -727,7 +870,7 @@ extern OBJECT objs[];
 
 - diningtable_exit
      description "The Living Room"
-     tags        "living hall","hall","back"
+     tags        "living hall","hall","back","south"
      location 	 diningtable
 	 destination livinghall 	  
 
@@ -934,57 +1077,59 @@ extern OBJECT objs[];
 	 
 
 - lakshagriha
-     description "place with the burning castle"
-	 tags    "lakshagriha"
-	 textGo    "You are in the city of lakshagriha\n"
+     description "a burning lakshagriha castle"
+	 tags        "lakshagriha"
+	 textGo      "You are in the city of lakshagriha\n"
 	 weight      99999
+	 
 - lakshagrihaEntrance
-     description "Entrance of the lakshagriha area"
+     description "Front entrance of the lakshagriha castle"
      tags        "entrance"
      location    lakshagriha
     
-	 textGo    "You entred the lakshagriha area\n"
+	 textGo    "You cant go out from here its on fire try the back"
 	 weight      99999
 	 
 - lakshagrihacastle
-     description "lakshagrihacastle\n"
-     tags        "lakshagrihacastle"
+     description "Lakshagriha village\n"
+     tags        "village"
 	 textGo    "You entred the lakshagrihacastle\n"
 	 weight      99999
+	 
 - lakshagrihacastleEntrance
-     description "Entrance of the lakshagrihacastle"
-     tags        "north","lakshagrihacastle"
+     description "Entrance of the lakshagriha village"
+     tags        "north","lakshagriha village"
      location    lakshagriha
      destination lakshagrihacastle
-	 textGo    "You entred the lakshagriha Castle\n"
+	 textGo    "You entred the lakshagriha village\n"
 	 weight      99999	 
 	 
 - lakshagrihacastleWalls
-     description "lakshagrihacastle walls"
+     description "lakshagriha village walls"
      tags        "east","west"
      location    lakshagrihacastle
-	 textGo    "There is nothing but walls there\n"
+	 textGo      "There is nothing but walls there\n"
 	 weight      99999
 	 
 
 - lakshagrihacastleExit
-     description "Exit of the lakshagrihacastle"
+     description "Entrance of the lakshagriha castle"
      tags        "south","exit"
      location    lakshagrihacastle
-     destination roadMahabharat
-	 textGo    "You are on the road towards village\n"
+     destination lakshagriha
+	 textGo      "You are on the road towards hastinapur\n"
 	 weight      99999		 
 
 - roadMahabharat
-	 description "the road leads to the village"
-	 tags 		 "road"
-	 textGo    "You are on the road that leads you to the village"
+	 description "the road leads to the hastinapur village"
+	 tags 		 "hastinapur"
+	 textGo     "You are on the road that leads you to the village"
 
 - roadentranceMahabharat
-	 description "The Road leads to the Village"
+	 description "The Road leads to Hastinapur Village"
      tags        "road"
-     location    lakshagriha
-     destination roadMahabharat
+     location    lakshagrihacastle
+     destination hastinapurcastle
 	 textGo    "You are on the road that leads to the Village\n"
 	 weight      99999
 
@@ -997,86 +1142,32 @@ extern OBJECT objs[];
 	 weight      99999
 	 
 - roadexit
-	 description "The exit "
-     tags        "exit"
+	 description "The path to lakshigrah village "
+     tags        "exit","path"
      location    roadMahabharat
      destination lakshagriha
-	 textGo    "You are on the road that leads to the Village\n"
+	 textGo     "You are on the road that leads to the Village\n"
 	 weight      99999
 	 
-- village
-     description "an old small village"
-     tags        "village"
-	 textGo    "You are here so that you can understand the language speak by the people of the Village and hide from the Fireman so that he couldn't kill you......\n You are in the front of the village\n"
-	 weight      99999
+ 
 	 
-- villageEntrance
-     description "entrance to the village"
-     tags        "entrance","south"
-     location    roadMahabharat
-     destination village
-	 textGo    "You entred the village\n"
-	 weight      99999
-	 
-- villageWalls
-     description "surrounded by mountains"
-     tags        "west","east"
-     location    village
-	 textGo    "Whole village is surronded by the mountains and the jungle\n"
-	 weight      99999	 
-
-- villagexit
-	 description "exit to the village"
-     tags        "exit"
-     location    village
-     destination road1Mahabharat
-	 textGo    "You have exited the village and move towards the Hatinapur castle where pandavas appeared after long time and demand for their own Kingdom\n"
-	 weight      99999	  
-	 
-- road1Mahabharat
-	 description "the road leads to the Hastinapur Castle\n"
-	 tags 		 "road"
-	 textGo    "You are on the road that leads you to the village"
-
-- road1entrance
-	 description "The Road leads to the Hatinapur Castle\n"
-     tags        "north"
-     location    road1Mahabharat
-     destination hastinapurcastle
-	 textGo    "You are on the road that leads to the Hastinapur Castle\n"
-	 weight      99999
-	 
-- road1WallsMahabharat
-     description "only jungle"
-     tags        "west","east"
-     location    road1Mahabharat
-	 textGo    "There is nothing but jungle all around and a narrow road that leads to Hastinapur Castle\n "
-	 weight      99999
-	 
-- road1exitMahabharat
-	 description "back to village"
-     tags        "exit"
-     location    road1Mahabharat
-     destination village
-	 textGo    "back to village\n"
-	 weight      99999
 
 - hastinapurcastle
-     description "Welcome to the castle"
+     description "Hastinapur Castle"
      tags        "hastinapurcastle"
 	 textGo    "You are at the glorious castle"
 	 weight      99999
 
 - hastinapurcastlgate
-	 description "You were at the gate of the Castle\n"
+	 description "Gate of the castle"
      tags        "east"
      location    hastinapurcastle
-	 textGo    "You were at the Gate for Entering the Castle\n"
+	 textGo     "It has been boarded shut"
 	 weight      99999
 
 - hastinapurcastleentrance
-	 description "Entered to the Castle\n"
-     tags        "north"
+	 description "Meeting Hall"
+     tags        "north","hall"
      location    hastinapurcastle
 	 destination meetinghall
 	 textGo    "Entered to the Castle Hastinapur Castle and Headed towards the Meeting hall\n  "
@@ -1091,18 +1182,50 @@ extern OBJECT objs[];
 	 
 	 
 - meetinghallentrance
-	 description "Entrance"
+	 description "Gate of the meeting hall"
      tags        "south"
      location    meetinghall
-	 textGo    "At the Entrance of the Meeting Hall\n"
+	 textGo      "It is blocked somehow"
 	 weight      99999
 
+- tic
+	 description "A game of tic tac toe"
+     tags        "game", "tic","tac","toe"
+     location    meetinghall
+	 weight      99999
+
+
+- openDoorToSeclock
+     description "an open secret exit"
+     tags        "exit", "door", "doorway"
+     destination secondFloorShelf_3_alt
+     details     "The door is open.\n"
+     textGo      "You walk through the door into a backroom.\n"
+     open        isAlreadyOpen
+     close       toggleBackdoor
 	 
-- levelExit_2
-	 description  "Level Exit PLACEHOLDER"
-	 tags         "exit"
-	 location     meetinghall
-	 destination  secondFloorShelf_3_alt
+- closedDoorToSeclock
+     description "a closed secret exit"
+     tags        "exit", "door", "doorway"
+     prospect    alt_libraryToilet
+     details     "The door is closed.\n"
+     textGo      "The door is closed.\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
+	 
+- lockedDoorToSeclock
+     description "a locked secret exit"
+     tags        "exit", "door", "doorway"
+     location    meetinghall
+     prospect    secondFloorShelf_3_alt
+     details     "The door is closed.\n"
+     textGo      "You should have kept your prayer book with you\n"
+     open        toggleBackdoor
+     close       isAlreadyClosed
+	 lock        isAlreadyLocked
+     unlock      toggleSecLock
+	 
+
 
 - secondFloor_alt
      description "The second floor"
@@ -1229,53 +1352,572 @@ extern OBJECT objs[];
 	 description  "Reading room table 2"
 	 tags         "table 2","north"
 	 location     thirdFloor
-	 textGo     "You are facing table 2"	 
+	 textGo      "You are facing table 2"	 
 	 
 - table_3
 	 description  "Reading room table 3"
 	 tags         "table 2","south"
 	 location     thirdFloor
-	 textGo     "You are facing table 3"
+	 textGo       "You are facing table 3"
 
 - level_3
 	 description  "A book on table 3"
 	 tags         "book"
 	 location     thirdFloor
 	 destination  porcelianPalace
-	 textGo     "What place is this why are there these paintings on the wall? What is it this time"
+	 textGo       "What place is this why are there these paintings on the wall? What is it this time"
 	 
 - porcelianPalace
 	 description   "a mysterious alley"
 	 tags          "surrounding"
 	 details       "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
-	 textGo      "You cant get much closer than this"
+	 textGo        "You cant get much closer than this"
 	
 - distantVoice
 	 description   "you hear pepole talking from far east"
 	 tags          "east"
-	 details       "There seems to be 2 pepole talking "
-	 textGo      "That little child looks wierd I wonder what it is"
 	 location      porcelianPalace
+	 destination   porcelianPalaceHall
+	 details       "There seems to be 2 pepole talking "
+	 textGo        "That little child looks wierd I wonder what it is"
+	 
 
+- porcelianPalaceHall
+     description   "a mysterious alley"
+	 tags          "hall"
+	 details       "This looks like a mueseum of some sort there are paintings on the wall. Fossils all around and many things you don't recoganize"
+	 textGo        "You cant get much closer than this"
 	
+- child
+     description "a weird child"
+     tags        "little kid", "child", "girl"
+	 location    porcelianPalaceHall
+	 details     "She looks like no child you have ever seen\n"
+	 gossip_3    "Her name is Weena and she is from the future here this is how humans evolved to be"
+     contents    "You have"
+     health      100
+	 capacity    20
+
+- stranger
+     description "an eccentric steampunk looking guy"
+     tags        "man", "steampunk guy", "steampunk", "guy"
+	 location    porcelianPalaceHall
+	 details     "He looks like someone who could help you\n"
+	 gossip_3    "He is the time traveller he is from a world ages away from yours or mine"
+     contents    "You have"
+     health      100
+	 capacity    20
+
+- mysterious_entrance
+	 level         3
+     description   "entrance to dark cave towards the east"
+	 tags          "east","cave"
+	 location      porcelianPalaceHall
+	 destination   maize_1
+	 details       "It looks like a dark cave who knows where it goes"
+	 textGo        "You cant get much closer than this"
+	 gossip_3      "That is a trecharous maze in the cave you go in I will meet you on the other side"
+	 
+//maze_1
+
+- maize_1
+	 description   "The maize"
+	 tags          "entrnace"
+	 textGo        "You have entred some kind of maze"
+	 
+- maize_1_top
+	 description   "blocked entrance to the cave you just entered"
+	 tags          "exit","west"
+	 location      maize_1
+	 textGo        "The entrance is blocked"
+	 
+
+- maize_1_left
+	 description   "left wall"
+	 tags          "north"
+	 location      maize_1
+	 textGo        "Left wall of the maze"
+	 
+- maize_1_right
+	 description   "right wall"
+	 tags          "south"
+	 location      maize_1
+	 textGo        "Right wall of the maze"
+
+- maize_1_bottom
+	 description   "opening to the east"
+	 tags          "east"
+	 location      maize_1
+	 destination   maize_2
+
+//maize_2
+
+- maize_2
+	 description   "Still in the maize"
+	 tags          "maize"
+	 textGo        "Still in the maize"
+
+- maize_2_top
+	 description   "open area from whence you came"
+	 tags          "west"
+	 location      maize_2
+	 destination   maize_1
+	 textGo        "You are where you began from"
+	 
+- maize_2_left
+	 description   "opening to the north"
+	 tags          "north"
+	 location      maize_2
+	 destination   maize_3
+	 textGo        "You have entered another section of the maze"
+	 
+- maize_2_right
+	 description   "left wall"
+	 tags          "south"
+	 location      maize_2
+	 textGo        "Left wall of the maze"
+
+- maize_2_bottom
+	 description   "opening to the east"
+	 tags          "east"
+	 location      maize_2
+	 destination   maize_5
+	 
+//maize_3
+	 
+- maize_3
+	 description   "Still in the maize"
+	 tags          "maize"
+	 textGo        "You are still in the maze"
+	 
+- maize_3_top
+	 description   "blocked area to the west"
+	 tags          "west"
+	 location      maize_3
+	 textGo        "The area is blocked"
+	 
+- maize_3_left
+	 description   "blocked area to the north"
+	 tags          "north"
+	 location      maize_3
+	 textGo        "The area is blocked"
+	 
+- maize_3_right
+	 description   "opening to the south"
+	 tags          "south"
+	 location      maize_3
+	 destination   maize_2
+	 textGo        "Left wall of the maze"
+
+- maize_3_bottom
+	 description   "opening to the east"
+	 tags          "east"
+	 location      maize_3
+	 destination   maize_4
+	 textGo        "Still in the maize"
+
+//maize_4
+	 
+- maize_4
+	 description   "Still in the maize"
+	 tags          "maize"
+	 textGo        "Still in the maize"
+	 
+- maize_4_top
+	 description   "opening to the west"
+	 tags          "west"
+	 location      maize_4
+	 destination   maize_3
+	 textGo        ""
+	 
+- maize_4_left
+	 description   "blocked area to the north"
+	 tags          "north"
+	 location      maize_4
+	 textGo        "The area is blocked"
+	 
+- maize_4_right
+	 description   "blocked area to the south"
+	 tags          "south"
+	 location      maize_4
+	 textGo        "The area is blocked"
+
+- maize_4_bottom
+	 description   "blocked area to the east"
+	 tags          "east"
+	 location      maize_4
+	 textGo        "The area is blocked"
+
+//maize_5
+
+- maize_5
+	 description   "Still in the maize"
+	 tags          "maize"
+	 textGo        "Still in the maize"
+	 
+- maize_5_top
+	 description   "opening to the west"
+	 tags          "west"
+	 location      maize_5
+	 destination   maize_2
+	 textGo        "Still in the maize"
+	 
+- maize_5_left
+	 description   "blocked area to the north"
+	 tags          "north"
+	 location      maize_5
+	 textGo        "The area is blocked"
+	 
+- maize_5_right
+	 description   "blocked area to the south"
+	 tags          "south"
+	 location      maize_5
+	 textGo        "The area is blocked"
+
+- maize_5_bottom
+	 description   "opening to the east"
+	 tags          "east"
+	 location      maize_5
+	 destination   maize_6
+	 textGo        "Still in the maze"
+	 
+//maize_6
+
+- maize_6
+	 description   "Still in the maze"
+	 tags          "maize"
+	 textGo        "Still in the maize"	 
+	 
+- maize_6_top
+	 description   "opening to the west"
+	 tags          "west"
+	 location      maize_6
+	 destination   maize_5
+	 textGo        "Still in the maze"
+	 
+- maize_6_left
+	 description   "opening to the north"
+	 tags          "north"
+	 location      maize_6
+	 destination   maize_7
+	 textGo        "Still in the maze"
+	 
+- maize_6_right
+	 description   "opening to the south"
+	 tags          "south"
+	 location      maize_6
+	 destination   maize_8
+	 textGo        "Still in the maze"
+
+- maize_6_bottom
+	 description   "blocked area to the east"
+	 tags          "east"
+	 location      maize_6
+	 textGo        "The area is blocked"
+	 
+//maize_7
+
+- maize_7
+	 description   "Still in the maze"
+	 tags          "maize"
+	 textGo        "Still in the maize"
+	 
+- maize_7_top
+	 description   "blocked area to the west"
+	 tags          "west"
+	 location      maize_7
+	 textGo        "The area is blocked"
+	 
+- maize_7_left
+	 description   "blocked area to the north"
+	 tags          "north"
+	 location      maize_7
+	 textGo        "The area is blocked"
+	 
+- maize_7_right
+	 description   "opening to the south"
+	 tags          "south"
+	 location      maize_7
+	 destination   maize_6
+	 textGo        "Still in the maze"
+
+- maize_7_bottom
+	 description   "blocked area to the east"
+	 tags          "east"
+	 location      maize_6
+	 textGo        "The area is blocked"
+	 
+//maize_8
+
+- maize_8
+	 description   "Still in the maze"
+	 tags          "maize"
+	 textGo        "Still in the maize"	 
+	 
+- maize_8_top
+	 description   "blocked area to the west"
+	 tags          "west"
+	 location      maize_8
+	 textGo        "The area is blocked"
+	 
+- maize_8_left
+	 description   "opening to the north"
+	 tags          "north"
+	 location      maize_8
+	 destination   maize_6
+	 textGo        "Still in the maze"
+	 
+- maize_8_right
+	 description   "blocked area to the south"
+	 tags          "south"
+	 location      maize_8
+	 textGo        "The area is blocked"
+
+- maize_8_bottom
+	 description   "opening to the east"
+	 tags          "east"
+	 location      maize_8
+	 destination   maize_exit_hall
+	 textGo        "Finaly out of the maize"
+	 
+- maize_exit_hall
+     description  "Garden outside the musesum"
+	 tags         "garden"
+	 
+
+- weena
+     description "weena"
+     tags        "little kid", "child", "girl","weena"
+	 location    maize_exit_hall
+	 details     "She looks like no child you have ever seen\n"
+	 gossip_3    "Her name is Weena and she is from the future here this is how humans evolved to be"
+     contents    "You have"
+     health      100
+	 capacity    20
+
+- the_time_traveller
+     description "The time traveller"
+     tags        "man", "steampunk guy", "steampunk", "guy"
+	 location    maize_exit_hall
+	 details     "He looks like someone who could help you\n"
+	 gossip_3    "He is the time traveller he is from a world ages away from yours or mine"
+     contents    "You have"
+     health      100
+	 capacity    20
+
+- portal_level_3
+     description "A portal made by the time traveller"
+	 tags        "north","south","east","west","portal"
+	 location    maize_exit_hall
+	 destination thirdFloor_alt
+	 textGo      "Back in the burning library"
 
 	 
+- thirdFloor_alt
+	 description  "the third floor reading room"
+	 tags         "third floor"	 	 
+
+- stairsSecondFloorDown_alt
+	 description   "Stairs to the second floor"
+	 tags          "down","east","second floor"
+	 location      thirdFloor_alt
+	 textGo      "Go forward these stairs are on fire"
+	 
+- table_1_alt
+	 description  "Reading room table 1"
+	 tags         "table 1","west"
+	 location     thirdFloor_alt
+	 textGo     "You are facing table 1"
+	 
+- table_2_alt
+	 description  "Reading room table 2"
+	 tags         "table 2","north"
+	 location     thirdFloor_alt
+	 textGo      "You are facing table 2"	 
+	 
+- table_3_alt
+	 description  "Reading room table 3"
+	 tags         "table 2","south"
+	 location     thirdFloor_alt
+	 textGo       "You are facing table 3"
+
+- roof_door
+     description  "Door to the roof"
+	 tags         "roof"
+	 location     thirdFloor_alt
+	 destination  roof
+	 textGo       "You are on the roof"
+	 
+- roof	 
+	 description  "The roof"
+	 tags         "door"
+	 textGo       "You are on the roof"
+
+- book_4
+     description  "A sizziling book"
+	 tags         "book"
+	 location      roof
+	 destination   firetruck
+- firetruck
+     description "The Firetruck."
+	 location street
+	 tags    "firetruck"
+	 weight      99999	
+
+- firetruckinterior
+     description "Gyu Montag's house in flames"
+	 tags       "firetruckinterior"
+	 location firetruck
+	 textGo    "You look around and see that your friend Montag's house in flames\n"
+	 weight      99999
+
+- firetruckHandle
+    description "Firetruck door handle"
+	tags       "handle","left","east"
+	 usage      "You have opened the firetruck door"
+	 location firetruck
+	 destination street
+	 textGo    "You are in the street and feel the warmth of the burning house infont.\n"
+	 weight      99999
+	 
+- street
+     description "street"
+     tags        "west","south"
+	 textGo    "Their is nothing but blocks of apartment running along the street\n"
+	 weight      99999
+
+- street2
+     description "You have called Granger and Faber a while ago, they may have approached till now while you were struggling your way out of the house.\n You should find yourself a wapon in order to defend yourself from the Hound"
+     tags        "west","north","south"
+	 textGo      "Their is nothing but blocks of apartment running along the street\n"
+	 weight      99999
+
+
+	 
+- houseEntrance
+     description "Entrance of Montag's house"
+     tags        "house","east"
+     location    street
+     destination Montagslivingroom
+	 textGo    "You are in front of Montag's house. You should probably find the boooks you have given to Guy Montag in order to go back to your World.\n"
+	 weight      99999
+
+- Montagslivingroom
+     description "Montag's Living Room is in flames"
+     tags        "east","Living Room"
+     location Montagslivingroom
+     destination Montagsbedroom
+	 textGo    "You entred Montag's Living Room\n"
+	 weight      99999	 	 	 
+- livingroomWalls
+     description "Livingroom walls all wrapped up in flames"
+     tags        "north","south"
+     location    Montagslivingroom
+	 textGo    "There is nothing but burning walls there\n"
+	 weight      99999
+	 
+
+- livingroomExit
+     description "Exit of Montag's living room"
+     tags        "west","exit","street"
+     location    Montagslivingroom
+     destination street2
+	 textGo    "You are in the streets with Guy Montag\n"
+	 weight      99999	
+
+- Montagsbedroom
+	 description "Montag's bedroom"
+     tags        "bedroom","east"
+	 location Montagsbedroom
+	 textGo    "You are in Montag's bedroom and everything is in fire.\n There is very less probability to get back the books admist the flames,Captain Beatty must have taken the books with him."
+	 weight      99999
+
+
+- bedroomWalls_montag
+     description "bedroom walls all covered in fire"
+     tags        "south","north"
+     location    Montagsbedroom
+	 textGo    "There is nothing but bedroom walls there\n"
+	 weight      99999
+	 
+- bed_montag
+	 description "Bed where the flames had reached and a telephone beside it where the flames have not yet reached. \nYou can use the telephone to call Faber and Granger for HELP"
+     tags        "bed","east"
+     location    Montagsbedroom
+	 textGo    "You see a burning bed"
+	 weight      99999
+
+- telephone
+     description "A telephone, yet away from the flames and can be used.If your books are with Captain Beatty use it to call Faber and Granger for support."
+     tags        "telephone"
+	 location    Montagsbedroom
+	 usage       "You used the telephone to call Faber and Granger"
+	 textGo      "Use the telephone to call faber and granger for Help\n"
+	 weight      99999
+	 	 
+- bedroomexit
+     description "exit to the living room"
+     tags        "bedroom exit","west"
+	 location    Montagsbedroom
+	 destination Montagslivingroom
+	 textGo    "you are in the living room\n"
+	 weight      99999
+	 
+
+- firetruckPosterior
+     description "The Firetruck posterior, with many fire emergency equipments and a firethrower."
+	 location street2
+	 tags    "firetruck"
+	 weight      99999
 	
+- Faber 
+     description "Faber who has taken hold of 2 firemen."
+     tags        "Captain Beatty","Captain"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+	 weight      99999	  
+- Granger 
+     description "Granger with his comrades is dealing with the remaining firemen."
+     tags        "Captain Beatty","Captain"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+	 weight      99999	  
+	 
+- CaptainBeatty
+	 description "Captain Beatty who is now aware of the situation,has ordered the beast to hunt and kill you and Montag."
+     tags        "Captain Beatty","Captain"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+	 weight      99999	  
+	 
+- Hound
+	 description "A Large Mechanical Hound, a monstrous machine which is on its way to kill you and Montag. \n"
+	 tags 		 "Hound"
+	  location    street2
+	 textGo    "The Hound has been set by Captain Beatty to kill you and Guy Montag"
 
-	 
-	 
-	 
-	 
 
-	 
-	 
+- fireman1
+     description "a tall and lean fireman grasped by Granger"
+	 location    street2
+     tags        " tall fireman","fireman"
+
+- Flamethrower
+     description "Flamethrower"
+     tags        "west","flamethrower"
+     location    firetruckPosterior
+	 usage    "You have the flamethrower and can use it to produce flames"
+	 textGo    "You see The Hound approachig you and Montag.\n You've noticed that your books are inside Captain Beatty waist coat.\n You've use the flame thrower on the hound, burning the beast into ashes.\n"
+	 Captain Beatty alone hand the books over to you." 
+	 weight      99999	 	 
+
 //hhd
 // misc
 - guard
      description "a burly guard"
      tags        "guard", "burly guard"
 	 location     bedroom
-	 details     "You would need a mirror to look at yourself.\n"
+	 details     "A large guard"
      contents    "You have"
      health      100
      capacity    20
