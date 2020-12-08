@@ -75,6 +75,7 @@ extern OBJECT objs[];
 - Montagslivingroom
      description "Montag's Living Room is in flames"
      tags        "east","Living Room"
+     location Montagslivingroom
      destination Montagsbedroom
 	 textGo    "You entred Montag's Living Room\n"
 	 weight      99999	 
@@ -98,7 +99,7 @@ extern OBJECT objs[];
 - Montagsbedroom
 	 description "Montag's bedroom"
      tags        "bedroom","east"
-	 location Montagslivingroom
+	 location Montagsbedroom
 	 textGo    "You are in Montag's bedroom and everything is in fire.\n There is very less probability to get back the books admist the flames,Captain Beatty must have taken the books with him."
 	 weight      99999
 

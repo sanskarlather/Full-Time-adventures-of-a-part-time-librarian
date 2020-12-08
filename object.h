@@ -2,7 +2,7 @@
 
 typedef struct object {
 	int           level;
-	bool         (*condition)(void);
+		bool         (*condition)(void);
 	const char* description;
 	const char* usage;
 	const char** tags;

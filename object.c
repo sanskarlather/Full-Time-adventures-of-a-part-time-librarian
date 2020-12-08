@@ -233,7 +233,8 @@ OBJECT objs[] = {
 ,
 		"That is something that can not be used\n",
 		tags6,
-		NULL,
+		 Montagslivingroom
+,
 		 Montagsbedroom
 ,
 		 Montagsbedroom
@@ -323,7 +324,7 @@ OBJECT objs[] = {
 ,
 		"That is something that can not be used\n",
 		tags9,
-		 Montagslivingroom
+		 Montagsbedroom
 ,
 		NULL,
 		NULL,
