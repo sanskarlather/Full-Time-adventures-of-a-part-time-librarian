@@ -1,169 +1,187 @@
-#include <stdbool.h>
 #include <stdio.h>
 #include "object.h"
-
+#include "toggle.h"
 
 typedef struct object {
+   int           level
+   bool         (*condition)(void);
    const char    *description;
-   const char   **tags;
    const char    *usage;
+   const char   **tags;
    struct object *location;
    struct object *destination;
-   const char 	 *textPass;
-   struct object* details;
-   int weight;
-
-   
+   struct object *prospect;
+   const char    *details;
+   const char    *contents;
+   const char    *textGo;
+   const char    *gossip;
+   const char    *gossip_1;
+   const char    *gossip_2;
+   const char    *gossip_3;
+   int            weight;
+   int            capacity;
+   int            health;
+   const char  *(*open)(void);
+   const char  *(*close)(void);
+   const char  *(*lock)(void);
+   const char  *(*unlock)(void);
 } OBJECT;
 
 extern OBJECT objs[];
 
 - firetruck
-     description "firetruck heading towards the burning house"
+     description "The Firetruck."
+	 location street
 	 tags    "firetruck"
-	 textPass    "You are sitting in the front seat of a firetruck, with Captain Beatty driving and Montag alongside you.\n"
 	 weight      99999
 
 - firetruckinterior
-     description "You are astonished to see that your friend Montag's house in flames"
+     description "Gyu Montag's house in flames"
 	 tags       "firetruckinterior"
-	 textPass    "You look around and see that your friend Montag's house in flames\n"
+	 location firetruck
+	 textGo    "You look around and see that your friend Montag's house in flames\n"
 	 weight      99999
 
 - firetruckHandle
-    description "handle"
-	 tags       "handle","east"
-	 usage      "You have opened the firetruck door"
-	 textPass    "You are in the street and feel the warmth of the burning house infont.\n"
+  description "Firetruck door handle"
+	tags       "handle","left","east"
+	  usage      "You have opened the firetruck door"
+	 location firetruck
+	 destination street
+	 textGo    "You are in the street and feel the warmth of the burning house infont.\n"
 	 weight      99999
 	 
 - street
      description "street"
      tags        "west","north","south"
-     location    street
-	 textPass    "Their is nothing but blocks of apartment running along the street\n"
+	 textGo    "Their is nothing but blocks of apartment running along the street\n"
+	 weight      99999
+- street2
+     description "You have called Granger and Faber a while ago, they may have approached till now while you were struggling your way out of the house.\n You should find yourself a wapon in order to defend yourself from the Hound"
+     tags        "west","north","south"
+	 textGo      "Their is nothing but blocks of apartment running along the street\n"
 	 weight      99999
 
+
+	 
 - houseEntrance
      description "Entrance of Montag's house"
-     tags        "entrance","east"
-     location    houseEntrance
-     destination Montagshouse
-	 textPass    "You are in front of Montag's house\n"
-	 weight      99999
-	 
-- Montagshouse
-     description "Montags house\n"
-     tags        "Montags house"
-	 textPass    "You entred Montag's house\n"
+     tags        "house","east"
+     location    street
+     destination Montagslivingroom
+	 textGo    "You are in front of Montag's house. You should probably find the boooks you have given to Guy Montag in order to go back to your World.\n"
 	 weight      99999
 
 - Montagslivingroom
-     description "Entrance of Montag's Living Room in flames"
+     description "Montag's Living Room is in flames"
      tags        "east","Living Room"
-     location    Montagslivingroom
      destination Montagsbedroom
-	 textPass    "You entred Montag's Living Room\n"
+	 textGo    "You entred Montag's Living Room\n"
 	 weight      99999	 
 	 
 - livingroomWalls
-     description "livingroom walls"
+     description "Livingroom walls all wrapped up in flames"
      tags        "north","south"
-     location    living room
-	 textPass    "There is nothing but burning walls there\n"
+     location    Montagslivingroom
+	 textGo    "There is nothing but burning walls there\n"
 	 weight      99999
 	 
 
 - livingroomExit
      description "Exit of Montag's living room"
-     tags        "west","exit"
-     location    livingroom
-     destination street
-	 textPass    "You are in the streets with Guy Montag\n"
+     tags        "west","exit","street"
+     location    Montagslivingroom
+     destination street2
+	 textGo    "You are in the streets with Guy Montag\n"
 	 weight      99999	
 
 - Montagsbedroom
 	 description "Montag's bedroom"
      tags        "bedroom","east"
-     location    Montagslivingroom
-     destination Montagsbedroom
-	 textPass    "You are in Montag's bedroom and everything is in fire\n"
+	 location Montagslivingroom
+	 textGo    "You are in Montag's bedroom and everything is in fire.\n There is very less probability to get back the books admist the flames,Captain Beatty must have taken the books with him."
 	 weight      99999
 
 
 - bedroomWalls
-     description "bedroom walls"
+     description "bedroom walls all covered in fire"
      tags        "south","north"
-     location    bedroom
-	 textPass    "There is nothing but bedroom walls there\n"
+     location    Montagsbedroom
+	 textGo    "There is nothing but bedroom walls there\n"
 	 weight      99999
 	 
 - bed
-	 description "The bed and the telephone"
+	 description "Bed where the flames had reached and a telephone beside it where the flames have not yet reached. \nYou can use the telephone to call Faber and Granger for HELP"
      tags        "bed","east"
-     location    bedroom
-	 textPass    "You see a burning bed and a telephone where the flames have not yet reached \n You can use the telephone to call Faber and Granger for HELP"
+     location    Montagsbedroom
+	 textGo    "You see a burning bed"
 	 weight      99999
 
 - telephone
-     description "telephone"
-     tags        "telpephone"
+     description "A telephone, yet away from the flames and can be used.If your books are with Captain Beatty use it to call Faber and Granger for support."
+     tags        "telephone"
+	 location    Montagsbedroom
 	 usage       "You used the telephone to call Faber and Granger"
-	 textPass    "Use the telephone to call faber and granger for Help\n"
+	 textGo      "Use the telephone to call faber and granger for Help\n"
 	 weight      99999
 	 	 
 - bedroomexit
      description "exit to the living room"
      tags        "bedroom exit","west"
-	 textPass    "you are in the living room\n"
+	 location    Montagsbedroom
+	 destination Montagslivingroom
+	 textGo    "you are in the living room\n"
 	 weight      99999
 	 
-- MontagHouseExit
-     description "Montag's house exit"
-     tags        "exit","west"
-     location    bedroom
-     destination street
-	 textPass    "You are back in the streets now, struggling your way out admist the flames. You see that Faber and Grange were arriving as fast as they could and Gyu Montag was standing beside the firetruck in search for some weapon.\n"
-	 weight      99999
-	 
-- Flamethrower
-     description "Flamethrower"
-     tags        "west","flamethrower"
-     location    street
-	 usage "You have the flamethrower and can use it to produce flames"
-	 textPass    "You see a flamethrower and \n"
-	 weight      99999	 
 
-- CaptainBeatty
-	 description "Captain Beatty"
+- firetruckPosterior
+     description "The Firetruck posterior, with many fire emergency equipments and a firethrower."
+	 location street2
+	 tags    "firetruck"
+	 weight      99999
+
+- Faber 
+     description "Faber who has taken hold of 2 firemen."
      tags        "Captain Beatty","Captain"
-     location    street
-	 textPass    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+	 weight      99999	  
+- Granger 
+     description "Granger with his comrades is dealing with the remaining firemen."
+     tags        "Captain Beatty","Captain"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
+	 weight      99999	  
+	 
+- CaptainBeatty
+	 description "Captain Beatty who is now aware of the situation,has ordered the beast to hunt and kill you and Montag."
+     tags        "Captain Beatty","Captain"
+     location    street2
+	 textGo    "Captain Beatty has ordered the brutal Hound to kill both you and Guy Montag"
 	 weight      99999	  
 	 
 - Hound
-	 description "A Large Mechanical Hound, a monstrous machine  \n"
+	 description "A Large Mechanical Hound, a monstrous machine which is on its way to kill you and Montag. \n"
 	 tags 		 "Hound"
-	 textPass    "The Hound has been set by Captain Beatty to kill you and Guy Montag"
+	  location    street2
+	 textGo    "The Hound has been set by Captain Beatty to kill you and Guy Montag"
 
 
 - fireman1
-     description "a tall fireman"
+     description "a tall and lean fireman grasped by Granger"
+	 location    street2
      tags        " tall fireman","fireman"
 
-- fireman2
-     description "a fat fireman"
-     tags        "fireman","fat fireman"
-
-- fireman3
-     description "a short fireman"
-     tags        "fireman","short fireman"
-
-- fireman4
-     description "a thin fireman"
-     tags        "fireman","thinfireman"
+- Flamethrower
+     description "Flamethrower"
+     tags        "west","flamethrower"
+     location    firetruckPosterior
+	 usage    "You have the flamethrower and can use it to produce flames"
+	 textGo    "You see The Hound approachig you and Montag.\n You've noticed that your books are inside Captain Beatty waist coat.\n You've use the flame thrower on the hound, burning the beast into ashes.\n"
+	 Captain Beatty alone hand the books over to you." 
+	 weight      99999	 
 	 
 - player
      description "yourself"
      tags        "yourself"
-     location    street
+     location    firetruck
